@@ -21,14 +21,14 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/Abdulrahman Qasem/DynamicMapper'
+  s.homepage         = 'https://github.com/AbdulrahmanQasem95/DynamicMapper'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Abdulrahman Qasem' => 'Abdulrahman.qasem@baaz.com' }
-  s.source           = { :git => 'https://github.com/Abdulrahman Qasem/DynamicMapper.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/AbdulrahmanQasem95/DynamicMapper.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '12.0'
 
   s.source_files = 'DynamicMapper/Classes/**/*'
   
