@@ -1,0 +1,22 @@
+{
+  "name": "DynamicMapper",
+  "version": "0.1.0",
+  "summary": "A short description of DynamicMapper.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Abdulrahman Qasem/DynamicMapper",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Abdulrahman Qasem": "Abdulrahman.qasem@baaz.com"
+  },
+  "source": {
+    "git": "https://github.com/Abdulrahman Qasem/DynamicMapper.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "DynamicMapper/Classes/**/*"
+}

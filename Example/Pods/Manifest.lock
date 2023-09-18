@@ -1,0 +1,16 @@
+PODS:
+  - DynamicMapper (0.1.0)
+
+DEPENDENCIES:
+  - DynamicMapper (from `../`)
+
+EXTERNAL SOURCES:
+  DynamicMapper:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DynamicMapper: 213b45dff15a9cb7c28bfc40d58576a1806601e3
+
+PODFILE CHECKSUM: e8d79a88f2dce0ead5126f762a9f325e7eeec64e
+
+COCOAPODS: 1.12.1
