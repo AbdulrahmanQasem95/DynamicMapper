@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 
   s.description      = <<-DESC
 'Dynamic Mapper is an awesome framework to git a nested propertry form inside your Json with out the need to create the whole model and its nested submodels'
-
+        DESC
   s.homepage         = 'https://github.com/AbdulrahmanQasem95/DynamicMapper'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '12.0'
 
-  s.source_files = 'DynamicMapper/Classes/**/*.swift'
+  s.source_files = 'Sources/**/*.swift'
   s.swift_version = '5.0'
   # s.resource_bundles = {
   #   'DynamicMapper' => ['DynamicMapper/Assets/*.png']
