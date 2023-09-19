@@ -102,7 +102,7 @@
 		0CA08541E3049BD845AE06CA7B005360 /* DynamicMapper */ = {
 			isa = PBXGroup;
 			children = (
-				F91543CB2AB9A91700340D63 /* Source */,
+				F91543CB2AB9A91700340D63 /* Classes */,
 				F41238E7D4CA6D97C1C845F3002ED94C /* Pod */,
 				FD9C479024EF19AACE46D97DCFF2B428 /* Support Files */,
 			);
@@ -197,12 +197,12 @@
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		F91543CB2AB9A91700340D63 /* Source */ = {
+		F91543CB2AB9A91700340D63 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				F91543CC2AB9A95600340D63 /* DynamicArrayValues.swift */,
 			);
-			path = Source;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		FAC397B0694FCCD814E5C9217E4BFCC0 /* Products */ = {
