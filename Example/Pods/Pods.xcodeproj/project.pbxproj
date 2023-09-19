@@ -68,7 +68,15 @@
 		E39C87DAF1E4C1296DB50AEF0C7F5155 /* Pods-DynamicMapper_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DynamicMapper_Example.release.xcconfig"; sourceTree = "<group>"; };
 		EED1BE14CB1C3D89358EE248D0E5F3FC /* DynamicMapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DynamicMapper.modulemap; sourceTree = "<group>"; };
 		F16BF6C46C8850978FDA3B093654590B /* DynamicMapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DynamicMapper.release.xcconfig; sourceTree = "<group>"; };
-		F91543CC2AB9A95600340D63 /* DynamicArrayValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicArrayValues.swift; sourceTree = "<group>"; };
+		F91544042AB9C37100340D63 /* DynamicClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicClass.swift; sourceTree = "<group>"; };
+		F91544052AB9C37100340D63 /* DynamicDecodableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicDecodableProtocol.swift; sourceTree = "<group>"; };
+		F91544062AB9C37100340D63 /* DynamicCodableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCodableProtocol.swift; sourceTree = "<group>"; };
+		F91544072AB9C37100340D63 /* DynamicValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicValue.swift; sourceTree = "<group>"; };
+		F91544082AB9C37100340D63 /* DynamicStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicStruct.swift; sourceTree = "<group>"; };
+		F91544092AB9C37100340D63 /* DynamicEncodableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicEncodableProtocol.swift; sourceTree = "<group>"; };
+		F915440A2AB9C37100340D63 /* DynamicArrayValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicArrayValues.swift; sourceTree = "<group>"; };
+		F915440B2AB9C37100340D63 /* DynamicJSONEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicJSONEncoder.swift; sourceTree = "<group>"; };
+		F915440C2AB9C37100340D63 /* DynamicJSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicJSONDecoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,7 +208,15 @@
 		F91543CB2AB9A91700340D63 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F91543CC2AB9A95600340D63 /* DynamicArrayValues.swift */,
+				F91544082AB9C37100340D63 /* DynamicStruct.swift */,
+				F91544042AB9C37100340D63 /* DynamicClass.swift */,
+				F91544072AB9C37100340D63 /* DynamicValue.swift */,
+				F915440A2AB9C37100340D63 /* DynamicArrayValues.swift */,
+				F91544062AB9C37100340D63 /* DynamicCodableProtocol.swift */,
+				F91544052AB9C37100340D63 /* DynamicDecodableProtocol.swift */,
+				F91544092AB9C37100340D63 /* DynamicEncodableProtocol.swift */,
+				F915440C2AB9C37100340D63 /* DynamicJSONDecoder.swift */,
+				F915440B2AB9C37100340D63 /* DynamicJSONEncoder.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
