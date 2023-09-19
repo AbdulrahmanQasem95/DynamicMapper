@@ -8,7 +8,7 @@
 import Foundation
 
 @dynamicMemberLookup
-enum DynamicValue: Codable {
+public  enum DynamicValue: Codable {
     
     case intValue(Int)
     case stringValue(String)
@@ -17,35 +17,35 @@ enum DynamicValue: Codable {
     case arrayValue(Array<DynamicValue>)
     case dictionaryValue(Dictionary<String, DynamicValue>)
     
-    var stringValue: String? {
+    public var stringValue: String? {
         if case .stringValue(let str) = self {
             return str
         }
         return nil
     }
     
-    var intValue: Int? {
+    public var intValue: Int? {
         if case .intValue(let int) = self {
             return int
         }
         return nil
     }
     
-    var boolValue: Bool? {
+    public var boolValue: Bool? {
         if case .boolValue(let bool) = self {
             return bool
         }
         return nil
     }
     
-    var doubleValue: Double? {
+    public var doubleValue: Double? {
         if case .doubleValue(let double) = self {
             return double
         }
         return nil
     }
     
-    func arrayValue<T:Decodable>(customType:T.Type)-> [T] {
+    public func arrayValue<T:Decodable>(customType:T.Type)-> [T] {
         if case .arrayValue(let value) = self {
             let data = try? JSONEncoder().encode(value)
             if let data = data {
@@ -55,7 +55,7 @@ enum DynamicValue: Codable {
         return []
     }
     
-    func arrayValue<T>(type:DynamicArrayValues)-> [T] {
+    public func arrayValue<T>(type:DynamicArrayValues)-> [T] {
         if case .arrayValue(let value) = self {
             switch type{
             case .int:
@@ -71,28 +71,28 @@ enum DynamicValue: Codable {
         return []
     }
     
-    subscript(index: Int) -> DynamicValue? {
+    public subscript(index: Int) -> DynamicValue? {
         if case .arrayValue(let arr) = self {
             return index < arr.count ? arr[index] : nil
         }
         return nil
     }
     
-    subscript(key: String) -> DynamicValue? {
+    public subscript(key: String) -> DynamicValue? {
         if case .dictionaryValue(let dict) = self {
             return dict[key]
         }
         return nil
     }
     
-    subscript(dynamicMember member: String) -> DynamicValue? {
+    public subscript(dynamicMember member: String) -> DynamicValue? {
         if case .dictionaryValue(let dict) = self {
             return dict[member]
         }
         return nil
     }
     
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         if let stringValue = try? container.decode(String.self) {
             self = .stringValue(stringValue)
@@ -111,7 +111,7 @@ enum DynamicValue: Codable {
         }
     }
     
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         switch self {
         case .stringValue(let string):

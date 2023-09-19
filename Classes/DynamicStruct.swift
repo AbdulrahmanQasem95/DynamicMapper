@@ -8,8 +8,8 @@
 import Foundation
 
 @dynamicMemberLookup
-struct DynamicStruct: DynamicCodable {
-    func mapping() {
+public struct DynamicStruct: DynamicCodable {
+    public func mapping() {
         fatalError("This method must be overriden by subclass in order to set the nested parameters")
     }
     struct DynamicCodingKeys: CodingKey {
@@ -36,7 +36,7 @@ struct DynamicStruct: DynamicCodable {
     }
 
     // Codable methods
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: DynamicCodingKeys.self)
         var tempContainer = [String: DynamicValue]()
         for key in container.allKeys {
@@ -48,7 +48,7 @@ struct DynamicStruct: DynamicCodable {
         self.container = tempContainer
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: DynamicCodingKeys.self)
         for (key, value) in self.container {
             let dynamicKey = DynamicCodingKeys(stringValue: key)!

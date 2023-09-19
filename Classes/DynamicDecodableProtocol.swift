@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol DynamicDecodable:Decodable{
+public protocol DynamicDecodable:Decodable{
     func mapping()
 }

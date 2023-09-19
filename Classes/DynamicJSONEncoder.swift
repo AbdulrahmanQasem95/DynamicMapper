@@ -6,8 +6,9 @@
 //
 
 import Foundation
-class DynamicJSONEncoder {
-    func encode<T>(_ value: T) throws -> Data where T : DynamicEncodable{
+public class DynamicJSONEncoder {
+    public init(){}
+    public func encode<T>(_ value: T) throws -> Data where T : DynamicEncodable{
         let ecoder = JSONEncoder()
         return try ecoder.encode(value)
     }

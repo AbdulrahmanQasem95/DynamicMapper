@@ -1,22 +1,24 @@
 {
   "name": "DynamicMapper",
-  "version": "0.1.0",
-  "summary": "A short description of DynamicMapper.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Abdulrahman Qasem/DynamicMapper",
+  "version": "1.0.3",
+  "summary": "Map your model Dynamically without need to create class or struct",
+  "description": "'Dynamic Mapper is an awesome framework to git a nested propertry form inside your Json with out the need to create the whole model and its nested submodels'",
+  "homepage": "https://github.com/AbdulrahmanQasem95/DynamicMapper",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "Abdulrahman Qasem": "Abdulrahman.qasem@baaz.com"
+    "Abdulrahman Qasem": "Abdulrahmanq1995@gmail.com"
   },
   "source": {
-    "git": "https://github.com/Abdulrahman Qasem/DynamicMapper.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/AbdulrahmanQasem95/DynamicMapper.git",
+    "tag": "1.0.3"
   },
   "platforms": {
-    "ios": "10.0"
+    "ios": "12.0"
   },
-  "source_files": "DynamicMapper/Classes/**/*"
+  "source_files": "Classes/**/*.swift",
+  "swift_versions": "5.0",
+  "swift_version": "5.0"
 }

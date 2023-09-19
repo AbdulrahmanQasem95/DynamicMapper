@@ -6,5 +6,5 @@
 //
 
 import Foundation
-protocol DynamicCodable:DynamicDecodable,DynamicEncodable{
+public protocol DynamicCodable:DynamicDecodable,DynamicEncodable{
 }

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-enum DynamicArrayValues {
+public enum DynamicArrayValues {
     case int
     case string
     case double

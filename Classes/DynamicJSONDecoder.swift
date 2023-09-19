@@ -6,8 +6,9 @@
 //
 
 import Foundation
-class DynamicJSONDecoder {
-    func decode<T>(_ type: T.Type, from data: Data) throws -> T where T : DynamicDecodable {
+public class DynamicJSONDecoder {
+    public init(){}
+    public func decode<T>(_ type: T.Type, from data: Data) throws -> T where T : DynamicDecodable {
         let decoder = JSONDecoder()
         let model = try decoder.decode(T.self, from: data)
         model.mapping()

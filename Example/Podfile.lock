@@ -1,5 +1,5 @@
 PODS:
-  - DynamicMapper (0.1.0)
+  - DynamicMapper (1.0.3)
 
 DEPENDENCIES:
   - DynamicMapper (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  DynamicMapper: 213b45dff15a9cb7c28bfc40d58576a1806601e3
+  DynamicMapper: 3bd780f61c0eb761133bfc37811dc0e41a3ff984
 
 PODFILE CHECKSUM: e8d79a88f2dce0ead5126f762a9f325e7eeec64e
 

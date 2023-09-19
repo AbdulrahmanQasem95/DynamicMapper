@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol DynamicEncodable:Encodable{
+public protocol DynamicEncodable:Encodable{
 }
 
