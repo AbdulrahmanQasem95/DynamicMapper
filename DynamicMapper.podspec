@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DynamicMapper'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Map your model Dynamically without need to create class or struct'
 
 # This description is used to generate tags and improve search results.
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '12.0'
 
-  s.source_files = 'Classes/**/*.swift'
+  s.source_files = 'Source/*.swift'
   s.swift_version = '5.0'
   # s.resource_bundles = {
   #   'DynamicMapper' => ['DynamicMapper/Assets/*.png']
