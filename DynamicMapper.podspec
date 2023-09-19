@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DynamicMapper'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'Map your model Dynamically without need to create class or struct'
 
 # This description is used to generate tags and improve search results.
