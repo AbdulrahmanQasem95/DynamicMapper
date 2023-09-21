@@ -8,5 +8,6 @@
 import Foundation
 
 public protocol DynamicDecodable:Decodable{
-    func mapping()
+    var dynamicSelf:DynamicClass? { get set  }
+    func fetchNestedItems()
 }

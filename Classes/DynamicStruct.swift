@@ -9,7 +9,9 @@ import Foundation
 
 @dynamicMemberLookup
 public struct DynamicStruct: DynamicCodable {
-    public func mapping() {
+    public var dynamicSelf: DynamicClass?
+    
+    public func fetchNestedItems() {
         fatalError("This method must be overriden by subclass in order to set the nested parameters")
     }
     struct DynamicCodingKeys: CodingKey {
@@ -28,6 +30,7 @@ public struct DynamicStruct: DynamicCodable {
 
     init(_ dictionary: [String: DynamicValue]) {
         self.container = dictionary
+        //dynamicValue = DynamicValue(from: Decoder())
     }
 
     // Dynamic member lookup subscript
@@ -46,6 +49,7 @@ public struct DynamicStruct: DynamicCodable {
             
         }
         self.container = tempContainer
+        //dynamicValue = self
     }
 
     public func encode(to encoder: Encoder) throws {

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "29276C51-1E5E-4279-AA1E-2E3E848A5C63"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3907E8C6-565A-4388-935D-33F466BD711A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DynamicMapper/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "fetchNestedItems()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3907E8C6-565A-4388-935D-33F466BD711A - cbb6aba1e5b850db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.Marwan.fetchNestedItems() -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "722">
+               </Location>
+               <Location
+                  uuid = "3907E8C6-565A-4388-935D-33F466BD711A - cbb6aba1e5b850db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.Marwan.fetchNestedItems() -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD1AAA8A-05CE-4C60-AE0B-17E8A8D45A81"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DynamicMapper/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "fetchNestedItems()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AD1AAA8A-05CE-4C60-AE0B-17E8A8D45A81 - 70aebecc657352db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.NestedClass.fetchNestedItems() -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "980">
+               </Location>
+               <Location
+                  uuid = "AD1AAA8A-05CE-4C60-AE0B-17E8A8D45A81 - 70aebecc657352db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.NestedClass.fetchNestedItems() -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FCE26223-2161-43A2-8307-AF4C4C02D4FE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/DynamicJSONDecoder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "decode(_:from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

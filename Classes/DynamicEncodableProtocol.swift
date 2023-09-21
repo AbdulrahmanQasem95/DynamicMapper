@@ -8,5 +8,6 @@
 import Foundation
 
 public protocol DynamicEncodable:Encodable{
+    var dynamicSelf:DynamicClass? { get set  }
 }
 

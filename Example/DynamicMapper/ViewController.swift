@@ -11,6 +11,7 @@ import DynamicMapper
 class ViewController: UIViewController {
     let jsonData = """
     {
+    "nameTotal":"Qasem",
       "aps": {
         "mutable-content": 1,
         "alert": {
@@ -32,22 +33,26 @@ class ViewController: UIViewController {
         }],
     "marwan":{
     "yazan":{
-    "mazen":"sdfsdf"
+    "mazen":"mazzzzzen"
     }
     }
     }
     """.data(using: .utf8)!
-    let decoder = DynamicJSONDecoder()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let dynamicClass = try? decoder.decode(NestedClass.self, from: jsonData) {
+        let decoder = DynamicJSONDecoder()
+        if let dynamicClass = try?  decoder.decode(NestedClass.self, from: jsonData) {
             print("dynamic object: \(dynamicClass.name ?? "")")
-            let data = try? JSONEncoder().encode(dynamicClass)
+            let data = try? DynamicJSONEncoder().encode(dynamicClass)
             
             if let dynamic = try? decoder.decode(NestedClass.self, from: data!) {
                 print("dynamic object: \(dynamic.name ?? "")")
-                print("dynamic object: \(dynamic.marwan?.yazan?.mazen?.stringValue ?? "")")
-                print("dynamic object: \(dynamic.aps?.badge?.intValue ?? 0)")
+//                print("dynamic object: \(dynamic.marwan?.yazan?.mazen?.stringValue ?? "")")
+               // print("dynamic object: \(dynamic.aps?.badge?.intValue ?? 0)")
+                print("dynamic object: \(dynamic.nameTotal )")
+               // print("dynamic object: \(dynamic.marwan.mazen ?? "" )")
+                print("dynamic object: \(dynamic.marwan.dynamicSelf!.yazan?.mazen?.stringValue ?? "" )")
             }
           
         }
@@ -62,22 +67,32 @@ class ViewController: UIViewController {
 
 
 
-class NestedClass:DynamicClass{
+
+class NestedClass:DynamicCodable{
+    var dynamicSelf: DynamicMapper.DynamicClass?
+
+    var nameTotal:String
     var name :String?
-
-    override func mapping() {
-        name = self.marwan?.yazan?.mazen?.stringValue ?? ""
+    var marwan:Marwan
+    func fetchNestedItems() {
+        name = dynamicSelf?.marwan?.yazan?.mazen?.stringValue ?? ""
     }
-
 }
 
-//class NestedClass:DynamicCodable{
-//    var aps:DynamicClass?
-//    var marwan:DynamicClass?
-//    var name :String?
-//
-//    func mapping() {
-//        name = marwan?.yazan?.mazen?.stringValue ?? ""
-//    }
-//}
+class Marwan:DynamicCodable{
+    var dynamicSelf: DynamicMapper.DynamicClass?
+    var mazen :String?
+    func fetchNestedItems() {
+        mazen = dynamicSelf?.yazan?.mazen?.stringValue ?? ""
+    }
+    
+}
 
+class Yazan:DynamicCodable{
+    var dynamicSelf: DynamicMapper.DynamicClass?
+    var mazen :String?
+    func fetchNestedItems() {
+       // mazen = dynamicSelf?.yazan?.mazen?.stringValue ?? ""
+    }
+    
+}

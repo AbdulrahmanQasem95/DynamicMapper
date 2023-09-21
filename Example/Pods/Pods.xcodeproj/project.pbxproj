@@ -51,8 +51,8 @@
 		1545A7F52ABFBE2E238A13A1DB442F8A /* DynamicMapper */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DynamicMapper; path = DynamicMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		172DEFD2F629AAC4D24A55BDE3ED5D64 /* Pods-DynamicMapper_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DynamicMapper_Example-umbrella.h"; sourceTree = "<group>"; };
 		19530CBA04960CAC6018160612A295B9 /* DynamicJSONDecoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicJSONDecoder.swift; path = Classes/DynamicJSONDecoder.swift; sourceTree = "<group>"; };
-		2BA4B642748C39F5C7435AB3CEDE7B28 /* Pods_DynamicMapper_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicMapper_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FA2ED443E78C351F05CCCAE2D7E6733 /* Pods_DynamicMapper_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicMapper_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BA4B642748C39F5C7435AB3CEDE7B28 /* Pods-DynamicMapper_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-DynamicMapper_Example"; path = Pods_DynamicMapper_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FA2ED443E78C351F05CCCAE2D7E6733 /* Pods-DynamicMapper_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-DynamicMapper_Tests"; path = Pods_DynamicMapper_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F8F85C85B58B2E1448917E906C5C2C /* DynamicCodableProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicCodableProtocol.swift; path = Classes/DynamicCodableProtocol.swift; sourceTree = "<group>"; };
 		328224EAEEBAEE763D6CA9E5614FD4BD /* DynamicJSONEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicJSONEncoder.swift; path = Classes/DynamicJSONEncoder.swift; sourceTree = "<group>"; };
 		32C553077595B738A169582C102E04F1 /* DynamicMapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DynamicMapper.debug.xcconfig; sourceTree = "<group>"; };
@@ -67,23 +67,23 @@
 		6D4EE36E0E02D63F8105D834717D29A6 /* Pods-DynamicMapper_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DynamicMapper_Example.modulemap"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		76D718DC18D85493940F4792A0D9E948 /* DynamicEncodableProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicEncodableProtocol.swift; path = Classes/DynamicEncodableProtocol.swift; sourceTree = "<group>"; };
-		7FD4E7C07F4F173113ECD381F72716C3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7FD4E7C07F4F173113ECD381F72716C3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		8E2BFD6475397B4F88BCAC8EEF41335E /* Pods-DynamicMapper_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DynamicMapper_Tests-umbrella.h"; sourceTree = "<group>"; };
 		91658C379E81F2378239DE0B80BF8EB6 /* DynamicMapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DynamicMapper.modulemap; sourceTree = "<group>"; };
 		99CFAC3D70E7FE00DA75A5B258F27ADE /* Pods-DynamicMapper_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DynamicMapper_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		9BEEC48FEBD8BEBE2FFA9FB1821D19C3 /* DynamicMapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DynamicMapper.release.xcconfig; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FA2DD23FB5066838F49E000F291B998 /* Pods-DynamicMapper_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DynamicMapper_Tests-dummy.m"; sourceTree = "<group>"; };
 		A4F7B857499C27A002FB46176D7F7EEC /* DynamicClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicClass.swift; path = Classes/DynamicClass.swift; sourceTree = "<group>"; };
 		A9DDC3B3A4486261910B4F9FA5725A8C /* Pods-DynamicMapper_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DynamicMapper_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B32D8E10531C8F4E6866F987F4B3BF50 /* DynamicValue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicValue.swift; path = Classes/DynamicValue.swift; sourceTree = "<group>"; };
 		C38368A4D8CE7D1623511E869981184B /* Pods-DynamicMapper_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DynamicMapper_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		C828E1F9B2DF0E40FACF7DD067016187 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		C828E1F9B2DF0E40FACF7DD067016187 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		CBC792968F48CE2796EE299B4A7FDC31 /* DynamicMapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DynamicMapper-prefix.pch"; sourceTree = "<group>"; };
 		CEF99A3DEAA99ABF1A08779CFBB277F4 /* Pods-DynamicMapper_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DynamicMapper_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DE6FD430D2DCAB6BDBF2B373BA222D51 /* Pods-DynamicMapper_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DynamicMapper_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E39C87DAF1E4C1296DB50AEF0C7F5155 /* Pods-DynamicMapper_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DynamicMapper_Example.release.xcconfig"; sourceTree = "<group>"; };
-		F2ECE7B31D4D208677FE3F8C400D15ED /* DynamicMapper.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DynamicMapper.podspec; sourceTree = "<group>"; tabWidth = 2; };
+		F2ECE7B31D4D208677FE3F8C400D15ED /* DynamicMapper.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = DynamicMapper.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F594D9E7AEF843A87A1CE2EE56C14571 /* DynamicMapper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DynamicMapper-Info.plist"; sourceTree = "<group>"; };
 		FB13225F359486D2216A84184A39EEE9 /* DynamicDecodableProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicDecodableProtocol.swift; path = Classes/DynamicDecodableProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -241,8 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				1545A7F52ABFBE2E238A13A1DB442F8A /* DynamicMapper */,
-				2BA4B642748C39F5C7435AB3CEDE7B28 /* Pods_DynamicMapper_Example.framework */,
-				2FA2ED443E78C351F05CCCAE2D7E6733 /* Pods_DynamicMapper_Tests.framework */,
+				2BA4B642748C39F5C7435AB3CEDE7B28 /* Pods-DynamicMapper_Example */,
+				2FA2ED443E78C351F05CCCAE2D7E6733 /* Pods-DynamicMapper_Tests */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -293,7 +293,7 @@
 			);
 			name = "Pods-DynamicMapper_Example";
 			productName = Pods_DynamicMapper_Example;
-			productReference = 2BA4B642748C39F5C7435AB3CEDE7B28 /* Pods_DynamicMapper_Example.framework */;
+			productReference = 2BA4B642748C39F5C7435AB3CEDE7B28 /* Pods-DynamicMapper_Example */;
 			productType = "com.apple.product-type.framework";
 		};
 		94DD4297F462B8FB932A3071A6EEB46D /* Pods-DynamicMapper_Tests */ = {
@@ -312,7 +312,7 @@
 			);
 			name = "Pods-DynamicMapper_Tests";
 			productName = Pods_DynamicMapper_Tests;
-			productReference = 2FA2ED443E78C351F05CCCAE2D7E6733 /* Pods_DynamicMapper_Tests.framework */;
+			productReference = 2FA2ED443E78C351F05CCCAE2D7E6733 /* Pods-DynamicMapper_Tests */;
 			productType = "com.apple.product-type.framework";
 		};
 		A4BEE3A041F5B9330EC376176068059D /* DynamicMapper */ = {
@@ -454,7 +454,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-DynamicMapper_Example/Pods-DynamicMapper_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-DynamicMapper_Example/Pods-DynamicMapper_Example.modulemap";
@@ -553,12 +553,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -580,7 +581,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-DynamicMapper_Tests/Pods-DynamicMapper_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-DynamicMapper_Tests/Pods-DynamicMapper_Tests.modulemap";
@@ -644,7 +645,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-DynamicMapper_Tests/Pods-DynamicMapper_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-DynamicMapper_Tests/Pods-DynamicMapper_Tests.modulemap";
@@ -715,7 +716,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -744,7 +745,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-DynamicMapper_Example/Pods-DynamicMapper_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-DynamicMapper_Example/Pods-DynamicMapper_Example.modulemap";
