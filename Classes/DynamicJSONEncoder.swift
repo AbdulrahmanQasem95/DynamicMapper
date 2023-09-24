@@ -10,6 +10,10 @@ public class DynamicJSONEncoder {
     public init(){}
     public func encode<T>(_ value: T) throws -> Data where T : DynamicEncodable{
         let ecoder = JSONEncoder()
-        return try ecoder.encode(value.dynamicSelf)
+        if let dynamicObject = value.dynamicSelf{
+            return try ecoder.encode(value.dynamicSelf)
+        }else {
+            return try ecoder.encode(value)
+        }
     }
 }

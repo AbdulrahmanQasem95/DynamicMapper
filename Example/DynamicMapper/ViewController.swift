@@ -24,12 +24,20 @@ class ViewController: UIViewController {
       },
        "array": [{
           "title": "testaaaa",
-          "body": "test",
-          "flag": true
+          "body": "testItem0",
+          "flag": true,
+           "intenralArray":[{
+              "bodyinternal": "testInternalItem0"
+    }
+    ]
         },{
           "title": "test22",
           "body": "test22",
-          "flag": true
+          "flag": true,
+           "intenralArray":[{
+              "bodyinternal": "testInternalItem0"
+    } 
+    ]
         }],
     "marwan":{
     "yazan":{
@@ -43,16 +51,32 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let decoder = DynamicJSONDecoder()
         if let dynamicClass = try?  decoder.decode(NestedClass.self, from: jsonData) {
-            print("dynamic object: \(dynamicClass.name ?? "")")
+            print("total name: \(dynamicClass.nameTotal )")
+          //  print("dynamic object: \(dynamicClass.marwan.dynamicSelf!.yazan?.mazen?.stringValue ?? "" )")
+            dynamicClass.fetchNestedItems()
+            print("name: \(dynamicClass.name ?? "")")
+            dynamicClass.array[0].fetchNestedItems()
+            print("arrayitem: \(dynamicClass.array[0].bodyme ?? "")")
+            dynamicClass.array[0].intenralArray[0].fetchNestedItems()
+            print("arrayitem: \(dynamicClass.array[0].intenralArray[0].bodyinternal ?? "")")
+            
+            
             let data = try? DynamicJSONEncoder().encode(dynamicClass)
             
             if let dynamic = try? decoder.decode(NestedClass.self, from: data!) {
-                print("dynamic object: \(dynamic.name ?? "")")
+                print("total name: \(dynamic.nameTotal)")
+                dynamic.fetchNestedItems()
+                print("name: \(dynamic.name ?? "")")
+                
+                dynamic.array[0].fetchNestedItems()
+                print("arrayitem: \(dynamic.array[0].bodyme ?? "")")
+                dynamic.array[0].intenralArray[0].fetchNestedItems()
+                print("arrayitem: \(dynamic.array[0].intenralArray[0].bodyinternal ?? "")")
 //                print("dynamic object: \(dynamic.marwan?.yazan?.mazen?.stringValue ?? "")")
                // print("dynamic object: \(dynamic.aps?.badge?.intValue ?? 0)")
-                print("dynamic object: \(dynamic.nameTotal )")
+               //print("dynamic object: \(dynamic.nameTotal )")
                // print("dynamic object: \(dynamic.marwan.mazen ?? "" )")
-                print("dynamic object: \(dynamic.marwan.dynamicSelf!.yazan?.mazen?.stringValue ?? "" )")
+               //print("dynamic object: \(dynamic.marwan.dynamicSelf!.yazan?.mazen?.stringValue ?? "" )")
             }
           
         }
@@ -74,16 +98,20 @@ class NestedClass:DynamicCodable{
     var nameTotal:String
     var name :String?
     var marwan:Marwan
+    var array:[arrayItem]
     func fetchNestedItems() {
-        name = dynamicSelf?.marwan?.yazan?.mazen?.stringValue ?? ""
+      //  name = dynamicSelf?.marwan?.yazan?.mazen?.stringValue ?? ""
+        name = marwan.dynamicSelf?.yazan?.mazen?.stringValue ?? ""
+        
     }
 }
 
 class Marwan:DynamicCodable{
     var dynamicSelf: DynamicMapper.DynamicClass?
-    var mazen :String?
+   // var mazen :String?
+    var yazan:Yazan?
     func fetchNestedItems() {
-        mazen = dynamicSelf?.yazan?.mazen?.stringValue ?? ""
+        //mazen = dynamicSelf?.yazan?.mazen?.stringValue ?? ""
     }
     
 }
@@ -94,5 +122,29 @@ class Yazan:DynamicCodable{
     func fetchNestedItems() {
        // mazen = dynamicSelf?.yazan?.mazen?.stringValue ?? ""
     }
+    
+}
+
+
+class arrayItem:DynamicCodable {
+    var dynamicSelf: DynamicMapper.DynamicClass?
+    
+    var title:String
+    var bodyme:String?
+    var flag:Bool
+    var intenralArray:[IntenralArray]
+    func fetchNestedItems() {
+        bodyme = dynamicSelf?.body?.stringValue ?? ""
+    }
+}
+
+class IntenralArray:DynamicCodable {
+    var dynamicSelf: DynamicMapper.DynamicClass?
+    var bodyinternal:String
+    var bodyinternalDynamic:String?
+    func fetchNestedItems() {
+        bodyinternalDynamic = dynamicSelf?.bodyinternal?.stringValue ?? ""
+    }
+    
     
 }

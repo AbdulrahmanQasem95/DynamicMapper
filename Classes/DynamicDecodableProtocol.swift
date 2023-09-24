@@ -6,8 +6,12 @@
 //
 
 import Foundation
+//should match dynamicSelf parameter in DynamicDecodable protocol
+let dynamicSelf = "dynamicSelf"
 
 public protocol DynamicDecodable:Decodable{
     var dynamicSelf:DynamicClass? { get set  }
     func fetchNestedItems()
 }
+
+
