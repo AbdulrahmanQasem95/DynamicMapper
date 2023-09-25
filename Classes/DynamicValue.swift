@@ -8,7 +8,7 @@
 import Foundation
 
 @dynamicMemberLookup
-public  enum DynamicValue: Codable {
+public enum DynamicValue: Codable {
     
     case intValue(Int)
     case stringValue(String)
@@ -17,6 +17,9 @@ public  enum DynamicValue: Codable {
     case arrayValue(Array<DynamicValue>)
     case dictionaryValue(Dictionary<String, DynamicValue>)
     
+    public mutating func setValue(string:String)  {
+        self = .stringValue(string)
+    }
     public var stringValue: String? {
         if case .stringValue(let str) = self {
             return str

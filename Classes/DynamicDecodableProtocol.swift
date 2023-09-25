@@ -11,7 +11,5 @@ let dynamicSelf = "dynamicSelf"
 
 public protocol DynamicDecodable:Decodable{
     var dynamicSelf:DynamicClass? { get set  }
-    func fetchNestedItems()
 }
-
 
