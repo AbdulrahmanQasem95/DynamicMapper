@@ -11,7 +11,7 @@ import DynamicMapper
 class ViewController: UIViewController {
     let jsonData = """
     {
-    "nameTotal":"Qasem",
+    "nameTotal": "Qasem",
       "aps": {
         "mutable-content": 1,
         "alert": {
@@ -57,6 +57,7 @@ class ViewController: UIViewController {
            // dynamicClass.array[0].fetchNestedItems()
             print("arrayitem: \(dynamicClass.array[0].bodyme ?? "")")
             dynamicClass.array[0].bodyme = "Abed"
+            print("arrayitem: \(dynamicClass.array[0].bodyme ?? "")")
            // dynamicClass.array[0].intenralArray[0].fetchNestedItems()
             print("arrayitem: \(dynamicClass.array[0].intenralArray[0].bodyinternalDynamic ?? "")")
             
@@ -71,7 +72,6 @@ class ViewController: UIViewController {
                // dynamic.array[0].fetchNestedItems()
                 print("arrayitem: \(dynamic.array[0].bodyme ?? "")")
                 
-                print("arrayitem: \(dynamic.array[0].bodyme ?? "")")
                // dynamic.array[0].intenralArray[0].fetchNestedItems()
                 print("arrayitem: \(dynamic.array[0].intenralArray[0].bodyinternalDynamic ?? "")")
             }
@@ -92,7 +92,7 @@ class ViewController: UIViewController {
 class NestedClass:DynamicCodable{
     var dynamicSelf: DynamicMapper.DynamicClass?
 
-    var nameTotal:String
+    var nameTotal:String?
     var name :String? {
         marwan.dynamicSelf?.yazan?.mazen?.stringValue
     }
@@ -114,12 +114,18 @@ class Yazan:DynamicCodable{
 }
 
 
-class arrayItem:DynamicCodable {
+struct arrayItem:DynamicCodable {
     var dynamicSelf: DynamicMapper.DynamicClass?
     
     var title:String
     var bodyme:String? {
-        dynamicSelf?.body?.stringValue ?? ""
+        get {
+            dynamicSelf?.body?.stringValue ?? ""
+        }
+        set {
+            dynamicSelf?.body?.setDynamicProperty(value: newValue )
+        }
+        
     }
 //    lazy var bodyme:String? = {
 //        dynamicSelf?.body?.stringValue ?? ""

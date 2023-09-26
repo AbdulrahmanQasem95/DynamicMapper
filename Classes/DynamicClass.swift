@@ -34,7 +34,12 @@ open  class DynamicClass: DynamicCodable {
     
     // Dynamic member lookup subscript
     public subscript(dynamicMember key: String) -> DynamicValue? {
-        return container[key]
+        get {
+            return container[key]
+        }
+        set {
+            return container[key] = newValue
+        }
     }
     
     // Codable methods

@@ -16,10 +16,9 @@ public enum DynamicValue: Codable {
     case doubleValue(Double)
     case arrayValue(Array<DynamicValue>)
     case dictionaryValue(Dictionary<String, DynamicValue>)
+    case null(Int?)
     
-    public mutating func setValue(string:String)  {
-        self = .stringValue(string)
-    }
+  
     public var stringValue: String? {
         if case .stringValue(let str) = self {
             return str
@@ -95,6 +94,42 @@ public enum DynamicValue: Codable {
         return nil
     }
     
+    
+    public mutating func setDynamicProperty(value:Any) {
+        switch value.self {
+        case let string as String:
+            self = .stringValue(string)
+        case let int as Int:
+            self = .intValue(int)
+        case let bool as Bool:
+            self = .boolValue(bool)
+        case let double as Double:
+            self = .doubleValue(double)
+        case Optional<Any>.none:
+            self = .null(nil)
+        case is [Encodable]:
+            print("Error in \(#function): object in array must conform to \(String(describing: DynamicEncodable.self)) protocol")
+        default:
+            print("Error in \(#function): object must conform to \(String(describing: DynamicEncodable.self)) protocol")
+        }
+    }
+    
+    public mutating func setDynamicProperty<T:DynamicEncodable>(value:[T]) {
+        if let data =  try? JSONEncoder().encode(value) {
+            if let model = try? JSONDecoder().decode([DynamicValue].self, from: data){
+                self = .arrayValue(model)
+            }
+        }
+    }
+    
+    public mutating func setDynamicProperty<T:DynamicEncodable>(value:T) {
+        if let data =  try? JSONEncoder().encode(value) {
+            if let model = try? JSONDecoder().decode([String:DynamicValue].self, from: data){
+                self = .dictionaryValue(model)
+            }
+        }
+    }
+    
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         if let stringValue = try? container.decode(String.self) {
@@ -109,8 +144,13 @@ public enum DynamicValue: Codable {
             self = .arrayValue(arrayValue)
         } else if let dictionaryValue = try? container.decode(Dictionary<String, DynamicValue>.self) {
             self = .dictionaryValue(dictionaryValue)
-        } else {
-            throw DecodingError.dataCorruptedError(in: container, debugDescription: "Value cannot be decoded")
+        }else {
+            let null = try? container.decode(Int?.self)
+            if null == nil {
+                self = .null(nil)
+            }else {
+                throw DecodingError.dataCorruptedError(in: container, debugDescription: "Value cannot be decoded")
+            }
         }
     }
     
@@ -129,6 +169,8 @@ public enum DynamicValue: Codable {
             try container.encode(array)
         case .dictionaryValue(let dictionary):
             try container.encode(dictionary)
+        case .null(let null):
+            try container.encode(null)
         }
     }
 }
