@@ -47,7 +47,7 @@ public enum DynamicValue: Codable {
         return nil
     }
     
-    public func arrayValue<T:Decodable>(customType:T.Type)-> [T] {
+    public func arrayValue<T:DynamicDecodable>(customType:T.Type)-> [T] {
         if case .arrayValue(let value) = self {
             let data = try? JSONEncoder().encode(value)
             if let data = data {
@@ -55,6 +55,16 @@ public enum DynamicValue: Codable {
             }
         }
         return []
+    }
+    
+    public func objectValue<T:DynamicDecodable>(customType:T.Type)-> T? {
+        if case .dictionaryValue(let value) = self {
+            let data = try? JSONEncoder().encode(value)
+            if let data = data {
+                return (try? JSONDecoder().decode(T.self, from: data))
+            }
+        }
+        return nil
     }
     
     public func arrayValue<T>(type:DynamicArrayValues)-> [T] {
@@ -74,24 +84,57 @@ public enum DynamicValue: Codable {
     }
     
     public subscript(index: Int) -> DynamicValue? {
-        if case .arrayValue(let arr) = self {
-            return index < arr.count ? arr[index] : nil
+        get {
+            if case .arrayValue(let arr) = self {
+                return index < arr.count ? arr[index] : nil
+            }
+            return nil
         }
-        return nil
+        set {
+            if let newValue = newValue {
+                if case .arrayValue(var arr) = self {
+                    if index < arr.count {
+                        arr[index] = newValue
+                        self = .arrayValue(arr)
+                    }
+                }
+            }
+        }
     }
     
     public subscript(key: String) -> DynamicValue? {
-        if case .dictionaryValue(let dict) = self {
-            return dict[key]
+        get {
+            if case .dictionaryValue(let dict) = self {
+                return dict[key]
+            }
+            return nil
         }
-        return nil
+        set {
+            if let newValue = newValue {
+                if case .dictionaryValue(var dict) = self {
+                     dict[key] = newValue
+                    self = .dictionaryValue(dict)
+                }
+            }
+        }
     }
     
     public subscript(dynamicMember member: String) -> DynamicValue? {
-        if case .dictionaryValue(let dict) = self {
-            return dict[member]
+        get {
+            if case .dictionaryValue(let dict) = self {
+                return dict[member]
+            }
+            return nil
         }
-        return nil
+        set {
+            if let newValue = newValue {
+                if case .dictionaryValue(var dict) = self {
+                     dict[member] = newValue
+                    self = .dictionaryValue(dict)
+                }
+            }
+
+        }
     }
     
     
@@ -114,16 +157,16 @@ public enum DynamicValue: Codable {
         }
     }
     
-    public mutating func setDynamicProperty<T:DynamicEncodable>(value:[T]) {
-        if let data =  try? JSONEncoder().encode(value) {
+    public mutating func setDynamicProperty<T:DynamicEncodable>(customArray:[T]) {
+        if let data =  try? JSONEncoder().encode(customArray) {
             if let model = try? JSONDecoder().decode([DynamicValue].self, from: data){
                 self = .arrayValue(model)
             }
         }
     }
     
-    public mutating func setDynamicProperty<T:DynamicEncodable>(value:T) {
-        if let data =  try? JSONEncoder().encode(value) {
+    public mutating func setDynamicProperty<T:DynamicEncodable>(customObject:T) {
+        if let data =  try? JSONEncoder().encode(customObject) {
             if let model = try? JSONDecoder().decode([String:DynamicValue].self, from: data){
                 self = .dictionaryValue(model)
             }

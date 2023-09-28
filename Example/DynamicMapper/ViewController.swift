@@ -54,12 +54,16 @@ class ViewController: UIViewController {
             print("total name: \(dynamicClass.nameTotal )")
             //dynamicClass.fetchNestedItems()
             print("name: \(dynamicClass.name ?? "")")
+            dynamicClass.name = "edit mazen"
+            print("name: \(dynamicClass.name ?? "")")
            // dynamicClass.array[0].fetchNestedItems()
             print("arrayitem: \(dynamicClass.array[0].bodyme ?? "")")
+            print("arrayitem: \(dynamicClass.dynamicSelf?.array?[0]?.body?.stringValue ?? "")")
             dynamicClass.array[0].bodyme = "Abed"
             print("arrayitem: \(dynamicClass.array[0].bodyme ?? "")")
+            print("arrayitem: \(dynamicClass.dynamicSelf?.array?[0]?.body?.stringValue ?? "")")
            // dynamicClass.array[0].intenralArray[0].fetchNestedItems()
-            print("arrayitem: \(dynamicClass.array[0].intenralArray[0].bodyinternalDynamic ?? "")")
+           // print("arrayitem: \(dynamicClass.array[0].intenralArray[0].bodyinternalDynamic ?? "")")
             
             
             let data = try? DynamicJSONEncoder().encode(dynamicClass)
@@ -71,9 +75,9 @@ class ViewController: UIViewController {
                 
                // dynamic.array[0].fetchNestedItems()
                 print("arrayitem: \(dynamic.array[0].bodyme ?? "")")
-                
+                print("arrayitem: \(dynamic.dynamicSelf?.array?[0]?.body?.stringValue ?? "")")
                // dynamic.array[0].intenralArray[0].fetchNestedItems()
-                print("arrayitem: \(dynamic.array[0].intenralArray[0].bodyinternalDynamic ?? "")")
+              //  print("arrayitem: \(dynamic.array[0].intenralArray[0].bodyinternalDynamic ?? "")")
             }
           
         }
@@ -92,9 +96,14 @@ class ViewController: UIViewController {
 class NestedClass:DynamicCodable{
     var dynamicSelf: DynamicMapper.DynamicClass?
 
-    var nameTotal:String?
+    var nameTotal:String
     var name :String? {
-        marwan.dynamicSelf?.yazan?.mazen?.stringValue
+        get {
+            marwan.dynamicSelf?.yazan?.mazen?.stringValue
+        }
+        set {
+            marwan.dynamicSelf?.yazan?.mazen?.setDynamicProperty(value: newValue ?? "" )
+        }
     }
     var marwan:Marwan
     var array:[arrayItem]
@@ -118,20 +127,46 @@ struct arrayItem:DynamicCodable {
     var dynamicSelf: DynamicMapper.DynamicClass?
     
     var title:String
-    var bodyme:String? {
-        get {
-            dynamicSelf?.body?.stringValue ?? ""
+    
+//    var bodyme:String? {
+//        get {
+//            dynamicSelf?.body?.stringValue
+//        }
+//        set {
+//            dynamicSelf?.body?.setDynamicProperty(value: newValue )
+//        }
+//    }
+    //MARK: Realm format
+//    @objc dynamic private var bodyme_holder:String? = ""
+//    var bodyme:String? {
+//        get {
+//            bodyme_holder ?? dynamicSelf?.body?.stringValue
+//        }
+//        set {
+//            bodyme_holder = newValue
+//            dynamicSelf?.body?.setDynamicProperty(value: bodyme_holder )
+//        }
+//    }
+    //MARK: Normal get set format
+    lazy var bodyme:String? = dynamicSelf?.intenralArray?[0]?.bodyinternal?.stringValue
+    {
+        didSet {
+            //TODO: need to test with dynamic items
+            dynamicSelf?.intenralArray?[0]?.bodyinternal?.setDynamicProperty(value: bodyme ?? "" )
         }
-        set {
-            dynamicSelf?.body?.setDynamicProperty(value: newValue )
-        }
-        
     }
+    //MARK: Normal get only
+   // var bodyme:String? {dynamicSelf?.body?.stringValue}
+  
 //    lazy var bodyme:String? = {
 //        dynamicSelf?.body?.stringValue ?? ""
-//    }()
+//    }() {
+//        didSet {
+//            dynamicSelf?.body?.setDynamicProperty(value: bodyme ?? "")
+//        }
+//    }
     var flag:Bool
-    var intenralArray:[IntenralArray]
+   // var intenralArray:[IntenralArray]
  
 }
 

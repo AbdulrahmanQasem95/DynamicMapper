@@ -38,7 +38,7 @@ open  class DynamicClass: DynamicCodable {
             return container[key]
         }
         set {
-            return container[key] = newValue
+             container[key] = newValue
         }
     }
     
