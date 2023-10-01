@@ -8,12 +8,8 @@
 import Foundation
 
 @dynamicMemberLookup
-open  class DynamicClass: DynamicCodable {
-    public var dynamicSelf: DynamicClass?
+open  class DynamicClass: Codable {
     
-    open func fetchNestedItems() {
-        fatalError("This method must be overriden by subclass in order to set the nested parameters")
-    }
     struct DynamicCodingKeys: CodingKey {
         var stringValue: String
         init?(stringValue: String) {

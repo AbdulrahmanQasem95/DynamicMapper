@@ -47,16 +47,6 @@ public enum DynamicValue: Codable {
         return nil
     }
     
-    public func arrayValue<T:DynamicDecodable>(customType:T.Type)-> [T] {
-        if case .arrayValue(let value) = self {
-            let data = try? JSONEncoder().encode(value)
-            if let data = data {
-                return (try? JSONDecoder().decode([T].self, from: data)) ?? []
-            }
-        }
-        return []
-    }
-    
     public func objectValue<T:DynamicDecodable>(customType:T.Type)-> T? {
         if case .dictionaryValue(let value) = self {
             let data = try? JSONEncoder().encode(value)
@@ -67,7 +57,7 @@ public enum DynamicValue: Codable {
         return nil
     }
     
-    public func arrayValue<T>(type:DynamicArrayValues)-> [T] {
+    public func arrayValue<T>(type:DynamicArrayValues<T>)-> [T] {
         if case .arrayValue(let value) = self {
             switch type{
             case .int:
@@ -78,6 +68,11 @@ public enum DynamicValue: Codable {
                 return value.compactMap({$0.doubleValue}).map({$0  as! T})
             case .bool:
                 return value.compactMap({$0.boolValue}).map({$0  as! T})
+            case .customObject(type: _):
+                let data = try? JSONEncoder().encode(value)
+                if let data = data {
+                    return (try? JSONDecoder().decode([T].self, from: data)) ?? []
+                }
             }
         }
         return []
