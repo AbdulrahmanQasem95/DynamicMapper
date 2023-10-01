@@ -62,7 +62,7 @@ class ViewController: UIViewController {
             print("name: \(dynamicClass.name ?? "")")
            // dynamicClass.array[0].fetchNestedItems()
             print("arrayitem: \(dynamicClass.array[0].bodyme ?? "")")
-            print("bodyinternal: \(dynamicClass.arrrrrr[0].bodyinternal ?? "")")
+          //  print("bodyinternal: \(dynamicClass.arrrrrr[0].bodyinternal ?? "")")
             print("arrayitem: \(dynamicClass.dynamicSelf?.array?[0]?.body?.stringValue ?? "")")
             print("arrayitem: \(dynamicClass.dynamicSelf?.bosddy?.sdfsd?.stringValue ?? "")")
             dynamicClass.array[0].bodyme = "Abed"

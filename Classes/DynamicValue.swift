@@ -68,7 +68,7 @@ public enum DynamicValue: Codable {
                 return value.compactMap({$0.doubleValue}).map({$0  as! T})
             case .bool:
                 return value.compactMap({$0.boolValue}).map({$0  as! T})
-            case .customObject(type: _):
+            case .customObject(ofType: _):
                 let data = try? JSONEncoder().encode(value)
                 if let data = data {
                     return (try? JSONDecoder().decode([T].self, from: data)) ?? []
