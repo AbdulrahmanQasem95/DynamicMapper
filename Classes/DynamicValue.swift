@@ -107,6 +107,8 @@ public enum DynamicValue: Codable {
             if case .dictionaryValue(let dict) = self {
                 return dict[key]
             }
+           
+            
             return nil
         }
         set {
@@ -120,9 +122,16 @@ public enum DynamicValue: Codable {
     }
     
     public subscript(dynamicMember member: String) -> DynamicValue? {
-        get {
-            if case .dictionaryValue(let dict) = self {
-                return dict[member]
+         get {
+            if case .dictionaryValue(var  dict) = self {
+                if let value =  dict[member] {
+                    return value
+                }else {
+                    //Set value if not exist the parent is dictionary to solve realm set issue
+                    let newDic =  DynamicValue.dictionaryValue([:])
+                    dict[member] = newDic
+                    return newDic
+                }
             }
             return nil
         }

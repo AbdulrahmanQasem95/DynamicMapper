@@ -14,8 +14,8 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "init(from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
             landmarkName = "init(from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "init(from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "init(from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "init(from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "init(from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -158,8 +158,8 @@
             filePath = "DynamicMapper/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
@@ -193,6 +193,21 @@
                   endingLineNumber = "54"
                   offsetFromSymbolStart = "519">
                </Location>
+               <Location
+                  uuid = "8F9FDDBA-6F1B-41D6-80D0-E8B78F776D19 - ef91a94b0820e136"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "566">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -206,28 +221,13 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
             landmarkName = "init(from:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "0E70F8D1-D6B7-443C-B355-21EA57F5B1A5 - 4db4bd48a9a6d8aa"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DynamicMapper.DynamicValue.encode(to: Swift.Encoder) throws -&gt; ()"
-                  moduleName = "DynamicMapper"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicValue.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "194"
-                  endingLineNumber = "194"
-                  offsetFromSymbolStart = "143">
-               </Location>
-               <Location
-                  uuid = "0E70F8D1-D6B7-443C-B355-21EA57F5B1A5 - bec00575c6096c35"
+                  uuid = "0E70F8D1-D6B7-443C-B355-21EA57F5B1A5 - bec00575c6096d5a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -237,8 +237,38 @@
                   urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicValue.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "193"
-                  endingLineNumber = "193"
+                  startingLineNumber = "202"
+                  endingLineNumber = "202"
+                  offsetFromSymbolStart = "964">
+               </Location>
+               <Location
+                  uuid = "0E70F8D1-D6B7-443C-B355-21EA57F5B1A5 - bec00575c6096d5a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper.DynamicValue.init(from: Swift.Decoder) throws -&gt; DynamicMapper.DynamicValue"
+                  moduleName = "DynamicMapper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicValue.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "202"
+                  endingLineNumber = "202"
+                  offsetFromSymbolStart = "1111">
+               </Location>
+               <Location
+                  uuid = "0E70F8D1-D6B7-443C-B355-21EA57F5B1A5 - bec00575c6096d5a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper.DynamicValue.init(from: Swift.Decoder) throws -&gt; DynamicMapper.DynamicValue"
+                  moduleName = "DynamicMapper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicValue.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "202"
+                  endingLineNumber = "202"
                   offsetFromSymbolStart = "2136">
                </Location>
             </Locations>
@@ -254,28 +284,13 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
             landmarkName = "init(from:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "D1CC8963-7B0A-4CD3-86B2-DE856C167B6A - 4db4bd48a9a6d868"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DynamicMapper.DynamicValue.encode(to: Swift.Encoder) throws -&gt; ()"
-                  moduleName = "DynamicMapper"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicValue.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "196"
-                  endingLineNumber = "196"
-                  offsetFromSymbolStart = "202">
-               </Location>
-               <Location
-                  uuid = "D1CC8963-7B0A-4CD3-86B2-DE856C167B6A - bec00575c6096c73"
+                  uuid = "D1CC8963-7B0A-4CD3-86B2-DE856C167B6A - bec00575c6096d98"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -285,8 +300,38 @@
                   urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicValue.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "195"
-                  endingLineNumber = "195"
+                  startingLineNumber = "204"
+                  endingLineNumber = "204"
+                  offsetFromSymbolStart = "1235">
+               </Location>
+               <Location
+                  uuid = "D1CC8963-7B0A-4CD3-86B2-DE856C167B6A - bec00575c6096d98"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper.DynamicValue.init(from: Swift.Decoder) throws -&gt; DynamicMapper.DynamicValue"
+                  moduleName = "DynamicMapper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicValue.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "204"
+                  endingLineNumber = "204"
+                  offsetFromSymbolStart = "1413">
+               </Location>
+               <Location
+                  uuid = "D1CC8963-7B0A-4CD3-86B2-DE856C167B6A - bec00575c6096d98"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper.DynamicValue.init(from: Swift.Decoder) throws -&gt; DynamicMapper.DynamicValue"
+                  moduleName = "DynamicMapper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicValue.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "204"
+                  endingLineNumber = "204"
                   offsetFromSymbolStart = "2168">
                </Location>
             </Locations>
@@ -302,28 +347,13 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
             landmarkName = "init(from:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "A469976B-28D5-4E8C-92E8-A275373FDAE5 - 4db4bd48a9a6d8aa"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DynamicMapper.DynamicValue.encode(to: Swift.Encoder) throws -&gt; ()"
-                  moduleName = "DynamicMapper"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicValue.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "194"
-                  endingLineNumber = "194"
-                  offsetFromSymbolStart = "143">
-               </Location>
-               <Location
-                  uuid = "A469976B-28D5-4E8C-92E8-A275373FDAE5 - bec00575c6096ff7"
+                  uuid = "A469976B-28D5-4E8C-92E8-A275373FDAE5 - bec00575c6096d1c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -333,8 +363,38 @@
                   urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicValue.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "191"
-                  endingLineNumber = "191"
+                  startingLineNumber = "200"
+                  endingLineNumber = "200"
+                  offsetFromSymbolStart = "736">
+               </Location>
+               <Location
+                  uuid = "A469976B-28D5-4E8C-92E8-A275373FDAE5 - bec00575c6096d1c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper.DynamicValue.init(from: Swift.Decoder) throws -&gt; DynamicMapper.DynamicValue"
+                  moduleName = "DynamicMapper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicValue.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "200"
+                  endingLineNumber = "200"
+                  offsetFromSymbolStart = "872">
+               </Location>
+               <Location
+                  uuid = "A469976B-28D5-4E8C-92E8-A275373FDAE5 - bec00575c6096d1c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper.DynamicValue.init(from: Swift.Decoder) throws -&gt; DynamicMapper.DynamicValue"
+                  moduleName = "DynamicMapper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicValue.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "200"
+                  endingLineNumber = "200"
                   offsetFromSymbolStart = "1802">
                </Location>
             </Locations>
@@ -350,8 +410,8 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "setDynamicProperty(value:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -629,69 +689,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "121D131F-DCB2-443A-A93A-F290BC60A9AD"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DynamicMapper/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "121D131F-DCB2-443A-A93A-F290BC60A9AD - ef91a94b0820e0e1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DynamicMapper_Example.ViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "DynamicMapper_Example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "6743">
-               </Location>
-               <Location
-                  uuid = "121D131F-DCB2-443A-A93A-F290BC60A9AD - ef91a94b0820e0e1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DynamicMapper_Example.ViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "DynamicMapper_Example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "7000">
-               </Location>
-               <Location
-                  uuid = "121D131F-DCB2-443A-A93A-F290BC60A9AD - ef91a94b0820e0e1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DynamicMapper_Example.ViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "DynamicMapper_Example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "7360">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "57E8BF1C-C3D7-4BB3-8AA4-17F090EDBC9F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -923,10 +920,10 @@
             filePath = "DynamicMapper/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "arrayItem"
-            landmarkType = "14">
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -939,10 +936,10 @@
             filePath = "DynamicMapper/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
             landmarkName = "arrayItem"
-            landmarkType = "14">
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -955,42 +952,10 @@
             filePath = "DynamicMapper/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "arrayItem"
-            landmarkType = "14">
-            <Locations>
-               <Location
-                  uuid = "7285FA73-3A36-40DB-AA38-891B170235A2 - 1834f1158e010c09"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DynamicMapper_Example.arrayItem.bodyme.didset : Swift.Optional&lt;Swift.String&gt;"
-                  moduleName = "DynamicMapper_Example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "155"
-                  endingLineNumber = "155"
-                  offsetFromSymbolStart = "1087">
-               </Location>
-               <Location
-                  uuid = "7285FA73-3A36-40DB-AA38-891B170235A2 - 1834f1158e010c09"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DynamicMapper_Example.arrayItem.bodyme.didset : Swift.Optional&lt;Swift.String&gt;"
-                  moduleName = "DynamicMapper_Example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "155"
-                  endingLineNumber = "155"
-                  offsetFromSymbolStart = "40">
-               </Location>
-            </Locations>
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1003,58 +968,10 @@
             filePath = "DynamicMapper/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "arrayItem"
-            landmarkType = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0C10CEAE-5BFB-49D3-8BF7-356AD04A9E6E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DynamicMapper/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "name"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "0C10CEAE-5BFB-49D3-8BF7-356AD04A9E6E - 2a61c18b252391a5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DynamicMapper_Example.NestedClass.name.setter : Swift.Optional&lt;Swift.String&gt;"
-                  moduleName = "DynamicMapper_Example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "874">
-               </Location>
-               <Location
-                  uuid = "0C10CEAE-5BFB-49D3-8BF7-356AD04A9E6E - 2a61c18b252391a5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DynamicMapper_Example.NestedClass.name.setter : Swift.Optional&lt;Swift.String&gt;"
-                  moduleName = "DynamicMapper_Example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "85">
-               </Location>
-            </Locations>
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1067,8 +984,8 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "setDynamicProperty(value:)"
             landmarkType = "7">
             <Locations>
@@ -1108,24 +1025,270 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9C9C6265-C6F3-4B30-AA27-40A8613D165A"
+            uuid = "CF598BA7-2FB8-45B5-858C-F04C1460277F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Classes/DynamicValue.swift"
+            filePath = "DynamicMapper/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
-            landmarkName = "subscript(dynamicMember:)"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CF598BA7-2FB8-45B5-858C-F04C1460277F"
+            uuid = "17C914EC-91A5-49CC-A8F3-B971D1913FE2"
             shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DynamicMapper/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "17C914EC-91A5-49CC-A8F3-B971D1913FE2 - ef91a94b0820e344"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "7821">
+               </Location>
+               <Location
+                  uuid = "17C914EC-91A5-49CC-A8F3-B971D1913FE2 - ef91a94b0820e344"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "8663">
+               </Location>
+               <Location
+                  uuid = "17C914EC-91A5-49CC-A8F3-B971D1913FE2 - ef91a94b0820e344"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "9023">
+               </Location>
+               <Location
+                  uuid = "17C914EC-91A5-49CC-A8F3-B971D1913FE2 - ef91a94b0820e344"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "8220">
+               </Location>
+               <Location
+                  uuid = "17C914EC-91A5-49CC-A8F3-B971D1913FE2 - ef91a94b0820e344"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "8580">
+               </Location>
+               <Location
+                  uuid = "17C914EC-91A5-49CC-A8F3-B971D1913FE2 - ef91a94b0820e344"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "8126">
+               </Location>
+               <Location
+                  uuid = "17C914EC-91A5-49CC-A8F3-B971D1913FE2 - ef91a94b0820e344"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "8486">
+               </Location>
+               <Location
+                  uuid = "17C914EC-91A5-49CC-A8F3-B971D1913FE2 - ef91a94b0820e344"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "8127">
+               </Location>
+               <Location
+                  uuid = "17C914EC-91A5-49CC-A8F3-B971D1913FE2 - ef91a94b0820e344"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "8500">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "49DC9D40-BA99-4612-A1F2-B1959952A061"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DynamicMapper/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "49DC9D40-BA99-4612-A1F2-B1959952A061 - ef91a94b08231e53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "247">
+               </Location>
+               <Location
+                  uuid = "49DC9D40-BA99-4612-A1F2-B1959952A061 - ef91a94b08231e53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "517">
+               </Location>
+               <Location
+                  uuid = "49DC9D40-BA99-4612-A1F2-B1959952A061 - ef91a94b08231e53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "255">
+               </Location>
+               <Location
+                  uuid = "49DC9D40-BA99-4612-A1F2-B1959952A061 - ef91a94b08231ef0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "214">
+               </Location>
+               <Location
+                  uuid = "49DC9D40-BA99-4612-A1F2-B1959952A061 - ef91a94b08231ef0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "221">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B6BC763A-9C6A-4D83-AA0A-EBB03572A6BC"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DynamicMapper/ViewController.swift"
@@ -1135,20 +1298,226 @@
             endingLineNumber = "56"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B6BC763A-9C6A-4D83-AA0A-EBB03572A6BC - ef91a94b08231ef0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "992">
+               </Location>
+               <Location
+                  uuid = "B6BC763A-9C6A-4D83-AA0A-EBB03572A6BC - ef91a94b08231ef0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "268">
+               </Location>
+               <Location
+                  uuid = "B6BC763A-9C6A-4D83-AA0A-EBB03572A6BC - ef91a94b08231ef0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "214">
+               </Location>
+               <Location
+                  uuid = "B6BC763A-9C6A-4D83-AA0A-EBB03572A6BC - ef91a94b08231ef0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "221">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "86833596-A5E4-4913-80FE-45AFEE414D2B"
+            uuid = "848F99D5-316D-4280-99DD-26BA59EB2E20"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DynamicMapper/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "bodyme"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F1F8A67B-1D8C-40DC-9FB3-CBF2EC19A18D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DynamicMapper/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "bodyme"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "206E4C67-B86E-441B-B43A-32F392BCED8F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DynamicMapper/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6BA0011F-A6F3-4C0B-AD20-1254C139DBC2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/DynamicClass.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "subscript(dynamicMember:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6BA0011F-A6F3-4C0B-AD20-1254C139DBC2 - ef1fd2b48c20af89"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper.DynamicClass.subscript.getter : (dynamicMember: Swift.String) -&gt; Swift.Optional&lt;DynamicMapper.DynamicValue&gt;"
+                  moduleName = "DynamicMapper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicClass.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "411">
+               </Location>
+               <Location
+                  uuid = "6BA0011F-A6F3-4C0B-AD20-1254C139DBC2 - ef1fd2b48c20af89"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper.DynamicClass.subscript.getter : (dynamicMember: Swift.String) -&gt; Swift.Optional&lt;DynamicMapper.DynamicValue&gt;"
+                  moduleName = "DynamicMapper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicClass.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "378">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "137C5B5A-2E38-436A-8720-10BDB6C0924B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/DynamicClass.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "subscript(dynamicMember:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "137C5B5A-2E38-436A-8720-10BDB6C0924B - ef1fd2b48c20a062"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper.DynamicClass.subscript.getter : (dynamicMember: Swift.String) -&gt; Swift.Optional&lt;DynamicMapper.DynamicValue&gt;"
+                  moduleName = "DynamicMapper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicClass.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "517">
+               </Location>
+               <Location
+                  uuid = "137C5B5A-2E38-436A-8720-10BDB6C0924B - ef1fd2b48c20a00d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper.DynamicClass.subscript.getter : (dynamicMember: Swift.String) -&gt; Swift.Optional&lt;DynamicMapper.DynamicValue&gt;"
+                  moduleName = "DynamicMapper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicClass.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "726">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D0055EFC-34BF-4F57-BC90-B151A9EDABEB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DynamicMapper/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1156,16 +1525,220 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FF434C71-B5A0-4A6C-8383-852C59A5B46C"
-            shouldBeEnabled = "Yes"
+            uuid = "8BD3932D-9153-4C55-9E82-788D936094FD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/DynamicValue.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "subscript(dynamicMember:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8BD3932D-9153-4C55-9E82-788D936094FD - a8c5f93ca74ebad6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper.DynamicValue.subscript.getter : (dynamicMember: Swift.String) -&gt; Swift.Optional&lt;DynamicMapper.DynamicValue&gt;"
+                  moduleName = "DynamicMapper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicValue.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "128"
+                  endingLineNumber = "128"
+                  offsetFromSymbolStart = "537">
+               </Location>
+               <Location
+                  uuid = "8BD3932D-9153-4C55-9E82-788D936094FD - a8c5f93ca74ebad6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper.DynamicValue.subscript.getter : (dynamicMember: Swift.String) -&gt; Swift.Optional&lt;DynamicMapper.DynamicValue&gt;"
+                  moduleName = "DynamicMapper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicValue.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "128"
+                  endingLineNumber = "128"
+                  offsetFromSymbolStart = "518">
+               </Location>
+               <Location
+                  uuid = "8BD3932D-9153-4C55-9E82-788D936094FD - a8c5f93ca74ebad6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper.DynamicValue.subscript.getter : (dynamicMember: Swift.String) -&gt; Swift.Optional&lt;DynamicMapper.DynamicValue&gt;"
+                  moduleName = "DynamicMapper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicValue.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "128"
+                  endingLineNumber = "128"
+                  offsetFromSymbolStart = "502">
+               </Location>
+               <Location
+                  uuid = "8BD3932D-9153-4C55-9E82-788D936094FD - a8c5f93ca74ebad6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper.DynamicValue.subscript.getter : (dynamicMember: Swift.String) -&gt; Swift.Optional&lt;DynamicMapper.DynamicValue&gt;"
+                  moduleName = "DynamicMapper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicValue.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "128"
+                  endingLineNumber = "128"
+                  offsetFromSymbolStart = "513">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3AE4FF31-348A-4799-B901-BCE3DECC19F6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/DynamicValue.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "subscript(dynamicMember:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3AE4FF31-348A-4799-B901-BCE3DECC19F6 - a8c5f93ca74eb931"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper.DynamicValue.subscript.getter : (dynamicMember: Swift.String) -&gt; Swift.Optional&lt;DynamicMapper.DynamicValue&gt;"
+                  moduleName = "DynamicMapper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicValue.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "729">
+               </Location>
+               <Location
+                  uuid = "3AE4FF31-348A-4799-B901-BCE3DECC19F6 - a8c5f93ca74eb931"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper.DynamicValue.subscript.getter : (dynamicMember: Swift.String) -&gt; Swift.Optional&lt;DynamicMapper.DynamicValue&gt;"
+                  moduleName = "DynamicMapper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicValue.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "707">
+               </Location>
+               <Location
+                  uuid = "3AE4FF31-348A-4799-B901-BCE3DECC19F6 - a8c5f93ca74eb931"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper.DynamicValue.subscript.getter : (dynamicMember: Swift.String) -&gt; Swift.Optional&lt;DynamicMapper.DynamicValue&gt;"
+                  moduleName = "DynamicMapper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicValue.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "691">
+               </Location>
+               <Location
+                  uuid = "3AE4FF31-348A-4799-B901-BCE3DECC19F6 - a8c5f93ca74eb931"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper.DynamicValue.subscript.getter : (dynamicMember: Swift.String) -&gt; Swift.Optional&lt;DynamicMapper.DynamicValue&gt;"
+                  moduleName = "DynamicMapper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicValue.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "702">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "61507E30-581B-428B-B9A3-F5E64D64C977"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DynamicMapper/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "name"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AF4D1C75-CBC5-4C91-9C7E-F1F2D6F75A40"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/DynamicValue.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "stringValue"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A115E89C-F47C-4EEF-AD7C-F6F8B31A5571"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/DynamicValue.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "stringValue"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1D2258F9-CF93-4B90-ADD1-80AFC84DDA54"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/DynamicValue.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "stringValue"
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>

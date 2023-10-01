@@ -49,6 +49,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let t = test()
+//        t.print()
+//
+//
         let decoder = DynamicJSONDecoder()
         if let dynamicClass = try?  decoder.decode(NestedClass.self, from: jsonData) {
             print("total name: \(dynamicClass.nameTotal )")
@@ -59,6 +63,7 @@ class ViewController: UIViewController {
            // dynamicClass.array[0].fetchNestedItems()
             print("arrayitem: \(dynamicClass.array[0].bodyme ?? "")")
             print("arrayitem: \(dynamicClass.dynamicSelf?.array?[0]?.body?.stringValue ?? "")")
+            print("arrayitem: \(dynamicClass.dynamicSelf?.bosddy?.sdfsd?.stringValue ?? "")")
             dynamicClass.array[0].bodyme = "Abed"
             print("arrayitem: \(dynamicClass.array[0].bodyme ?? "")")
             print("arrayitem: \(dynamicClass.dynamicSelf?.array?[0]?.body?.stringValue ?? "")")
@@ -99,10 +104,11 @@ class NestedClass:DynamicCodable{
     var nameTotal:String
     var name :String? {
         get {
-            marwan.dynamicSelf?.yazan?.mazen?.stringValue
+            //marwan.dm.yazan?.mazen?.stringValue
+            marwan.dm.asdf?.asfd?.stringValue
         }
         set {
-            marwan.dynamicSelf?.yazan?.mazen?.setDynamicProperty(value: newValue ?? "" )
+            marwan.dm.asdf?.asfd?.setDynamicProperty(value: newValue ?? "" )
         }
     }
     var marwan:Marwan
@@ -123,7 +129,7 @@ class Yazan:DynamicCodable{
 }
 
 
-struct arrayItem:DynamicCodable {
+class arrayItem:DynamicCodable {
     var dynamicSelf: DynamicMapper.DynamicClass?
     
     var title:String
@@ -137,7 +143,15 @@ struct arrayItem:DynamicCodable {
 //        }
 //    }
     //MARK: Realm format
-//    @objc dynamic private var bodyme_holder:String? = ""
+//    @objc dynamic var bodyme:String {
+//        get{
+//            dm.intenralArray?[0]?.bodyinternal?.stringValue ?? ""
+//        }
+//        set{
+//            dm.intenralArray?[0]?.bodyinternal?.setDynamicProperty(value: newValue )
+//        }
+//    }
+//    @objc dynamic private var bodyme_holder:String?
 //    var bodyme:String? {
 //        get {
 //            bodyme_holder ?? dynamicSelf?.body?.stringValue
@@ -147,14 +161,30 @@ struct arrayItem:DynamicCodable {
 //            dynamicSelf?.body?.setDynamicProperty(value: bodyme_holder )
 //        }
 //    }
+    
+//    @objc dynamic private var bodyme:String? = {dynamicSelf?.body?.stringValue}()
+
     //MARK: Normal get set format
-    lazy var bodyme:String? = dynamicSelf?.intenralArray?[0]?.bodyinternal?.stringValue
-    {
-        didSet {
-            //TODO: need to test with dynamic items
-            dynamicSelf?.intenralArray?[0]?.bodyinternal?.setDynamicProperty(value: bodyme ?? "" )
+//    lazy var bodyme:String? = dynamicSelf?.intenralArray?[0]?.bodyinternal?.stringValue
+//    {
+//        didSet {
+//            //TODO: need to test with dynamic items
+//            dynamicSelf?.intenralArray?[0]?.bodyinternal?.setDynamicProperty(value: bodyme ?? "" )
+//        }
+//    }
+//
+    var bodyme:String {
+        get{
+            dm.intenralArray?[0]?.bodyinternal?.stringValue ?? ""
+        }
+        set{
+            dm.intenralArray?[0]?.bodyinternal?.setDynamicProperty(value: newValue )
         }
     }
+    
+  
+    
+    
     //MARK: Normal get only
    // var bodyme:String? {dynamicSelf?.body?.stringValue}
   
@@ -174,8 +204,62 @@ class IntenralArray:DynamicCodable {
     var dynamicSelf: DynamicMapper.DynamicClass?
     var bodyinternal:String
     var bodyinternalDynamic:String? {
-        dynamicSelf?.bodyinternal?.stringValue ?? ""
+         get {
+             dm.bodyinternal?.stringValue ?? ""
+        }
+        set {
+            dm.bodyinternal?.setDynamicProperty(value: "")
+        }
     }
+//    var bodyinternalDynamic: String {
+//        return ComputedPropertyWrapper { self.dynamicSelf!.bodyinternal! }.wrappedValue().stringValue ?? ""
+//    }
  
     
 }
+
+
+
+//var myInstance = MyStruct(propertyA: 10, propertyB: 20)
+//
+//// Access the computed property
+//let result = myInstance.computedProperty // Result is 30
+
+//var myInstance = MyStruct(propertyA: 10, propertyB: 20)
+//
+//// Access the computed property
+//let result = myInstance.computedProperty // Result is 30
+
+//var myInstance = MyStruct(propertyA: 10, propertyB: 20)
+//
+//// Access the computed property
+//let result = myInstance.computedProperty // Result is 30
+
+//class test {
+//    var dynamicSelf: DynamicMapper.DynamicClass?
+//    @Flag(completion: {"Qasem" }()) lazy  var bodyinternal:String = ""
+//    func print()  {
+//        Swift.print(bodyinternal)
+//    }
+//}
+//
+//@propertyWrapper  struct Flag {
+//    var wrappedValue: String {
+//        mutating get {
+//            completion
+//        }
+//    }
+////    var valuedd:String {
+////        get{
+////
+////        }
+////    }
+//     var completion: (String)
+//    init(  completion:  (String) ) {
+//        self.completion = completion
+//    }
+//
+//}
+//
+//
+

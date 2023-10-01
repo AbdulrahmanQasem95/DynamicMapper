@@ -35,7 +35,13 @@ open  class DynamicClass: DynamicCodable {
     // Dynamic member lookup subscript
     public subscript(dynamicMember key: String) -> DynamicValue? {
         get {
-            return container[key]
+            if let value = container[key] {
+                return value
+            }
+            else {
+                container[key] = .dictionaryValue([:])
+                return container[key]!
+            }
         }
         set {
              container[key] = newValue
