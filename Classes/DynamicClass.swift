@@ -8,7 +8,7 @@
 import Foundation
 
 @dynamicMemberLookup
-open  class DynamicClass: Codable {
+open class DynamicClass: Codable {
     
     struct DynamicCodingKeys: CodingKey {
         var stringValue: String

@@ -22,7 +22,7 @@ public class DynamicJSONDecoder {
         }
     }
     
-    func performDynamicInjection(dic:inout [String:Any]) {
+    private func performDynamicInjection(dic:inout [String:Any]) {
         if !dic.keys.contains(dynamicSelf) {
             dic[dynamicSelf] = dic
         }

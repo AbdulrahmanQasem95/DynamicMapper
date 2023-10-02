@@ -15,7 +15,7 @@ class ViewController: UIViewController {
       "aps": {
         "mutable-content": 1,
         "alert": {
-          "title": "test",
+          "title": "Alert name test",
           "body": "test",
           "flag": true
         },
@@ -56,6 +56,9 @@ class ViewController: UIViewController {
         let decoder = DynamicJSONDecoder()
         if let dynamicClass = try?  decoder.decode(NestedClass.self, from: jsonData) {
             print("total name: \(dynamicClass.nameTotal )")
+            print("alert name: \(dynamicClass.dm.aps?.alert?.objectValue(customType: Alert.self)?.title ?? "" )")
+            print("alert name: \(dynamicClass.dm.aps?.alert?.objectValue(customType: Alert.self)?.title ?? "" )")
+
             //dynamicClass.fetchNestedItems()
             print("name: \(dynamicClass.name ?? "")")
             dynamicClass.name = "edit mazen"
@@ -82,6 +85,8 @@ class ViewController: UIViewController {
                // dynamic.array[0].fetchNestedItems()
                 print("arrayitem: \(dynamic.array[0].bodyme ?? "")")
                 print("arrayitem: \(dynamic.dynamicSelf?.array?[0]?.body?.stringValue ?? "")")
+                print("alert name: \(dynamic.dm.aps?.alert?.objectValue(customType: Alert.self)?.title ?? "" )")
+                print("alert name: \(dynamic.dm.aps?.alert?.objectValue(customType: Alert.self)?.title ?? "" )")
                // dynamic.array[0].intenralArray[0].fetchNestedItems()
               //  print("arrayitem: \(dynamic.array[0].intenralArray[0].bodyinternalDynamic ?? "")")
             }
@@ -212,13 +217,18 @@ class IntenralArray:DynamicCodable {
             dm.bodyinternal?.setDynamicProperty(value: "")
         }
     }
-//    var bodyinternalDynamic: String {
-//        return ComputedPropertyWrapper { self.dynamicSelf!.bodyinternal! }.wrappedValue().stringValue ?? ""
-//    }
  
     
 }
 
+
+class Alert:DynamicCodable {
+    var dynamicSelf: DynamicMapper.DynamicClass?
+    var title:String
+    var body:String
+    var flag: Bool
+    
+}
 
 
 //var myInstance = MyStruct(propertyA: 10, propertyB: 20)

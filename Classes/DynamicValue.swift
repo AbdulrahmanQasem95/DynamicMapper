@@ -16,6 +16,7 @@ public enum DynamicValue: Codable {
     case doubleValue(Double)
     case arrayValue(Array<DynamicValue>)
     case dictionaryValue(Dictionary<String, DynamicValue>)
+    case customType(T:DynamicCodable)
     case null(Int?)
     
   
@@ -47,11 +48,16 @@ public enum DynamicValue: Codable {
         return nil
     }
     
-    public func objectValue<T:DynamicDecodable>(customType:T.Type)-> T? {
-        if case .dictionaryValue(let value) = self {
+    public mutating func objectValue<T:DynamicCodable>(customType:T.Type)-> T? {
+        if case .customType(let t) = self {
+            return t as? T
+        }else if case .dictionaryValue(let value) = self {
             let data = try? JSONEncoder().encode(value)
             if let data = data {
-                return (try? JSONDecoder().decode(T.self, from: data))
+                if let model = try? DynamicJSONDecoder().decode(T.self, from: data) {
+                    self = .customType(T: model)
+                    return (model)
+                }
             }
         }
         return nil
@@ -69,6 +75,7 @@ public enum DynamicValue: Codable {
             case .bool:
                 return value.compactMap({$0.boolValue}).map({$0  as! T})
             case .customObject(ofType: _):
+                //TODO: handel .customArrayObject so you don't need to decode and encode each time
                 let data = try? JSONEncoder().encode(value)
                 if let data = data {
                     return (try? JSONDecoder().decode([T].self, from: data)) ?? []
@@ -218,6 +225,8 @@ public enum DynamicValue: Codable {
             try container.encode(dictionary)
         case .null(let null):
             try container.encode(null)
+        case .customType(T: let T):
+            try container.encode(T)
         }
     }
 }
