@@ -52,7 +52,6 @@ open class DynamicClass: Codable {
             let stringValue = key.stringValue
             let dynamicValue = try container.decode(DynamicValue.self, forKey: key)
             tempContainer[stringValue] = dynamicValue
-            
         }
         self.container = tempContainer
     }
