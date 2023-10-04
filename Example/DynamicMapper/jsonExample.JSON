@@ -1,0 +1,31 @@
+{
+    "level1": {
+        "property1": "Value 1",
+        "level2": {
+            "property2": "Value 2",
+            "level3": {
+                "property3": "Value 3",
+                "level4": {
+                    "property4": "Value 4",
+                    "level5": {
+                        "property5": "Value 5",
+                        "level6Array": [
+                            {
+                                "item1": "Item A",
+                                "item2": "Item B"
+                            },
+                            {
+                                "item1": "Item C",
+                                "item2": "Item D"
+                            },
+                            {
+                                "item1": "Item E",
+                                "item2": "Item F"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

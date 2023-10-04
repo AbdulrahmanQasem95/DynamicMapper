@@ -36,7 +36,7 @@ class ViewController: UIViewController {
           "flag": true,
            "intenralArray":[{
               "bodyinternal": "testInternalItem0"
-    } 
+    }
     ]
         }],
     "marwan":{
@@ -49,11 +49,29 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let t = test()
-//        t.print()
-//
-//
+        
+        guard let url = Bundle.main.url(forResource: "jsonExample", withExtension: "JSON") else {
+            return
+        }
+        var data: Data = Data()
+        do {
+            data = try Data(contentsOf: url)
+            print(String(data: data, encoding: .utf8))
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
         let decoder = DynamicJSONDecoder()
+        if let json = try?  decoder.decode(JsonExample.self, from: data) {
+            print(json.dm.level1?.level2?.level3?.property3?.stringValue ?? "")
+            print(json.dm.level1?.level2?.level3?.level4?.level5?.level6Array?[1]?.item2?.stringValue ?? "")
+            json.dm.level1?.level2?.level3?.level4?.level5?.level6Array?[1]?.item2?.setDynamicProperty(value: "Item D modefied")
+            print(json.dm.level1?.level2?.level3?.level4?.level5?.level6Array?[1]?.item2?.stringValue ?? "")
+        }
+        
+        
+        
+        
         if let dynamicClass = try?  decoder.decode(NestedClass.self, from: jsonData) {
             print("total name: \(dynamicClass.nameTotal )")
             print("alert name: \(dynamicClass.dm.aps?.alert?.objectValue(customType: Alert.self)?.title ?? "" )")
@@ -102,7 +120,9 @@ class ViewController: UIViewController {
 }
 
 
-
+class JsonExample:DynamicCodable{
+    var dynamicSelf: DynamicMapper.DynamicClass?
+}
 
 class NestedClass:DynamicCodable{
     var dynamicSelf: DynamicMapper.DynamicClass?
@@ -187,12 +207,12 @@ class arrayItem:DynamicCodable {
             dm.intenralArray?[0]?.bodyinternal?.setDynamicProperty(value: newValue )
         }
     }
- 
-  
+//
+//
     
     
     //MARK: Normal get only
-   // var bodyme:String? {dynamicSelf?.body?.stringValue}
+    //var bodyme:String? {dynamicSelf?.body?.stringValue}
   
 //    lazy var bodyme:String? = {
 //        dynamicSelf?.body?.stringValue ?? ""
@@ -231,46 +251,52 @@ class Alert:DynamicCodable {
 }
 
 
-//var myInstance = MyStruct(propertyA: 10, propertyB: 20)
-//
-//// Access the computed property
-//let result = myInstance.computedProperty // Result is 30
 
-//var myInstance = MyStruct(propertyA: 10, propertyB: 20)
-//
-//// Access the computed property
-//let result = myInstance.computedProperty // Result is 30
 
-//var myInstance = MyStruct(propertyA: 10, propertyB: 20)
-//
-//// Access the computed property
-//let result = myInstance.computedProperty // Result is 30
+struct DM<T:Codable>:Codable{
 
-//class test {
-//    var dynamicSelf: DynamicMapper.DynamicClass?
-//    @Flag(completion: {"Qasem" }()) lazy  var bodyinternal:String = ""
-//    func print()  {
-//        Swift.print(bodyinternal)
-//    }
-//}
-//
-//@propertyWrapper  struct Flag {
-//    var wrappedValue: String {
-//        mutating get {
-//            completion
+    var path:DynamicValue?
+    var value:T?
+    func set(_ value: T){
+
+    }
+
+    init(path:DynamicValue?) {
+        self.path = path
+    }
+    func get() -> T?{
+       return value
+    }
+//    subscript() -> T{
+//        set{
+//            path?.setDynamicProperty(value: "name")
+//        }
+//        get{
+//            return "" as! T
 //        }
 //    }
-////    var valuedd:String {
-////        get{
-////
-////        }
-////    }
-//     var completion: (String)
-//    init(  completion:  (String) ) {
-//        self.completion = completion
-//    }
-//
-//}
-//
-//
+    init(from decoder: Decoder) throws {
+        let value = try? T(from: decoder)
+        self.value = value
+    }
+
+    func encode(to encoder: Encoder) throws {
+        if let value = value {
+            try "\(value)".encode(to: encoder)
+        }
+    }
+    
+}
+
+class test:DynamicCodable {
+    var dynamicSelf: DynamicMapper.DynamicClass?
+
+   // var myValue: DM<Int> = DM(path: dm.what?.ksdhjsf)
+    var myValue:Int
+    func dsdf() {
+//        myValue.set(30)
+//        let i = myValue.get()
+    }
+}
+
 
