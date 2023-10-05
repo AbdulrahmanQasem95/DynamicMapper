@@ -9,150 +9,47 @@
 import UIKit
 import DynamicMapper
 class ViewController: UIViewController {
-    let jsonData = """
-    {
-    "nameTotal": "Qasem",
-      "aps": {
-        "mutable-content": 1,
-        "alert": {
-          "title": "Alert name test",
-          "body": "test",
-          "flag": true
-        },
-        "badge": 11,
-        "sound": "default"
-      },
-       "array": [{
-          "title": "testaaaa",
-          "body": "testItem0",
-          "flag": true,
-           "intenralArray":[{
-              "bodyinternal": "testInternalItem0"
-    }
-    ]
-        },{
-          "title": "test22",
-          "body": "test22",
-          "flag": true,
-           "intenralArray":[{
-              "bodyinternal": "testInternalItem0"
-    }
-    ]
-        }],
-    "marwan":{
-    "yazan":{
-    "mazen":"mazzzzzen"
-    }
-    }
-    }
-    """.data(using: .utf8)!
+    //MARK: first example about reading and wirting nested properties
+    
+    //MARK: second example about reading and writing from nested definded model that containd dynamic properties
+    //MARK: third example about reading and writing nested custom models
+    //MARK: forth example about reading and writing and compatility with Realm
+    
+   
+    let decoder = DynamicJSONDecoder()
+    let encoder = DynamicJSONEncoder()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        guard let url = Bundle.main.url(forResource: "jsonExample", withExtension: "JSON") else {
-            return
-        }
-        var data: Data = Data()
-        do {
-            data = try Data(contentsOf: url)
-            print(String(data: data, encoding: .utf8))
-        } catch let error {
-            print(error.localizedDescription)
-        }
-        
-        let decoder = DynamicJSONDecoder()
-        if let json = try?  decoder.decode(JsonExample.self, from: data) {
-            print(json.dm.level1?.level2?.level3?.property3?.stringValue ?? "")
-            print(json.dm.level1?.level2?.level3?.level4?.level5?.level6Array?[1]?.item2?.stringValue ?? "")
-            json.dm.level1?.level2?.level3?.level4?.level5?.level6Array?[1]?.item2?.setDynamicProperty(value: "Item D modefied")
-            print(json.dm.level1?.level2?.level3?.level4?.level5?.level6Array?[1]?.item2?.stringValue ?? "")
-        }
-        
-        
-        
-        
-        if let dynamicClass = try?  decoder.decode(NestedClass.self, from: jsonData) {
-            print("total name: \(dynamicClass.nameTotal )")
-            print("alert name: \(dynamicClass.dm.aps?.alert?.objectValue(customType: Alert.self)?.title ?? "" )")
-            print("alert name: \(dynamicClass.dm.aps?.alert?.objectValue(customType: Alert.self)?.title ?? "" )")
-
-            //dynamicClass.fetchNestedItems()
-            print("name: \(dynamicClass.name ?? "")")
-            dynamicClass.name = "edit mazen"
-            print("name: \(dynamicClass.name ?? "")")
-           // dynamicClass.array[0].fetchNestedItems()
-            print("arrayitem: \(dynamicClass.array[0].bodyme ?? "")")
-          //  print("bodyinternal: \(dynamicClass.arrrrrr[0].bodyinternal ?? "")")
-            print("arrayitem: \(dynamicClass.dynamicSelf?.array?[0]?.body?.stringValue ?? "")")
-            print("arrayitem: \(dynamicClass.dynamicSelf?.bosddy?.sdfsd?.stringValue ?? "")")
-            dynamicClass.array[0].bodyme = "Abed"
-            print("arrayitem: \(dynamicClass.array[0].bodyme ?? "")")
-            print("arrayitem: \(dynamicClass.dynamicSelf?.array?[0]?.body?.stringValue ?? "")")
-           // dynamicClass.array[0].intenralArray[0].fetchNestedItems()
-           // print("arrayitem: \(dynamicClass.array[0].intenralArray[0].bodyinternalDynamic ?? "")")
+    }
+    
+    let data1 = JsonReader.getJsonSample1Data()
+    @IBAction func readingAndWritingNestedPropertiesAction(_ sender: UIButton) {
+        if let model = try?  decoder.decode(ReadingWritingNestedPropertiesModel.self, from: data1) {
+            
+            print("property 0: \(model.property0)")
+            print("property 2: \(model.property2)")
+            
+            print("property 4: \(model.property4)")
+            model.property4 += " modefied"
+            print("property 4: \(model.property4)")
             
             
-            let data = try? DynamicJSONEncoder().encode(dynamicClass)
+            print("level 6 second array item1: \(model.secondArrayItem1OfLevel6)")
             
-            if let dynamic = try? decoder.decode(NestedClass.self, from: data!) {
-                print("total name: \(dynamic.nameTotal)")
-                //dynamic.fetchNestedItems()
-                print("name: \(dynamic.name ?? "")")
-                
-               // dynamic.array[0].fetchNestedItems()
-                print("arrayitem: \(dynamic.array[0].bodyme ?? "")")
-                print("arrayitem: \(dynamic.dynamicSelf?.array?[0]?.body?.stringValue ?? "")")
-                print("alert name: \(dynamic.dm.aps?.alert?.objectValue(customType: Alert.self)?.title ?? "" )")
-                print("alert name: \(dynamic.dm.aps?.alert?.objectValue(customType: Alert.self)?.title ?? "" )")
-               // dynamic.array[0].intenralArray[0].fetchNestedItems()
-              //  print("arrayitem: \(dynamic.array[0].intenralArray[0].bodyinternalDynamic ?? "")")
-            }
-          
+            print("level 6 third array item2: \(model.thirdArrayItem2OfLevel6)")
+            model.thirdArrayItem2OfLevel6 += 10
+            print("level 6 third array item2: \(model.thirdArrayItem2OfLevel6)")
+            
+            print("non exit array item: \(model.nonExitArrayItem)")
+
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-}
-
-
-class JsonExample:DynamicCodable{
-    var dynamicSelf: DynamicMapper.DynamicClass?
-}
-
-class NestedClass:DynamicCodable{
-    var dynamicSelf: DynamicMapper.DynamicClass?
-
-    var nameTotal:String
-    var name :String? {
-        get {
-            //marwan.dm.yazan?.mazen?.stringValue
-            marwan.dm.asdf?.asfd?.stringValue
-        }
-        set {
-            marwan.dm.asdf?.asfd?.setDynamicProperty(value: newValue ?? "" )
-        }
-    }
-    var marwan:Marwan
-    var array:[arrayItem]
-}
-
-class Marwan:DynamicCodable{
-    var dynamicSelf: DynamicMapper.DynamicClass?
-   // var mazen :String?
-    var yazan:Yazan?
- 
     
 }
 
-class Yazan:DynamicCodable{
-    var dynamicSelf: DynamicMapper.DynamicClass?
-    var mazen :String?
-}
+
+
 
 
 class arrayItem:DynamicCodable {
@@ -225,31 +122,6 @@ class arrayItem:DynamicCodable {
    // var intenralArray:[IntenralArray]
  
 }
-
-class IntenralArray:DynamicCodable {
-    var dynamicSelf: DynamicMapper.DynamicClass?
-    var bodyinternal:String
-    var bodyinternalDynamic:String? {
-         get {
-             dm.bodyinternal?.stringValue ?? ""
-        }
-        set {
-            dm.bodyinternal?.setDynamicProperty(value: "")
-        }
-    }
- 
-    
-}
-
-
-class Alert:DynamicCodable {
-    var dynamicSelf: DynamicMapper.DynamicClass?
-    var title:String
-    var body:String
-    var flag: Bool
-    
-}
-
 
 
 
