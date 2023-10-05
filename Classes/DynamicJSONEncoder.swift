@@ -9,7 +9,10 @@ import Foundation
 public class DynamicJSONEncoder {
     public init(){}
     public func encode<T>(_ value: T) throws -> Data where T : DynamicEncodable{
-        let ecoder = JSONEncoder()
-        return try ecoder.encode(value)
+        let endoedData = try JSONEncoder().encode(value)
+      //TODO: remove dynamic self from all nested classes after set it to it is corrsponding property
+        return endoedData
     }
 }
+
+

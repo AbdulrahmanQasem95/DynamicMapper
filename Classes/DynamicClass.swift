@@ -8,10 +8,8 @@
 import Foundation
 
 @dynamicMemberLookup
- open  class DynamicClass: DynamicCodable {
-     open func mapping() {
-        fatalError("This method must be overriden by subclass in order to set the nested parameters")
-    }
+open class DynamicClass: Codable {
+    
     struct DynamicCodingKeys: CodingKey {
         var stringValue: String
         init?(stringValue: String) {
@@ -32,7 +30,18 @@ import Foundation
     
     // Dynamic member lookup subscript
     public subscript(dynamicMember key: String) -> DynamicValue? {
-        return container[key]
+        get {
+            if let value = container[key] {
+                return value
+            }
+            else {
+                container[key] = .dictionaryValue([:])
+                return container[key]!
+            }
+        }
+        set {
+             container[key] = newValue
+        }
     }
     
     // Codable methods
@@ -43,7 +52,6 @@ import Foundation
             let stringValue = key.stringValue
             let dynamicValue = try container.decode(DynamicValue.self, forKey: key)
             tempContainer[stringValue] = dynamicValue
-            
         }
         self.container = tempContainer
     }
