@@ -16,7 +16,7 @@ public enum DynamicValue: Codable {
     case doubleValue(Double)
     case arrayValue(Array<DynamicValue>)
     case dictionaryValue(Dictionary<String, DynamicValue>)
-    case customType(DynamicCodable)
+    case customType(customModel:DynamicCodable, dynamicModel: Dictionary<String, DynamicValue>)
     case customArrayType(customArray:[DynamicCodable],dynamicArray:Array<DynamicValue>)
     case null(Int?)
     
@@ -49,13 +49,13 @@ public enum DynamicValue: Codable {
     }
     
     public mutating func objectValue<T:DynamicCodable>(customType:T.Type)-> T? {
-        if case .customType(let customModel) = self {
+        if case .customType(customModel: let customModel, dynamicModel: _) = self {
             return customModel as? T
         }else if case .dictionaryValue(let value) = self {
             let data = try? JSONEncoder().encode(value)
             if let data = data {
                 if let model = try? DynamicJSONDecoder().decode(T.self, from: data) {
-                    self = .customType(model)
+                    self = .customType(customModel: model, dynamicModel: value)
                     return (model)
                 }
             }
@@ -75,7 +75,6 @@ public enum DynamicValue: Codable {
             case .bool:
                 return value.compactMap({$0.boolValue}).map({$0  as! T})
             case .customObject(ofType: _):
-                //TODO: need to be tested
                 let data = try? JSONEncoder().encode(value)
                 if let data = data {
                     if let model = try?  JSONDecoder().decode([T].self, from: data) {
@@ -94,6 +93,8 @@ public enum DynamicValue: Codable {
         get {
             if case .arrayValue(let arr) = self {
                 return index < arr.count ? arr[index] : nil
+            }else if case .customArrayType(_, let dynamicArray) = self {
+                return index < dynamicArray.count ? dynamicArray[index] : nil
             }
             return nil
         }
@@ -104,29 +105,34 @@ public enum DynamicValue: Codable {
                         arr[index] = newValue
                         self = .arrayValue(arr)
                     }
+                }else if case .customArrayType(_, var dynamicArray) = self {
+                    if index < dynamicArray.count {
+                        dynamicArray[index] = newValue
+                        self = .arrayValue(dynamicArray)
+                    }
                 }
             }
         }
     }
     
-    public subscript(key: String) -> DynamicValue? {
-        get {
-            if case .dictionaryValue(let dict) = self {
-                return dict[key]
-            }
-           
-            
-            return nil
-        }
-        set {
-            if let newValue = newValue {
-                if case .dictionaryValue(var dict) = self {
-                     dict[key] = newValue
-                    self = .dictionaryValue(dict)
-                }
-            }
-        }
-    }
+//    public subscript(key: String) -> DynamicValue? {
+//        get {
+//            if case .dictionaryValue(let dict) = self {
+//                return dict[key]
+//            }
+//
+//
+//            return nil
+//        }
+//        set {
+//            if let newValue = newValue {
+//                if case .dictionaryValue(var dict) = self {
+//                     dict[key] = newValue
+//                    self = .dictionaryValue(dict)
+//                }
+//            }
+//        }
+//    }
     
     public subscript(dynamicMember member: String) -> DynamicValue? {
          get {
@@ -134,22 +140,32 @@ public enum DynamicValue: Codable {
                 if let value =  dict[member] {
                     return value
                 }else {
-                    //Set value if not exist the parent is dictionary to solve realm set issue
                     let newDic =  DynamicValue.dictionaryValue([:])
                     dict[member] = newDic
+                    return newDic
+                }
+            }else if case .customType(_, var dynamicModel) = self {
+                if let value =  dynamicModel[member] {
+                    return value
+                }else {
+                    let newDic =  DynamicValue.dictionaryValue([:])
+                    dynamicModel[member] = newDic
                     return newDic
                 }
             }
             return nil
         }
+        
         set {
             if let newValue = newValue {
                 if case .dictionaryValue(var dict) = self {
                      dict[member] = newValue
                     self = .dictionaryValue(dict)
+                }else if case .customType(_, var dynamicModel) = self {
+                    dynamicModel[member] = newValue
+                   self = .dictionaryValue(dynamicModel)
                 }
             }
-
         }
     }
     
@@ -173,7 +189,7 @@ public enum DynamicValue: Codable {
         }
     }
     
-    public mutating func setDynamicProperty<T:DynamicEncodable>(customArray:[T]) {
+    public mutating func setDynamicProperty<T:DynamicEncodable>(customArray:[T?]) {
         if let data =  try? JSONEncoder().encode(customArray) {
             if let model = try? JSONDecoder().decode([DynamicValue].self, from: data){
                 self = .arrayValue(model)
@@ -181,7 +197,7 @@ public enum DynamicValue: Codable {
         }
     }
     
-    public mutating func setDynamicProperty<T:DynamicEncodable>(customObject:T) {
+    public mutating func setDynamicProperty<T:DynamicEncodable>(customObject:T?) {
         if let data =  try? JSONEncoder().encode(customObject) {
             if let model = try? JSONDecoder().decode([String:DynamicValue].self, from: data){
                 self = .dictionaryValue(model)
@@ -230,8 +246,8 @@ public enum DynamicValue: Codable {
             try container.encode(dictionary)
         case .null(let null):
             try container.encode(null)
-        case .customType(T: let t):
-            try container.encode(t)
+        case .customType(customModel: _, dynamicModel: let dynamicModel) :
+            try container.encode(dynamicModel)
         case .customArrayType(customArray: _ , dynamicArray: let dynamicArray):
             try container.encode(dynamicArray)
         }
