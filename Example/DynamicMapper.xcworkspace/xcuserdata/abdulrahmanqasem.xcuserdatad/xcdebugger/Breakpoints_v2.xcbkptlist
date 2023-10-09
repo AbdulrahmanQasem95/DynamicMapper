@@ -416,8 +416,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
             endingLineNumber = "100"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "arrayItem"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "206E4C67-B86E-441B-B43A-32F392BCED8F - 63c2be00fa57604b"
@@ -922,8 +922,40 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
             endingLineNumber = "24"
-            landmarkName = "level6Array"
+            landmarkName = "level_6_Array"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "DF87046E-5AEF-4312-8834-83A6545CBA33 - b655142caa5905ce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ReadingWritingNestedCustomModel.level6Array.setter : Swift.Array&lt;DynamicMapper_Example.ArrayItemModel&gt;"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ReadingWritingNestedCustomModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "67">
+               </Location>
+               <Location
+                  uuid = "DF87046E-5AEF-4312-8834-83A6545CBA33 - 3e9ad877fc4f0cf6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ReadingWritingNestedCustomModel.level_6_Array.setter : Swift.Array&lt;DynamicMapper_Example.ArrayItemModel&gt;"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ReadingWritingNestedCustomModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "67">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

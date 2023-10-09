@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5iA-xT-OmB">
-                                <rect key="frame" x="26" y="249.5" width="323" height="168"/>
+                                <rect key="frame" x="26" y="229.5" width="323" height="208"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTn-wU-ChM">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="34.5"/>
@@ -37,9 +37,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHV-Gg-7fQ">
-                                        <rect key="frame" x="0.0" y="44.5" width="323" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="323" height="54.5"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Sample 2">
+                                        <buttonConfiguration key="configuration" style="plain" title="Reading &amp; writing From Nested Defined Model">
                                             <backgroundConfiguration key="background">
                                                 <color key="backgroundColor" systemColor="linkColor"/>
                                             </backgroundConfiguration>
@@ -50,9 +50,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PkL-PD-lIW">
-                                        <rect key="frame" x="0.0" y="89" width="323" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="109" width="323" height="54.5"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Sample 3">
+                                        <buttonConfiguration key="configuration" style="plain" title="Reading &amp; Writing of Nested Custom Model">
                                             <backgroundConfiguration key="background">
                                                 <color key="backgroundColor" systemColor="linkColor"/>
                                             </backgroundConfiguration>
@@ -63,9 +63,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZw-io-zzx">
-                                        <rect key="frame" x="0.0" y="133.5" width="323" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="173.5" width="323" height="34.5"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title=" Sample 4">
+                                        <buttonConfiguration key="configuration" style="plain" title="Dynamic Encoding">
                                             <backgroundConfiguration key="background">
                                                 <color key="backgroundColor" systemColor="linkColor"/>
                                             </backgroundConfiguration>

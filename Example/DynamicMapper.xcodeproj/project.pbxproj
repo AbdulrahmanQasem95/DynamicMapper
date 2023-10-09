@@ -52,7 +52,7 @@
 		B85E5EA26BE1EF7E3E4D5FC8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E16FE62581D7654B04E5BF2A /* Pods-DynamicMapper_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicMapper_Tests.release.xcconfig"; path = "Target Support Files/Pods-DynamicMapper_Tests/Pods-DynamicMapper_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E30B29E7F0FD7E4312556F2F /* Pods_DynamicMapper_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicMapper_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F91543CD2AB9B1E700340D63 /* DynamicMapper.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = DynamicMapper.podspec; path = ../DynamicMapper.podspec; sourceTree = "<group>"; };
+		F91543CD2AB9B1E700340D63 /* DynamicMapper.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = DynamicMapper.podspec; path = ../DynamicMapper.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F9BA4A4D2ACDA0ED00EBABA8 /* jsonExample.JSON */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jsonExample.JSON; sourceTree = "<group>"; };
 		F9BA4A512ACEA3CF00EBABA8 /* ReadingWritingNestedPropertiesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingWritingNestedPropertiesModel.swift; sourceTree = "<group>"; };
 		F9BA4A532ACEA72C00EBABA8 /* JsonReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
