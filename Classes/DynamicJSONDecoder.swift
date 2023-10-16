@@ -14,6 +14,7 @@ public class DynamicJSONDecoder {
             let endoedData = try JSONSerialization.data(withJSONObject: serializedDictionary)
             let decoder = JSONDecoder()
             let model = try decoder.decode(T.self, from: endoedData)
+            model.realmData = endoedData
             return model
         }else {
             let decoder = JSONDecoder()

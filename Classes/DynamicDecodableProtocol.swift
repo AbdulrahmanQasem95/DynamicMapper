@@ -12,6 +12,7 @@ let dynamicSelf = "dynamicSelf"
 //TODO: DynamicDecodable for structs 
 public protocol DynamicDecodable:Decodable,AnyObject{
     var dynamicSelf:DynamicClass? { get set }
+    var realmData:Data? { get set }
     var dm:DynamicClass {  get } // stands for DynamicMapper
 }
 extension DynamicDecodable {
@@ -19,6 +20,9 @@ extension DynamicDecodable {
          get {
             if let dynamicSelf = dynamicSelf{
                 return dynamicSelf
+            }else if let realmData = realmData, let model = try? JSONDecoder().decode(DynamicClass.self, from: realmData) {
+                    dynamicSelf = model
+                    return model
             }else {
                 let newDynamicSelf = DynamicClass([:])
                 self.dynamicSelf = newDynamicSelf 

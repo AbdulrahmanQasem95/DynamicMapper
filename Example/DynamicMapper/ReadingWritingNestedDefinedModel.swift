@@ -27,11 +27,14 @@ class Level2Model:DynamicCodable{
     
     var property2:Int
     
-    var property5:String
+    var property_5:String
     {
         get{dm.level3?.level4?.level5?.property5?.stringValue ?? ""}
         set{dm.level3?.level4?.level5?.property5?.setDynamicProperty(value: newValue)}
     }
     
-    var secondArrayItem1OfLevel6:String {dm.level3?.level4?.level5?.level6Array?[1]?.item1?.stringValue ?? "item not found" }
+    var secondArrayItem_1_OfLevel_6:String {
+        get{dm.level3?.level4?.level5?.level6Array?[1]?.item1?.stringValue ?? "item not found" }
+        set{dm.level3?.level4?.level5?.level6Array?[1]?.item1?.setDynamicProperty(value: newValue)}
+    }
 }

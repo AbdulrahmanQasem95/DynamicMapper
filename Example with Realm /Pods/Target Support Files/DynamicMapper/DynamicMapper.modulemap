@@ -1,6 +1,0 @@
-framework module DynamicMapper {
-  umbrella header "DynamicMapper-umbrella.h"
-
-  export *
-  module * { export * }
-}

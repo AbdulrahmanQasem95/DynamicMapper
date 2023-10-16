@@ -9,7 +9,7 @@
 import Foundation
 class JsonReader{
     
-    static func getJsonSample1Data()->Data{
+    static func getJsonSampleData()->Data{
         var data: Data = Data()
         guard let url = Bundle.main.url(forResource: "jsonExample", withExtension: "JSON") else {
             return data

@@ -10,10 +10,9 @@ import UIKit
 import DynamicMapper
 class ViewController: UIViewController {
     
-    
     //MARK: forth example about reading and writing and compatility with Realm
     
-    let data = JsonReader.getJsonSample1Data()
+    let data = JsonReader.getJsonSampleData()
     let decoder = DynamicJSONDecoder()
     let encoder = DynamicJSONEncoder()
     
@@ -26,18 +25,18 @@ class ViewController: UIViewController {
     @IBAction func example1Action(_ sender: UIButton) {
         if let model = try?  decoder.decode(ReadingWritingNestedPropertiesModel.self, from: data) {
             print("property 0: \(model.property0)")
-            print("property 2: \(model.property2)")
+            print("property 2: \(model.property_2)")
             
-            print("property 4: \(model.property4)")
-            model.property4 += " modefied"
-            print("property 4: \(model.property4)")
+            print("property 4: \(model.property_4)")
+            model.property_4 += " modefied"
+            print("property 4: \(model.property_4)")
             
             
-            print("level 6 second array item1: \(model.secondArrayItem1OfLevel6)")
+            print("level 6 second array item1: \(model.secondArrayItem_1_OfLevel_6)")
             
-            print("level 6 third array item2: \(model.thirdArrayItem2OfLevel6)")
-            model.thirdArrayItem2OfLevel6 += 10
-            print("level 6 third array item2: \(model.thirdArrayItem2OfLevel6)")
+            print("level 6 third array item2: \(model.thirdArrayItem_2_OfLevel_6)")
+            model.thirdArrayItem_2_OfLevel_6 += 10
+            print("level 6 third array item2: \(model.thirdArrayItem_2_OfLevel_6)")
             
             print("non exit array item: \(model.nonExitArrayItem)")
         }
@@ -52,11 +51,11 @@ class ViewController: UIViewController {
             
             print("property 2: \(model.level1.level2.property2)")
            
-            print("property 5: \(model.level1.level2.property5)")
-            model.level1.level2.property5 += " modified"
-            print("property 5: \(model.level1.level2.property5)")
+            print("property 5: \(model.level1.level2.property_5)")
+            model.level1.level2.property_5 += " modified"
+            print("property 5: \(model.level1.level2.property_5)")
             
-            print("level 6 second array item1: \(model.level1.level2.secondArrayItem1OfLevel6)")
+            print("level 6 second array item1: \(model.level1.level2.secondArrayItem_1_OfLevel_6)")
         }
     }
     
@@ -64,11 +63,11 @@ class ViewController: UIViewController {
     @IBAction func example3Action(_ sender: UIButton) {
         if let model = try?  decoder.decode(ReadingWritingNestedCustomModel.self, from: data) {
             print("property 0: \(model.property0)")
-            print("property 4: \(model.level4?.property4 ?? "not found")")
+            print("property 4: \(model.level_4?.property4 ?? "not found")")
             
-            print("Array second item item1: \(model.level6Array[1].item1)")
-            model.level6Array[1].item1 += " modified"
-            print("Array second item item1: \(model.level6Array[1].item1)")
+            print("Array second item item1: \(model.level_6_Array[1].item1)")
+            model.level_6_Array[1].item1 += " modified"
+            print("Array second item item1: \(model.level_6_Array[1].item1)")
         }
     }
     
@@ -81,15 +80,21 @@ class ViewController: UIViewController {
         model.property0 += " modified"
         print("property 0: \(model.property0)")
         
-        print("property 5: \(model.level1.level2.property5)")
-        model.level1.level2.property5 += " modified"
-        print("property 5: \(model.level1.level2.property5)")
+        print("property 5: \(model.level1.level2.property_5)")
+        model.level1.level2.property_5 += " modified"
+        print("property 5: \(model.level1.level2.property_5)")
+        
+        print("Array second item item1: \(model.level1.level2.secondArrayItem_1_OfLevel_6)")
+        model.level1.level2.secondArrayItem_1_OfLevel_6 += " modified"
+        print("Array second item item1: \(model.level1.level2.secondArrayItem_1_OfLevel_6)")
         
         guard let encodedData = try?  encoder.encode(model) else {return}
+        print(String(data: encodedData, encoding: .utf8))
         guard let decodedModel = try?  decoder.decode(ReadingWritingNestedDefinedModel.self, from: encodedData) else {return}
         print("\nAfter endode and decode model again:")
         print("property 0: \(decodedModel.property0)")
-        print("property 5: \(decodedModel.level1.level2.property5)")
+        print("property 5: \(decodedModel.level1.level2.property_5)")
+        print("Array second item item1: \(model.level1.level2.secondArrayItem_1_OfLevel_6)")
     }
     
 }

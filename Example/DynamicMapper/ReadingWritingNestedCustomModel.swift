@@ -12,13 +12,13 @@ class ReadingWritingNestedCustomModel :DynamicCodable{
     var dynamicSelf:DynamicClass?
     
     var property0:String
-    var level4:Level4Model?
+    var level_4:Level4Model?
     {
         get{dm.level1?.level2?.level3?.level4?.objectValue(customType: Level4Model.self)}
         set{dm.level1?.level2?.level3?.level4?.setDynamicProperty(customObject: newValue)}
     }
     
-    var level6Array:[ArrayItemModel] {
+    var level_6_Array:[ArrayItemModel] {
         get{dm.level1?.level2?.level3?.level4?.level5?.level6Array?.arrayValue(type: .customObject(ofType: ArrayItemModel.self)) ?? []}
         set{
             dm.level1?.level2?.level3?.level4?.level5?.level6Array?.setDynamicProperty(customArray: newValue)
