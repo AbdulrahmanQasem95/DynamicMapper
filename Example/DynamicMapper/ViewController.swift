@@ -84,11 +84,17 @@ class ViewController: UIViewController {
         model.level1.level2.property_5 += " modified"
         print("property 5: \(model.level1.level2.property_5)")
         
+        print("Array second item item1: \(model.level1.level2.secondArrayItem_1_OfLevel_6)")
+        model.level1.level2.secondArrayItem_1_OfLevel_6 += " modified"
+        print("Array second item item1: \(model.level1.level2.secondArrayItem_1_OfLevel_6)")
+        
         guard let encodedData = try?  encoder.encode(model) else {return}
+        print(String(data: encodedData, encoding: .utf8))
         guard let decodedModel = try?  decoder.decode(ReadingWritingNestedDefinedModel.self, from: encodedData) else {return}
         print("\nAfter endode and decode model again:")
         print("property 0: \(decodedModel.property0)")
         print("property 5: \(decodedModel.level1.level2.property_5)")
+        print("Array second item item1: \(model.level1.level2.secondArrayItem_1_OfLevel_6)")
     }
     
 }

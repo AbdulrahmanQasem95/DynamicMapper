@@ -21,12 +21,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5iA-xT-OmB">
-                                <rect key="frame" x="26" y="249.5" width="323" height="168"/>
+                                <rect key="frame" x="26" y="272" width="323" height="123.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTn-wU-ChM">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="34.5"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Reading &amp; Writing Nested Properties">
+                                        <buttonConfiguration key="configuration" style="plain" title="Read from json object">
                                             <backgroundConfiguration key="background">
                                                 <color key="backgroundColor" systemColor="linkColor"/>
                                             </backgroundConfiguration>
@@ -36,43 +36,30 @@
                                             <action selector="example1Action:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="8go-Iz-GBl"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHV-Gg-7fQ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qC-sh-l8H">
                                         <rect key="frame" x="0.0" y="44.5" width="323" height="34.5"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Sample 2">
+                                        <buttonConfiguration key="configuration" style="plain" title="Write to realm DB">
                                             <backgroundConfiguration key="background">
                                                 <color key="backgroundColor" systemColor="linkColor"/>
                                             </backgroundConfiguration>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="example2Action:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="juI-FQ-eEc"/>
+                                            <action selector="writeToRealmDB:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HPD-zP-jjg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PkL-PD-lIW">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHV-Gg-7fQ">
                                         <rect key="frame" x="0.0" y="89" width="323" height="34.5"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Sample 3">
+                                        <buttonConfiguration key="configuration" style="plain" title="Read from realm DB">
                                             <backgroundConfiguration key="background">
                                                 <color key="backgroundColor" systemColor="linkColor"/>
                                             </backgroundConfiguration>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="example3Action:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="b9Z-eY-Yxk"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZw-io-zzx">
-                                        <rect key="frame" x="0.0" y="133.5" width="323" height="34.5"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title=" Sample 4">
-                                            <backgroundConfiguration key="background">
-                                                <color key="backgroundColor" systemColor="linkColor"/>
-                                            </backgroundConfiguration>
-                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="example4Action:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="axK-yp-Il6"/>
+                                            <action selector="readFromRealmDBAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="flW-fS-CGj"/>
                                         </connections>
                                     </button>
                                 </subviews>

@@ -8,38 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		059E04C55857F98490541114BDAE6DC4 /* Pods-DynamicMapper_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E2BFD6475397B4F88BCAC8EEF41335E /* Pods-DynamicMapper_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0EC98A739C73E5E2351823CF62ED5F57 /* DynamicEncodableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D718DC18D85493940F4792A0D9E948 /* DynamicEncodableProtocol.swift */; };
-		15B206D90FD79622B90E88FE0B5C6F30 /* DynamicMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 50462E29DC01A2AA4C2E4718C5525BEE /* DynamicMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1781D55C7BC99F8C12F2C4465B447E19 /* DynamicJSONEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328224EAEEBAEE763D6CA9E5614FD4BD /* DynamicJSONEncoder.swift */; };
 		23B6D6A6EA3F1E4951B5CF8D2C6C685D /* Pods-DynamicMapper_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 576CA4662860243BC8BC9D48342C26DB /* Pods-DynamicMapper_Example-dummy.m */; };
-		2ACDFFC47B1ECE5478D8AB168EEB8280 /* DynamicJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19530CBA04960CAC6018160612A295B9 /* DynamicJSONDecoder.swift */; };
-		34883EF529E6A4002D6A3EAA7258FEDB /* DynamicArrayValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346BAB163F42A5637177464CD55941C5 /* DynamicArrayValues.swift */; };
+		2D985DFF89D5617D3810A01C772D3DC7 /* DynamicMapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BA21CEF8423DFF2AAB26052B93A6D0 /* DynamicMapper-dummy.m */; };
 		34DDD1E0BB2BD30628EADFFE6703CDD4 /* Pods-DynamicMapper_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 172DEFD2F629AAC4D24A55BDE3ED5D64 /* Pods-DynamicMapper_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		42D4624CDC4A0A7921332CF0A724B515 /* DynamicClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F7B857499C27A002FB46176D7F7EEC /* DynamicClass.swift */; };
-		4C4EE23943538275620A9C8A4B2439D6 /* DynamicValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32D8E10531C8F4E6866F987F4B3BF50 /* DynamicValue.swift */; };
-		59D70E945C655821A7A944452A8EF5AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		5F67FBFDB15A0D598C3FE5EAABA09A27 /* DynamicMapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCAE5C0891B557FA2FE1C5F52278EA8 /* DynamicMapper-dummy.m */; };
+		5905DD248C38B8140FD724CE3EB9F486 /* DynamicJSONEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DA2C1D6D4C29C7F907C6E267B945EC /* DynamicJSONEncoder.swift */; };
 		605315B123561D56D2F1A7CC5EC3AD00 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		AA760F034CC784E9496DBE90D662E985 /* DynamicDecodableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB13225F359486D2216A84184A39EEE9 /* DynamicDecodableProtocol.swift */; };
-		AE0C67E244D0E6B674034C2DC355E70B /* DynamicCodableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F8F85C85B58B2E1448917E906C5C2C /* DynamicCodableProtocol.swift */; };
+		62E416D3D8CA09F9D8F623A98D58806C /* DynamicDecodableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C87FF4EDF9E15486F4277C4ACD6EC8F /* DynamicDecodableProtocol.swift */; };
+		75C641918C0ED462D341D211CF85CB89 /* DynamicArrayValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258F7233DFFEDA2257BB975833A0BE49 /* DynamicArrayValues.swift */; };
+		8533ADC63BD490CF79B14D85AA7DD55A /* DynamicValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6081466CE1A8587E9C8AD786F0F96209 /* DynamicValue.swift */; };
+		86F96DA68F6BB78B8E64D62D604A714B /* DynamicEncodableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82F87FAB41EA98EF53D6AFA2C26F659 /* DynamicEncodableProtocol.swift */; };
+		8A29CB2F25618AC48C39DE2D01501793 /* DynamicCodableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0FFD53119AC737062B51DDD721366 /* DynamicCodableProtocol.swift */; };
+		91D87168BECDC77C231339009FC263B5 /* DynamicMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 734D50F0E91915ADA7D04C24E6EA2BE7 /* DynamicMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0380B995C75836C3DDB849E13D122A9 /* DynamicJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D227AF937E422CCEF9F066C073CECAD5 /* DynamicJSONDecoder.swift */; };
+		A3A54C7A82FE0E6B150B1ADB0B338C4E /* DynamicClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D081355717F9F230E3B0FC47275A2 /* DynamicClass.swift */; };
 		DF51BD2CA4CE8F598CA723A1184D8D91 /* Pods-DynamicMapper_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA2DD23FB5066838F49E000F291B998 /* Pods-DynamicMapper_Tests-dummy.m */; };
+		E1A1D8FA376508AEDADF7CD924FB2B41 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		ED0041008E2C6F0229E609FADAF55D31 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1227F0A5E8D5A136ECF62A747AAF6F2E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A4BEE3A041F5B9330EC376176068059D;
-			remoteInfo = DynamicMapper;
-		};
-		CAD2131648C27615BEC511108D04AAD2 /* PBXContainerItemProxy */ = {
+		20357D83BEC448AAFCB47DD5BE9DA4FF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5F24D4C2EF88DCC7CD36EFDADCC52575;
 			remoteInfo = "Pods-DynamicMapper_Example";
+		};
+		BCB0A45989A7C8B19A9CD8A49EEA66A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4BEE3A041F5B9330EC376176068059D;
+			remoteInfo = DynamicMapper;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -49,41 +49,41 @@
 		0DF04556F2844C0A9FBCE6EF08DF6FB2 /* Pods-DynamicMapper_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DynamicMapper_Example-Info.plist"; sourceTree = "<group>"; };
 		1545A7F52ABFBE2E238A13A1DB442F8A /* DynamicMapper */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DynamicMapper; path = DynamicMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		172DEFD2F629AAC4D24A55BDE3ED5D64 /* Pods-DynamicMapper_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DynamicMapper_Example-umbrella.h"; sourceTree = "<group>"; };
-		19530CBA04960CAC6018160612A295B9 /* DynamicJSONDecoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicJSONDecoder.swift; path = Classes/DynamicJSONDecoder.swift; sourceTree = "<group>"; };
+		258F7233DFFEDA2257BB975833A0BE49 /* DynamicArrayValues.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicArrayValues.swift; path = Classes/DynamicArrayValues.swift; sourceTree = "<group>"; };
+		27DA2C1D6D4C29C7F907C6E267B945EC /* DynamicJSONEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicJSONEncoder.swift; path = Classes/DynamicJSONEncoder.swift; sourceTree = "<group>"; };
+		2908B887B4172F6851EA9FC5E7A4DA32 /* DynamicMapper.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = DynamicMapper.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2BA4B642748C39F5C7435AB3CEDE7B28 /* Pods-DynamicMapper_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-DynamicMapper_Example"; path = Pods_DynamicMapper_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FA2ED443E78C351F05CCCAE2D7E6733 /* Pods-DynamicMapper_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-DynamicMapper_Tests"; path = Pods_DynamicMapper_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		31F8F85C85B58B2E1448917E906C5C2C /* DynamicCodableProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicCodableProtocol.swift; path = Classes/DynamicCodableProtocol.swift; sourceTree = "<group>"; };
-		328224EAEEBAEE763D6CA9E5614FD4BD /* DynamicJSONEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicJSONEncoder.swift; path = Classes/DynamicJSONEncoder.swift; sourceTree = "<group>"; };
-		32C553077595B738A169582C102E04F1 /* DynamicMapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DynamicMapper.debug.xcconfig; sourceTree = "<group>"; };
-		346BAB163F42A5637177464CD55941C5 /* DynamicArrayValues.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicArrayValues.swift; path = Classes/DynamicArrayValues.swift; sourceTree = "<group>"; };
-		3BCAE5C0891B557FA2FE1C5F52278EA8 /* DynamicMapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DynamicMapper-dummy.m"; sourceTree = "<group>"; };
-		50462E29DC01A2AA4C2E4718C5525BEE /* DynamicMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DynamicMapper-umbrella.h"; sourceTree = "<group>"; };
+		396281586512B99096B943758142AF72 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		576CA4662860243BC8BC9D48342C26DB /* Pods-DynamicMapper_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DynamicMapper_Example-dummy.m"; sourceTree = "<group>"; };
 		582078AA8D02BBBD473547BF83886376 /* Pods-DynamicMapper_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DynamicMapper_Tests-Info.plist"; sourceTree = "<group>"; };
+		5BAF6792F1781A5765DF262A53317679 /* DynamicMapper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DynamicMapper-Info.plist"; sourceTree = "<group>"; };
 		5BBDCF4E877462C613015B227FA432AB /* Pods-DynamicMapper_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DynamicMapper_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6081466CE1A8587E9C8AD786F0F96209 /* DynamicValue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicValue.swift; path = Classes/DynamicValue.swift; sourceTree = "<group>"; };
 		63DF7889C7AF29873A0956E5A11F50ED /* Pods-DynamicMapper_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DynamicMapper_Example-frameworks.sh"; sourceTree = "<group>"; };
 		6D4EE36E0E02D63F8105D834717D29A6 /* Pods-DynamicMapper_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DynamicMapper_Example.modulemap"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		76D718DC18D85493940F4792A0D9E948 /* DynamicEncodableProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicEncodableProtocol.swift; path = Classes/DynamicEncodableProtocol.swift; sourceTree = "<group>"; };
-		7FD4E7C07F4F173113ECD381F72716C3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		734D50F0E91915ADA7D04C24E6EA2BE7 /* DynamicMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DynamicMapper-umbrella.h"; sourceTree = "<group>"; };
+		7C3D081355717F9F230E3B0FC47275A2 /* DynamicClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicClass.swift; path = Classes/DynamicClass.swift; sourceTree = "<group>"; };
+		8C87FF4EDF9E15486F4277C4ACD6EC8F /* DynamicDecodableProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicDecodableProtocol.swift; path = Classes/DynamicDecodableProtocol.swift; sourceTree = "<group>"; };
 		8E2BFD6475397B4F88BCAC8EEF41335E /* Pods-DynamicMapper_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DynamicMapper_Tests-umbrella.h"; sourceTree = "<group>"; };
-		91658C379E81F2378239DE0B80BF8EB6 /* DynamicMapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DynamicMapper.modulemap; sourceTree = "<group>"; };
+		96B0FFD53119AC737062B51DDD721366 /* DynamicCodableProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicCodableProtocol.swift; path = Classes/DynamicCodableProtocol.swift; sourceTree = "<group>"; };
 		99CFAC3D70E7FE00DA75A5B258F27ADE /* Pods-DynamicMapper_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DynamicMapper_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		9BEEC48FEBD8BEBE2FFA9FB1821D19C3 /* DynamicMapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DynamicMapper.release.xcconfig; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FA2DD23FB5066838F49E000F291B998 /* Pods-DynamicMapper_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DynamicMapper_Tests-dummy.m"; sourceTree = "<group>"; };
-		A4F7B857499C27A002FB46176D7F7EEC /* DynamicClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicClass.swift; path = Classes/DynamicClass.swift; sourceTree = "<group>"; };
+		A0BA21CEF8423DFF2AAB26052B93A6D0 /* DynamicMapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DynamicMapper-dummy.m"; sourceTree = "<group>"; };
 		A9DDC3B3A4486261910B4F9FA5725A8C /* Pods-DynamicMapper_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DynamicMapper_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		B32D8E10531C8F4E6866F987F4B3BF50 /* DynamicValue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicValue.swift; path = Classes/DynamicValue.swift; sourceTree = "<group>"; };
+		B224ADD3509D4EABE61B9BD94F055406 /* DynamicMapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DynamicMapper-prefix.pch"; sourceTree = "<group>"; };
+		B6F219D6967D60A660B08FC18571CD70 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		C38368A4D8CE7D1623511E869981184B /* Pods-DynamicMapper_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DynamicMapper_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		C828E1F9B2DF0E40FACF7DD067016187 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		CBC792968F48CE2796EE299B4A7FDC31 /* DynamicMapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DynamicMapper-prefix.pch"; sourceTree = "<group>"; };
 		CEF99A3DEAA99ABF1A08779CFBB277F4 /* Pods-DynamicMapper_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DynamicMapper_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D227AF937E422CCEF9F066C073CECAD5 /* DynamicJSONDecoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicJSONDecoder.swift; path = Classes/DynamicJSONDecoder.swift; sourceTree = "<group>"; };
 		DE6FD430D2DCAB6BDBF2B373BA222D51 /* Pods-DynamicMapper_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DynamicMapper_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E39C87DAF1E4C1296DB50AEF0C7F5155 /* Pods-DynamicMapper_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DynamicMapper_Example.release.xcconfig"; sourceTree = "<group>"; };
-		F2ECE7B31D4D208677FE3F8C400D15ED /* DynamicMapper.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DynamicMapper.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		F594D9E7AEF843A87A1CE2EE56C14571 /* DynamicMapper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DynamicMapper-Info.plist"; sourceTree = "<group>"; };
-		FB13225F359486D2216A84184A39EEE9 /* DynamicDecodableProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicDecodableProtocol.swift; path = Classes/DynamicDecodableProtocol.swift; sourceTree = "<group>"; };
+		E82F87FAB41EA98EF53D6AFA2C26F659 /* DynamicEncodableProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicEncodableProtocol.swift; path = Classes/DynamicEncodableProtocol.swift; sourceTree = "<group>"; };
+		EA448CBA40936789686DEAB245755A61 /* DynamicMapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DynamicMapper.modulemap; sourceTree = "<group>"; };
+		F0C592F41DDE26DB38B6219934D5754E /* DynamicMapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DynamicMapper.debug.xcconfig; sourceTree = "<group>"; };
+		FA6B88B3C9E62D9A957C6E657A3031B5 /* DynamicMapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DynamicMapper.release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +95,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		47770E998EE3805E008D95F6ABAE64E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1A1D8FA376508AEDADF7CD924FB2B41 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		481260D8C763E420D855CAF2CCEE5761 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -103,33 +111,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B5E14E5EC0523E77F580479FFE764C6B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				59D70E945C655821A7A944452A8EF5AA /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1414B384CBA3BC71442EB8BC57A5A1A8 /* DynamicMapper */ = {
+		2A7DEFBA7DFD7283532C15FECCDDBA19 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				346BAB163F42A5637177464CD55941C5 /* DynamicArrayValues.swift */,
-				A4F7B857499C27A002FB46176D7F7EEC /* DynamicClass.swift */,
-				B32D8E10531C8F4E6866F987F4B3BF50 /* DynamicValue.swift */,
-				31F8F85C85B58B2E1448917E906C5C2C /* DynamicCodableProtocol.swift */,
-				FB13225F359486D2216A84184A39EEE9 /* DynamicDecodableProtocol.swift */,
-				76D718DC18D85493940F4792A0D9E948 /* DynamicEncodableProtocol.swift */,
-				19530CBA04960CAC6018160612A295B9 /* DynamicJSONDecoder.swift */,
-				328224EAEEBAEE763D6CA9E5614FD4BD /* DynamicJSONEncoder.swift */,
-				7836E0C97D893AAAA2EEF4553E558E68 /* Pod */,
-				73CA69AF0EA1AC7B45B57EBA9FD6D1FC /* Support Files */,
+				EA448CBA40936789686DEAB245755A61 /* DynamicMapper.modulemap */,
+				A0BA21CEF8423DFF2AAB26052B93A6D0 /* DynamicMapper-dummy.m */,
+				5BAF6792F1781A5765DF262A53317679 /* DynamicMapper-Info.plist */,
+				B224ADD3509D4EABE61B9BD94F055406 /* DynamicMapper-prefix.pch */,
+				734D50F0E91915ADA7D04C24E6EA2BE7 /* DynamicMapper-umbrella.h */,
+				F0C592F41DDE26DB38B6219934D5754E /* DynamicMapper.debug.xcconfig */,
+				FA6B88B3C9E62D9A957C6E657A3031B5 /* DynamicMapper.release.xcconfig */,
 			);
-			name = DynamicMapper;
-			path = ../..;
+			name = "Support Files";
+			path = "ExampleWithRealm /Pods/Target Support Files/DynamicMapper";
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -157,39 +154,6 @@
 			path = "Target Support Files/Pods-DynamicMapper_Example";
 			sourceTree = "<group>";
 		};
-		73CA69AF0EA1AC7B45B57EBA9FD6D1FC /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				91658C379E81F2378239DE0B80BF8EB6 /* DynamicMapper.modulemap */,
-				3BCAE5C0891B557FA2FE1C5F52278EA8 /* DynamicMapper-dummy.m */,
-				F594D9E7AEF843A87A1CE2EE56C14571 /* DynamicMapper-Info.plist */,
-				CBC792968F48CE2796EE299B4A7FDC31 /* DynamicMapper-prefix.pch */,
-				50462E29DC01A2AA4C2E4718C5525BEE /* DynamicMapper-umbrella.h */,
-				32C553077595B738A169582C102E04F1 /* DynamicMapper.debug.xcconfig */,
-				9BEEC48FEBD8BEBE2FFA9FB1821D19C3 /* DynamicMapper.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/DynamicMapper";
-			sourceTree = "<group>";
-		};
-		7836E0C97D893AAAA2EEF4553E558E68 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				F2ECE7B31D4D208677FE3F8C400D15ED /* DynamicMapper.podspec */,
-				C828E1F9B2DF0E40FACF7DD067016187 /* LICENSE */,
-				7FD4E7C07F4F173113ECD381F72716C3 /* README.md */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		7849552F845AC87C1D6E1D1EB905C988 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1414B384CBA3BC71442EB8BC57A5A1A8 /* DynamicMapper */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
 		959B9F8BC78456CF07EFC07F3FB5FF1E /* Pods-DynamicMapper_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +170,16 @@
 			path = "Target Support Files/Pods-DynamicMapper_Tests";
 			sourceTree = "<group>";
 		};
+		ABC6AFB5DFB9480ABEA22B09F9FB0719 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				2908B887B4172F6851EA9FC5E7A4DA32 /* DynamicMapper.podspec */,
+				396281586512B99096B943758142AF72 /* LICENSE */,
+				B6F219D6967D60A660B08FC18571CD70 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
 		BB3BF45E6D87107A2B071BDA541B498F /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,11 +189,29 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		BBAC62A91EA7E821CE493D531AE1FAD0 /* DynamicMapper */ = {
+			isa = PBXGroup;
+			children = (
+				258F7233DFFEDA2257BB975833A0BE49 /* DynamicArrayValues.swift */,
+				7C3D081355717F9F230E3B0FC47275A2 /* DynamicClass.swift */,
+				96B0FFD53119AC737062B51DDD721366 /* DynamicCodableProtocol.swift */,
+				8C87FF4EDF9E15486F4277C4ACD6EC8F /* DynamicDecodableProtocol.swift */,
+				E82F87FAB41EA98EF53D6AFA2C26F659 /* DynamicEncodableProtocol.swift */,
+				D227AF937E422CCEF9F066C073CECAD5 /* DynamicJSONDecoder.swift */,
+				27DA2C1D6D4C29C7F907C6E267B945EC /* DynamicJSONEncoder.swift */,
+				6081466CE1A8587E9C8AD786F0F96209 /* DynamicValue.swift */,
+				ABC6AFB5DFB9480ABEA22B09F9FB0719 /* Pod */,
+				2A7DEFBA7DFD7283532C15FECCDDBA19 /* Support Files */,
+			);
+			name = DynamicMapper;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				7849552F845AC87C1D6E1D1EB905C988 /* Development Pods */,
+				FC569CB45D6947C9991CF86E1B054EF2 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				FAC397B0694FCCD814E5C9217E4BFCC0 /* Products */,
 				BB3BF45E6D87107A2B071BDA541B498F /* Targets Support Files */,
@@ -244,6 +236,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		FC569CB45D6947C9991CF86E1B054EF2 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BBAC62A91EA7E821CE493D531AE1FAD0 /* DynamicMapper */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -255,11 +255,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C4AC5122A9C9FB6DEEBBC8FE33EA2D5 /* Headers */ = {
+		A2A538E49EC36AB718FE8D7A31636B1E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15B206D90FD79622B90E88FE0B5C6F30 /* DynamicMapper-umbrella.h in Headers */,
+				91D87168BECDC77C231339009FC263B5 /* DynamicMapper-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +286,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				7CCF05464626B29069298E8A243F678C /* PBXTargetDependency */,
+				2B51AC208BE7EB43D3013715DA5E1E54 /* PBXTargetDependency */,
 			);
 			name = "Pods-DynamicMapper_Example";
 			productName = Pods_DynamicMapper_Example;
@@ -305,7 +305,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				B47B8F9EE33C062DE3F6A267287440F4 /* PBXTargetDependency */,
+				04017D19CEBB4CA5E7EFC3F4EC5CD52F /* PBXTargetDependency */,
 			);
 			name = "Pods-DynamicMapper_Tests";
 			productName = Pods_DynamicMapper_Tests;
@@ -314,12 +314,12 @@
 		};
 		A4BEE3A041F5B9330EC376176068059D /* DynamicMapper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6CBABD02CFA3BB8C3F70463EF794FA64 /* Build configuration list for PBXNativeTarget "DynamicMapper" */;
+			buildConfigurationList = C5D42BD2B46FAADBD1EA3F1E80A4ED21 /* Build configuration list for PBXNativeTarget "DynamicMapper" */;
 			buildPhases = (
-				9C4AC5122A9C9FB6DEEBBC8FE33EA2D5 /* Headers */,
-				D16C7096FAAA04100EEB0BA6ABC90F82 /* Sources */,
-				B5E14E5EC0523E77F580479FFE764C6B /* Frameworks */,
-				A4A64BD7A302D2FE4CC5A5A95DBF1A21 /* Resources */,
+				A2A538E49EC36AB718FE8D7A31636B1E /* Headers */,
+				551EB0B6112A1273236DF5348076D2F8 /* Sources */,
+				47770E998EE3805E008D95F6ABAE64E5 /* Frameworks */,
+				24A641E70A7B8F96DD50543733384230 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -367,14 +367,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		662631ABD0D152F9B86F14857609F138 /* Resources */ = {
+		24A641E70A7B8F96DD50543733384230 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4A64BD7A302D2FE4CC5A5A95DBF1A21 /* Resources */ = {
+		662631ABD0D152F9B86F14857609F138 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -392,19 +392,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D16C7096FAAA04100EEB0BA6ABC90F82 /* Sources */ = {
+		551EB0B6112A1273236DF5348076D2F8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34883EF529E6A4002D6A3EAA7258FEDB /* DynamicArrayValues.swift in Sources */,
-				42D4624CDC4A0A7921332CF0A724B515 /* DynamicClass.swift in Sources */,
-				AE0C67E244D0E6B674034C2DC355E70B /* DynamicCodableProtocol.swift in Sources */,
-				AA760F034CC784E9496DBE90D662E985 /* DynamicDecodableProtocol.swift in Sources */,
-				0EC98A739C73E5E2351823CF62ED5F57 /* DynamicEncodableProtocol.swift in Sources */,
-				2ACDFFC47B1ECE5478D8AB168EEB8280 /* DynamicJSONDecoder.swift in Sources */,
-				1781D55C7BC99F8C12F2C4465B447E19 /* DynamicJSONEncoder.swift in Sources */,
-				5F67FBFDB15A0D598C3FE5EAABA09A27 /* DynamicMapper-dummy.m in Sources */,
-				4C4EE23943538275620A9C8A4B2439D6 /* DynamicValue.swift in Sources */,
+				75C641918C0ED462D341D211CF85CB89 /* DynamicArrayValues.swift in Sources */,
+				A3A54C7A82FE0E6B150B1ADB0B338C4E /* DynamicClass.swift in Sources */,
+				8A29CB2F25618AC48C39DE2D01501793 /* DynamicCodableProtocol.swift in Sources */,
+				62E416D3D8CA09F9D8F623A98D58806C /* DynamicDecodableProtocol.swift in Sources */,
+				86F96DA68F6BB78B8E64D62D604A714B /* DynamicEncodableProtocol.swift in Sources */,
+				A0380B995C75836C3DDB849E13D122A9 /* DynamicJSONDecoder.swift in Sources */,
+				5905DD248C38B8140FD724CE3EB9F486 /* DynamicJSONEncoder.swift in Sources */,
+				2D985DFF89D5617D3810A01C772D3DC7 /* DynamicMapper-dummy.m in Sources */,
+				8533ADC63BD490CF79B14D85AA7DD55A /* DynamicValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,21 +419,52 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7CCF05464626B29069298E8A243F678C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DynamicMapper;
-			target = A4BEE3A041F5B9330EC376176068059D /* DynamicMapper */;
-			targetProxy = 1227F0A5E8D5A136ECF62A747AAF6F2E /* PBXContainerItemProxy */;
-		};
-		B47B8F9EE33C062DE3F6A267287440F4 /* PBXTargetDependency */ = {
+		04017D19CEBB4CA5E7EFC3F4EC5CD52F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-DynamicMapper_Example";
 			target = 5F24D4C2EF88DCC7CD36EFDADCC52575 /* Pods-DynamicMapper_Example */;
-			targetProxy = CAD2131648C27615BEC511108D04AAD2 /* PBXContainerItemProxy */;
+			targetProxy = 20357D83BEC448AAFCB47DD5BE9DA4FF /* PBXContainerItemProxy */;
+		};
+		2B51AC208BE7EB43D3013715DA5E1E54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DynamicMapper;
+			target = A4BEE3A041F5B9330EC376176068059D /* DynamicMapper */;
+			targetProxy = BCB0A45989A7C8B19A9CD8A49EEA66A4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		16BA3AF16D4BC4F81965BA6E36E94746 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0C592F41DDE26DB38B6219934D5754E /* DynamicMapper.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DynamicMapper/DynamicMapper-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DynamicMapper/DynamicMapper-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DynamicMapper/DynamicMapper.modulemap";
+				PRODUCT_MODULE_NAME = DynamicMapper;
+				PRODUCT_NAME = DynamicMapper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		60C8FDA38B0CE23A1AC23F5BDDE90F4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C38368A4D8CE7D1623511E869981184B /* Pods-DynamicMapper_Example.debug.xcconfig */;
@@ -467,9 +498,9 @@
 			};
 			name = Debug;
 		};
-		7A7E89F690C324DB0FE1134A37DDE72B /* Release */ = {
+		7657F24159F0452BC4D6AE13010448C5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9BEEC48FEBD8BEBE2FFA9FB1821D19C3 /* DynamicMapper.release.xcconfig */;
+			baseConfigurationReference = FA6B88B3C9E62D9A957C6E657A3031B5 /* DynamicMapper.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -554,7 +585,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -587,37 +619,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B4BA8B6CD7ACA39872CE33B765B100C2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32C553077595B738A169582C102E04F1 /* DynamicMapper.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/DynamicMapper/DynamicMapper-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DynamicMapper/DynamicMapper-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DynamicMapper/DynamicMapper.modulemap";
-				PRODUCT_MODULE_NAME = DynamicMapper;
-				PRODUCT_NAME = DynamicMapper;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -779,11 +780,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6CBABD02CFA3BB8C3F70463EF794FA64 /* Build configuration list for PBXNativeTarget "DynamicMapper" */ = {
+		C5D42BD2B46FAADBD1EA3F1E80A4ED21 /* Build configuration list for PBXNativeTarget "DynamicMapper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B4BA8B6CD7ACA39872CE33B765B100C2 /* Debug */,
-				7A7E89F690C324DB0FE1134A37DDE72B /* Release */,
+				16BA3AF16D4BC4F81965BA6E36E94746 /* Debug */,
+				7657F24159F0452BC4D6AE13010448C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
