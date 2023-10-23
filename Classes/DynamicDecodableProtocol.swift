@@ -11,8 +11,9 @@ let dynamicSelf = "dynamicSelf"
 
 //TODO: DynamicDecodable for structs
 public protocol DynamicDecodable:Decodable,AnyObject{
-    var dynamicSelf:DynamicClass? { get set }
-    var dm:DynamicClass {  get } // stands for DynamicMapper
+    var  dynamicSelf:DynamicClass? { get set }
+    var  dm:DynamicClass {  get } // stands for DynamicMapper
+    func dynamicMapping(mappingType:DynamicMappingType)
 }
 
 extension DynamicDecodable {

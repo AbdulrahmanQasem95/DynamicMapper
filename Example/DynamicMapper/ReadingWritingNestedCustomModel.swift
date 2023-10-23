@@ -13,15 +13,16 @@ class ReadingWritingNestedCustomModel :DynamicCodable{
     
     var property0:String
     var level_4:Level4Model?
-    {
-        get{dm.level1?.level2?.level3?.level4?.objectValue(customType: Level4Model.self)}
-        set{dm.level1?.level2?.level3?.level4?.setDynamicProperty(customObject: newValue)}
-    }
+    var level_6_Array:[ArrayItemModel]?
     
-    var level_6_Array:[ArrayItemModel] {
-        get{dm.level1?.level2?.level3?.level4?.level5?.level6Array?.arrayValue(type: .customObject(ofType: ArrayItemModel.self)) ?? []}
-        set{
-            dm.level1?.level2?.level3?.level4?.level5?.level6Array?.setDynamicProperty(customArray: newValue)
+    func dynamicMapping(mappingType: DynamicMappingType) {
+        switch mappingType {
+        case .decoding:
+            level_4 = dm.level1?.level2?.level3?.level4?.objectValue(customType: Level4Model.self)
+            level_6_Array = dm.level1?.level2?.level3?.level4?.level5?.level6Array?.arrayValue(type: .customObject(ofType: ArrayItemModel.self))
+        case .encoding:
+            dm.level1?.level2?.level3?.level4?.setDynamicProperty(customObject: level_4)
+            dm.level1?.level2?.level3?.level4?.level5?.level6Array?.setDynamicProperty(customArray: level_6_Array ?? [])
         }
     }
     
@@ -29,7 +30,10 @@ class ReadingWritingNestedCustomModel :DynamicCodable{
 
 class Level4Model:DynamicCodable{
     var dynamicSelf:DynamicClass?
+    
     var property4:String
+    
+    func dynamicMapping(mappingType: DynamicMappingType) {}
 }
 
 class ArrayItemModel:DynamicCodable{
@@ -37,4 +41,6 @@ class ArrayItemModel:DynamicCodable{
     
     var item1:String
     var item2:Int
+    
+    func dynamicMapping(mappingType: DynamicMappingType) {}
 }

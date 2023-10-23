@@ -9,6 +9,7 @@ import Foundation
 public class DynamicJSONEncoder {
     public init(){}
     public func encode<T>(_ value: T) throws -> Data where T : DynamicEncodable{
+        value.dynamicMapping(mappingType: .encoding)
         let endoedData = try JSONEncoder().encode(value)
       //TODO: more testing on the cleaned model
         //TODO: test when decode none dynamic decoded model
@@ -26,7 +27,7 @@ public class DynamicJSONEncoder {
    private func dataCleaning(dic:inout [String:Any]) {
         if var innerDynamicSelf = dic[dynamicSelf] as? [String:Any] {
             for key in dic.keys {
-                // give the proriority to the defined in model item over dynamic self item
+                // give the priority to the defined in model item over dynamic self item
                 if var internalDic = dic[key] as?  [String:Any], key != dynamicSelf {
                     //handel internalModels
                     dataCleaning(dic: &internalDic)

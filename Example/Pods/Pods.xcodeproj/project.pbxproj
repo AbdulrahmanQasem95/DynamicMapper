@@ -24,6 +24,7 @@
 		AE0C67E244D0E6B674034C2DC355E70B /* DynamicCodableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F8F85C85B58B2E1448917E906C5C2C /* DynamicCodableProtocol.swift */; };
 		DF51BD2CA4CE8F598CA723A1184D8D91 /* Pods-DynamicMapper_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA2DD23FB5066838F49E000F291B998 /* Pods-DynamicMapper_Tests-dummy.m */; };
 		ED0041008E2C6F0229E609FADAF55D31 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		F931F15C2AE6910C00AF829E /* DynamicMappingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931F15B2AE6910C00AF829E /* DynamicMappingType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		E39C87DAF1E4C1296DB50AEF0C7F5155 /* Pods-DynamicMapper_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DynamicMapper_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F2ECE7B31D4D208677FE3F8C400D15ED /* DynamicMapper.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DynamicMapper.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F594D9E7AEF843A87A1CE2EE56C14571 /* DynamicMapper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DynamicMapper-Info.plist"; sourceTree = "<group>"; };
+		F931F15B2AE6910C00AF829E /* DynamicMappingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicMappingType.swift; sourceTree = "<group>"; };
 		FB13225F359486D2216A84184A39EEE9 /* DynamicDecodableProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicDecodableProtocol.swift; path = Classes/DynamicDecodableProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +122,7 @@
 				346BAB163F42A5637177464CD55941C5 /* DynamicArrayValues.swift */,
 				A4F7B857499C27A002FB46176D7F7EEC /* DynamicClass.swift */,
 				B32D8E10531C8F4E6866F987F4B3BF50 /* DynamicValue.swift */,
+				F931F15B2AE6910C00AF829E /* DynamicMappingType.swift */,
 				31F8F85C85B58B2E1448917E906C5C2C /* DynamicCodableProtocol.swift */,
 				FB13225F359486D2216A84184A39EEE9 /* DynamicDecodableProtocol.swift */,
 				76D718DC18D85493940F4792A0D9E948 /* DynamicEncodableProtocol.swift */,
@@ -396,6 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F931F15C2AE6910C00AF829E /* DynamicMappingType.swift in Sources */,
 				34883EF529E6A4002D6A3EAA7258FEDB /* DynamicArrayValues.swift in Sources */,
 				42D4624CDC4A0A7921332CF0A724B515 /* DynamicClass.swift in Sources */,
 				AE0C67E244D0E6B674034C2DC355E70B /* DynamicCodableProtocol.swift in Sources */,

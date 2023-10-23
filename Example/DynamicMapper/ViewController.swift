@@ -28,14 +28,14 @@ class ViewController: UIViewController {
             print("property 2: \(model.property_2)")
             
             print("property 4: \(model.property_4)")
-            model.property_4 += " modefied"
+            model.property_4? += " modefied"
             print("property 4: \(model.property_4)")
             
             
             print("level 6 second array item1: \(model.secondArrayItem_1_OfLevel_6)")
             
             print("level 6 third array item2: \(model.thirdArrayItem_2_OfLevel_6)")
-            model.thirdArrayItem_2_OfLevel_6 += 10
+            model.thirdArrayItem_2_OfLevel_6? += 10
             print("level 6 third array item2: \(model.thirdArrayItem_2_OfLevel_6)")
             
             print("non exit array item: \(model.nonExitArrayItem)")
@@ -50,9 +50,13 @@ class ViewController: UIViewController {
             print("property 1: \(model.level1.property1)")
             
             print("property 2: \(model.level1.level2.property2)")
-           
+            
+            print("property 4: \(model.property_4)")
+            model.property_4? += " modefied"
+            print("property 4: \(model.property_4)")
+            
             print("property 5: \(model.level1.level2.property_5)")
-            model.level1.level2.property_5 += " modified"
+            model.level1.level2.property_5? += " modified"
             print("property 5: \(model.level1.level2.property_5)")
             
             print("level 6 second array item1: \(model.level1.level2.secondArrayItem_1_OfLevel_6)")
@@ -65,9 +69,9 @@ class ViewController: UIViewController {
             print("property 0: \(model.property0)")
             print("property 4: \(model.level_4?.property4 ?? "not found")")
             
-            print("Array second item item1: \(model.level_6_Array[1].item1)")
-            model.level_6_Array[1].item1 += " modified"
-            print("Array second item item1: \(model.level_6_Array[1].item1)")
+            print("Array second item item1: \(model.level_6_Array?[1].item1)")
+            model.level_6_Array?[1].item1 += " modified"
+            print("Array second item item1: \(model.level_6_Array?[1].item1)")
         }
     }
     
@@ -81,11 +85,11 @@ class ViewController: UIViewController {
         print("property 0: \(model.property0)")
         
         print("property 5: \(model.level1.level2.property_5)")
-        model.level1.level2.property_5 += " modified"
+        model.level1.level2.property_5? += " modified"
         print("property 5: \(model.level1.level2.property_5)")
         
         print("Array second item item1: \(model.level1.level2.secondArrayItem_1_OfLevel_6)")
-        model.level1.level2.secondArrayItem_1_OfLevel_6 += " modified"
+        model.level1.level2.secondArrayItem_1_OfLevel_6? += " modified"
         print("Array second item item1: \(model.level1.level2.secondArrayItem_1_OfLevel_6)")
         
         guard let encodedData = try?  encoder.encode(model) else {return}
@@ -103,21 +107,51 @@ class ViewController: UIViewController {
 
 
 
-class arrayItem:DynamicCodable {
-    var dynamicSelf: DynamicMapper.DynamicClass?
-    
-    var title:String
-    
-//    var bodyme:String? {
-//        get {
-//            dynamicSelf?.body?.stringValue
-//        }
-//        set {
-//            dynamicSelf?.body?.setDynamicProperty(value: newValue )
-//        }
-//    }
-    //MARK: Realm format
-//    @objc dynamic var bodyme:String {
+//class arrayItem:DynamicCodable {
+//    var dynamicSelf: DynamicMapper.DynamicClass?
+//    
+//    var title:String
+//    
+////    var bodyme:String? {
+////        get {
+////            dynamicSelf?.body?.stringValue
+////        }
+////        set {
+////            dynamicSelf?.body?.setDynamicProperty(value: newValue )
+////        }
+////    }
+//    //MARK: Realm format
+////    @objc dynamic var bodyme:String {
+////        get{
+////            dm.intenralArray?[0]?.bodyinternal?.stringValue ?? ""
+////        }
+////        set{
+////            dm.intenralArray?[0]?.bodyinternal?.setDynamicProperty(value: newValue )
+////        }
+////    }
+////    @objc dynamic private var bodyme_holder:String?
+////    var bodyme:String? {
+////        get {
+////            bodyme_holder ?? dynamicSelf?.body?.stringValue
+////        }
+////        set {
+////            bodyme_holder = newValue
+////            dynamicSelf?.body?.setDynamicProperty(value: bodyme_holder )
+////        }
+////    }
+//    
+////    @objc dynamic private var bodyme:String? = {dynamicSelf?.body?.stringValue}()
+//
+//    //MARK: Normal get set format
+////    lazy var bodyme:String? = dynamicSelf?.intenralArray?[0]?.bodyinternal?.stringValue
+////    {
+////        didSet {
+////            //TODO: need to test with dynamic items
+////            dynamicSelf?.intenralArray?[0]?.bodyinternal?.setDynamicProperty(value: bodyme ?? "" )
+////        }
+////    }
+////
+//    var bodyme:String {
 //        get{
 //            dm.intenralArray?[0]?.bodyinternal?.stringValue ?? ""
 //        }
@@ -125,101 +159,71 @@ class arrayItem:DynamicCodable {
 //            dm.intenralArray?[0]?.bodyinternal?.setDynamicProperty(value: newValue )
 //        }
 //    }
-//    @objc dynamic private var bodyme_holder:String?
-//    var bodyme:String? {
-//        get {
-//            bodyme_holder ?? dynamicSelf?.body?.stringValue
-//        }
-//        set {
-//            bodyme_holder = newValue
-//            dynamicSelf?.body?.setDynamicProperty(value: bodyme_holder )
-//        }
-//    }
-    
-//    @objc dynamic private var bodyme:String? = {dynamicSelf?.body?.stringValue}()
-
-    //MARK: Normal get set format
-//    lazy var bodyme:String? = dynamicSelf?.intenralArray?[0]?.bodyinternal?.stringValue
-//    {
-//        didSet {
-//            //TODO: need to test with dynamic items
-//            dynamicSelf?.intenralArray?[0]?.bodyinternal?.setDynamicProperty(value: bodyme ?? "" )
-//        }
-//    }
-//
-    var bodyme:String {
-        get{
-            dm.intenralArray?[0]?.bodyinternal?.stringValue ?? ""
-        }
-        set{
-            dm.intenralArray?[0]?.bodyinternal?.setDynamicProperty(value: newValue )
-        }
-    }
+////
+////
+//    
+//    
+//    //MARK: Normal get only
+//    //var bodyme:String? {dynamicSelf?.body?.stringValue}
+//  
+////    lazy var bodyme:String? = {
+////        dynamicSelf?.body?.stringValue ?? ""
+////    }() {
+////        didSet {
+////            dynamicSelf?.body?.setDynamicProperty(value: bodyme ?? "")
+////        }
+////    }
+//    var flag:Bool
+//   // var intenralArray:[IntenralArray]
+// 
+//}
 //
 //
-    
-    
-    //MARK: Normal get only
-    //var bodyme:String? {dynamicSelf?.body?.stringValue}
-  
-//    lazy var bodyme:String? = {
-//        dynamicSelf?.body?.stringValue ?? ""
-//    }() {
-//        didSet {
-//            dynamicSelf?.body?.setDynamicProperty(value: bodyme ?? "")
+//
+//struct DM<T:Codable>:Codable{
+//
+//    var path:DynamicValue?
+//    var value:T?
+//    func set(_ value: T){
+//
+//    }
+//
+//    init(path:DynamicValue?) {
+//        self.path = path
+//    }
+//    func get() -> T?{
+//       return value
+//    }
+////    subscript() -> T{
+////        set{
+////            path?.setDynamicProperty(value: "name")
+////        }
+////        get{
+////            return "" as! T
+////        }
+////    }
+//    init(from decoder: Decoder) throws {
+//        let value = try? T(from: decoder)
+//        self.value = value
+//    }
+//
+//    func encode(to encoder: Encoder) throws {
+//        if let value = value {
+//            try "\(value)".encode(to: encoder)
 //        }
 //    }
-    var flag:Bool
-   // var intenralArray:[IntenralArray]
- 
-}
-
-
-
-struct DM<T:Codable>:Codable{
-
-    var path:DynamicValue?
-    var value:T?
-    func set(_ value: T){
-
-    }
-
-    init(path:DynamicValue?) {
-        self.path = path
-    }
-    func get() -> T?{
-       return value
-    }
-//    subscript() -> T{
-//        set{
-//            path?.setDynamicProperty(value: "name")
-//        }
-//        get{
-//            return "" as! T
-//        }
+//    
+//}
+//
+//class test:DynamicCodable {
+//    var dynamicSelf: DynamicMapper.DynamicClass?
+//
+//   // var myValue: DM<Int> = DM(path: dm.what?.ksdhjsf)
+//    var myValue:Int
+//    func dsdf() {
+////        myValue.set(30)
+////        let i = myValue.get()
 //    }
-    init(from decoder: Decoder) throws {
-        let value = try? T(from: decoder)
-        self.value = value
-    }
-
-    func encode(to encoder: Encoder) throws {
-        if let value = value {
-            try "\(value)".encode(to: encoder)
-        }
-    }
-    
-}
-
-class test:DynamicCodable {
-    var dynamicSelf: DynamicMapper.DynamicClass?
-
-   // var myValue: DM<Int> = DM(path: dm.what?.ksdhjsf)
-    var myValue:Int
-    func dsdf() {
-//        myValue.set(30)
-//        let i = myValue.get()
-    }
-}
-
-
+//}
+//
+//

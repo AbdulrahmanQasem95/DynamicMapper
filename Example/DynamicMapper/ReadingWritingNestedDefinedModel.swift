@@ -12,7 +12,18 @@ class ReadingWritingNestedDefinedModel :DynamicCodable{
     var dynamicSelf:DynamicClass?
     
     var property0:String
+    var property_4:String?
     var level1:Level1Model
+    
+    func dynamicMapping(mappingType: DynamicMapper.DynamicMappingType) {
+        level1.dynamicMapping(mappingType: mappingType)
+        switch mappingType {
+        case .decoding:
+            property_4 = dm.level1?.level2?.level3?.level4?.property4?.stringValue
+        case .encoding:
+            dm.level1?.level2?.level3?.level4?.property4?.setDynamicProperty(value: property_4)
+        }
+    }
 }
 
 class Level1Model:DynamicCodable{
@@ -20,21 +31,26 @@ class Level1Model:DynamicCodable{
     
     var property1:String
     var level2:Level2Model
+    func dynamicMapping(mappingType: DynamicMapper.DynamicMappingType) {
+        level2.dynamicMapping(mappingType: mappingType)
+    }
 }
 
 class Level2Model:DynamicCodable{
     var dynamicSelf:DynamicClass?
     
     var property2:Int
+    var property_5:String?
+    var secondArrayItem_1_OfLevel_6:String?
     
-    var property_5:String
-    {
-        get{dm.level3?.level4?.level5?.property5?.stringValue ?? ""}
-        set{dm.level3?.level4?.level5?.property5?.setDynamicProperty(value: newValue)}
-    }
-    
-    var secondArrayItem_1_OfLevel_6:String {
-        get{dm.level3?.level4?.level5?.level6Array?[1]?.item1?.stringValue ?? "item not found" }
-        set{dm.level3?.level4?.level5?.level6Array?[1]?.item1?.setDynamicProperty(value: newValue)}
+    func dynamicMapping(mappingType: DynamicMapper.DynamicMappingType) {
+        switch mappingType {
+        case .decoding:
+            property_5 = dm.level3?.level4?.level5?.property5?.stringValue
+            secondArrayItem_1_OfLevel_6 = dm.level3?.level4?.level5?.level6Array?[1]?.item1?.stringValue
+        case .encoding:
+            dm.level3?.level4?.level5?.property5?.setDynamicProperty(value: property_5)
+            dm.level3?.level4?.level5?.level6Array?[1]?.item1?.setDynamicProperty(value: secondArrayItem_1_OfLevel_6)
+        }
     }
 }
