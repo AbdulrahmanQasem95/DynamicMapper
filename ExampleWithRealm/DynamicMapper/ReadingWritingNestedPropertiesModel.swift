@@ -10,11 +10,12 @@ import Foundation
 import DynamicMapper
 import RealmSwift
 class ReadingWritingNestedPropertiesModel:Object, DynamicCodable{
+    
     var dynamicSelf:DynamicClass?
-    @objc dynamic var realmData: Data?
+   // @objc dynamic var realmData: Data?
     
     
-    @objc dynamic var data:Data?
+   // @objc dynamic var data:Data?
     @objc dynamic var property0:String
     @objc dynamic var property2:Int{
         get{
