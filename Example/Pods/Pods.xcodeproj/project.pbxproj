@@ -25,6 +25,7 @@
 		DF51BD2CA4CE8F598CA723A1184D8D91 /* Pods-DynamicMapper_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA2DD23FB5066838F49E000F291B998 /* Pods-DynamicMapper_Tests-dummy.m */; };
 		ED0041008E2C6F0229E609FADAF55D31 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		F931F15C2AE6910C00AF829E /* DynamicMappingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931F15B2AE6910C00AF829E /* DynamicMappingType.swift */; };
+		F931F15E2AE695CE00AF829E /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931F15D2AE695CE00AF829E /* Operators.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		F2ECE7B31D4D208677FE3F8C400D15ED /* DynamicMapper.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DynamicMapper.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F594D9E7AEF843A87A1CE2EE56C14571 /* DynamicMapper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DynamicMapper-Info.plist"; sourceTree = "<group>"; };
 		F931F15B2AE6910C00AF829E /* DynamicMappingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicMappingType.swift; sourceTree = "<group>"; };
+		F931F15D2AE695CE00AF829E /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		FB13225F359486D2216A84184A39EEE9 /* DynamicDecodableProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicDecodableProtocol.swift; path = Classes/DynamicDecodableProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +130,7 @@
 				76D718DC18D85493940F4792A0D9E948 /* DynamicEncodableProtocol.swift */,
 				19530CBA04960CAC6018160612A295B9 /* DynamicJSONDecoder.swift */,
 				328224EAEEBAEE763D6CA9E5614FD4BD /* DynamicJSONEncoder.swift */,
+				F931F15D2AE695CE00AF829E /* Operators.swift */,
 				7836E0C97D893AAAA2EEF4553E558E68 /* Pod */,
 				73CA69AF0EA1AC7B45B57EBA9FD6D1FC /* Support Files */,
 			);
@@ -405,6 +408,7 @@
 				AE0C67E244D0E6B674034C2DC355E70B /* DynamicCodableProtocol.swift in Sources */,
 				AA760F034CC784E9496DBE90D662E985 /* DynamicDecodableProtocol.swift in Sources */,
 				0EC98A739C73E5E2351823CF62ED5F57 /* DynamicEncodableProtocol.swift in Sources */,
+				F931F15E2AE695CE00AF829E /* Operators.swift in Sources */,
 				2ACDFFC47B1ECE5478D8AB168EEB8280 /* DynamicJSONDecoder.swift in Sources */,
 				1781D55C7BC99F8C12F2C4465B447E19 /* DynamicJSONEncoder.swift in Sources */,
 				5F67FBFDB15A0D598C3FE5EAABA09A27 /* DynamicMapper-dummy.m in Sources */,

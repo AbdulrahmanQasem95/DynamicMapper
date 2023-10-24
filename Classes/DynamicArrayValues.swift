@@ -6,10 +6,10 @@
 //
 
 import Foundation
-public enum DynamicArrayValues<T:DynamicDecodable> {
+public enum DynamicArrayValues {
     case int
     case string
     case double
     case bool
-    case customObject(ofType:T.Type)
+   // case customObject(ofType:T.Type)
 }
