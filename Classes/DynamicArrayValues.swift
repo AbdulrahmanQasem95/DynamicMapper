@@ -11,5 +11,4 @@ public enum DynamicArrayValues {
     case string
     case double
     case bool
-   // case customObject(ofType:T.Type)
 }
