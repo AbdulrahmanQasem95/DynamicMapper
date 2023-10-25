@@ -11,7 +11,7 @@ import DynamicMapper
 class ViewController: UIViewController {
     
     //MARK: forth example about reading and writing and compatility with Realm
-    
+    //MARK:  example use different names than json keys
     let data = JsonReader.getJsonSampleData()
     let decoder = DynamicJSONDecoder()
     let encoder = DynamicJSONEncoder()
