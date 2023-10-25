@@ -8,6 +8,7 @@
 import Foundation
 public class DynamicJSONEncoder {
     public init(){}
+    //TODO: check if i need to add "" public func encode<T>(_ value: [T]) throws -> Data where T : DynamicEncodable{"" like what i did for decoding in case user use json array
     public func encode<T>(_ value: T) throws -> Data where T : DynamicEncodable{
         value.dynamicMapping(mappingType: .encoding)
         let endoedData = try JSONEncoder().encode(value)
