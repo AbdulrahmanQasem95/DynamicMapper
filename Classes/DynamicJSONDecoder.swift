@@ -24,8 +24,12 @@ public class DynamicJSONDecoder {
     }
     
     public func decode<T>(_ type: [T].Type, from data: Data) throws -> [T] where T : DynamicDecodable {
-        if var serializedDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]{
-            performDynamicInjection(dic: &serializedDictionary)
+        if var serializedDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [[String:Any]]{
+            for (index,item) in serializedDictionary.enumerated() {
+                var serializedItem =  item
+                performDynamicInjection(dic: &serializedItem)
+                serializedDictionary[index] = serializedItem
+            }
             let endoedData = try JSONSerialization.data(withJSONObject: serializedDictionary)
             let decoder = JSONDecoder()
             let model = try decoder.decode([T].self, from: endoedData)
