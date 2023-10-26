@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     //MARK:  example use different names than json keys
     //MARK:  test for value and refernce types
     //MARK:  code documentation above each method and var
+    //TODO:  clean project 
     let data = JsonReader.getJsonSampleData()
     let decoder = DynamicJSONDecoder()
     let encoder = DynamicJSONEncoder()

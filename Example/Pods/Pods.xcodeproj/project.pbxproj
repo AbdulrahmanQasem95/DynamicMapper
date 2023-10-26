@@ -26,6 +26,7 @@
 		ED0041008E2C6F0229E609FADAF55D31 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		F931F15C2AE6910C00AF829E /* DynamicMappingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931F15B2AE6910C00AF829E /* DynamicMappingType.swift */; };
 		F931F15E2AE695CE00AF829E /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931F15D2AE695CE00AF829E /* Operators.swift */; };
+		F9BA18022AEAA4B30099F212 /* BaseDynamicCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BA18012AEAA4B30099F212 /* BaseDynamicCodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		F594D9E7AEF843A87A1CE2EE56C14571 /* DynamicMapper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DynamicMapper-Info.plist"; sourceTree = "<group>"; };
 		F931F15B2AE6910C00AF829E /* DynamicMappingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicMappingType.swift; sourceTree = "<group>"; };
 		F931F15D2AE695CE00AF829E /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		F9BA18012AEAA4B30099F212 /* BaseDynamicCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDynamicCodable.swift; sourceTree = "<group>"; };
 		FB13225F359486D2216A84184A39EEE9 /* DynamicDecodableProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicDecodableProtocol.swift; path = Classes/DynamicDecodableProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,9 +127,10 @@
 				A4F7B857499C27A002FB46176D7F7EEC /* DynamicClass.swift */,
 				B32D8E10531C8F4E6866F987F4B3BF50 /* DynamicValue.swift */,
 				F931F15B2AE6910C00AF829E /* DynamicMappingType.swift */,
-				31F8F85C85B58B2E1448917E906C5C2C /* DynamicCodableProtocol.swift */,
+				F9BA18012AEAA4B30099F212 /* BaseDynamicCodable.swift */,
 				FB13225F359486D2216A84184A39EEE9 /* DynamicDecodableProtocol.swift */,
 				76D718DC18D85493940F4792A0D9E948 /* DynamicEncodableProtocol.swift */,
+				31F8F85C85B58B2E1448917E906C5C2C /* DynamicCodableProtocol.swift */,
 				19530CBA04960CAC6018160612A295B9 /* DynamicJSONDecoder.swift */,
 				328224EAEEBAEE763D6CA9E5614FD4BD /* DynamicJSONEncoder.swift */,
 				F931F15D2AE695CE00AF829E /* Operators.swift */,
@@ -410,6 +413,7 @@
 				0EC98A739C73E5E2351823CF62ED5F57 /* DynamicEncodableProtocol.swift in Sources */,
 				F931F15E2AE695CE00AF829E /* Operators.swift in Sources */,
 				2ACDFFC47B1ECE5478D8AB168EEB8280 /* DynamicJSONDecoder.swift in Sources */,
+				F9BA18022AEAA4B30099F212 /* BaseDynamicCodable.swift in Sources */,
 				1781D55C7BC99F8C12F2C4465B447E19 /* DynamicJSONEncoder.swift in Sources */,
 				5F67FBFDB15A0D598C3FE5EAABA09A27 /* DynamicMapper-dummy.m in Sources */,
 				4C4EE23943538275620A9C8A4B2439D6 /* DynamicValue.swift in Sources */,

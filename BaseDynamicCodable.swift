@@ -7,5 +7,6 @@
 
 import Foundation
 
-public protocol DynamicCodable:DynamicDecodable,DynamicEncodable{
+public protocol BaseDynamicCodable{
+    mutating func dynamicMapping(mappingType:DynamicMappingType)
 }
