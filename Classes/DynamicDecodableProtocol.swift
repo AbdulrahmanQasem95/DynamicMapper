@@ -9,23 +9,22 @@ import Foundation
 //should match dynamicSelf parameter in DynamicDecodable protocol
 let dynamicSelf = "dynamicSelf"
 
-//TODO: DynamicDecodable for structs
-public protocol DynamicDecodable:Decodable,AnyObject{
+public protocol DynamicDecodable:BaseDynamicCodable,Decodable{
     var  dynamicSelf:DynamicClass? { get set }
-    var  dm:DynamicClass {  get } // stands for DynamicMapper
-    func dynamicMapping(mappingType:DynamicMappingType)
+    var  dm:DynamicClass? {  get } // stands for DynamicMapper
 }
 
 extension DynamicDecodable {
-    public var dm: DynamicClass {
+    public var dm: DynamicClass? {
         get {
-            if let dynamicSelf = dynamicSelf{
-                return dynamicSelf
-            }else {
-                let newDynamicSelf = DynamicClass([:])
-                self.dynamicSelf = newDynamicSelf
-                return newDynamicSelf
-            }
+            return dynamicSelf
+//            if let dynamicSelf = dynamicSelf{
+//                return dynamicSelf
+//            }else {
+//                let newDynamicSelf = DynamicClass([:])
+//               // self.dynamicSelf = newDynamicSelf
+//                return newDynamicSelf
+//            }
         }
     }
 }

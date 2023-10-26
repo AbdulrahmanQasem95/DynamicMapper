@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     
     //MARK: forth example about reading and writing and compatility with Realm
     //MARK:  example use different names than json keys
+    //MARK:  test for value and refernce types
+    //MARK:  code documentation above each method and var
     let data = JsonReader.getJsonSampleData()
     let decoder = DynamicJSONDecoder()
     let encoder = DynamicJSONEncoder()
@@ -23,23 +25,31 @@ class ViewController: UIViewController {
     
     //MARK: reading and wirting nested properties
     @IBAction func example1Action(_ sender: UIButton) {
-        if let model = try?  decoder.decode(ReadingWritingNestedPropertiesModel.self, from: data) {
-            print("property 0: \(model.property0)")
+        
+        
+        if var model = try?  decoder.decode(ReadingWritingNestedPropertiesModelValueType.self, from: data) {
+            print("property 2: \(model.property_2)")
+            model.property_2? += 3
             print("property 2: \(model.property_2)")
             
-            print("property 4: \(model.property_4)")
-            model.property_4? += " modefied"
-            print("property 4: \(model.property_4)")
-            
-            
-            print("level 6 second array item1: \(model.secondArrayItem_1_OfLevel_6)")
-            
-            print("level 6 third array item2: \(model.thirdArrayItem_2_OfLevel_6)")
-            model.thirdArrayItem_2_OfLevel_6? += 10
-            print("level 6 third array item2: \(model.thirdArrayItem_2_OfLevel_6)")
-            
-            print("non exit array item: \(model.nonExitArrayItem)")
         }
+//        if let model = try?  decoder.decode(ReadingWritingNestedPropertiesModel.self, from: data) {
+//            print("property 0: \(model.property0)")
+//            print("property 2: \(model.property_2)")
+//            
+//            print("property 4: \(model.property_4)")
+//            model.property_4? += " modefied"
+//            print("property 4: \(model.property_4)")
+//            
+//            
+//            print("level 6 second array item1: \(model.secondArrayItem_1_OfLevel_6)")
+//            
+//            print("level 6 third array item2: \(model.thirdArrayItem_2_OfLevel_6)")
+//            model.thirdArrayItem_2_OfLevel_6? += 10
+//            print("level 6 third array item2: \(model.thirdArrayItem_2_OfLevel_6)")
+//            
+//            print("non exit array item: \(model.nonExitArrayItem)")
+//        }
     }
     
     

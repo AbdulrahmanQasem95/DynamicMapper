@@ -6,5 +6,10 @@
 //
 
 import Foundation
+
+public protocol BaseDynamicCodable{
+    mutating func dynamicMapping(mappingType:DynamicMappingType)
+}
+
 public protocol DynamicCodable:DynamicDecodable,DynamicEncodable{
 }

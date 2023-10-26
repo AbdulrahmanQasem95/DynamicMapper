@@ -10,8 +10,11 @@ public class DynamicJSONEncoder {
     public init(){}
     //T should conform to DynamicCodable not only DynamicEncodable to make sure it was decoded by DynamicDecodable
     public func encode<T>(_ value: T) throws -> Data where T : DynamicCodable{
-        value.dynamicMapping(mappingType: .encoding)
-        let encodedData = try JSONEncoder().encode(value)
+        //TODO: solve this for value type -done but need test-
+        //value.dynamicMapping(mappingType: .encoding)
+        var mutatingValues = value
+        mutatingValues.dynamicMapping(mappingType: .encoding)
+        let encodedData = try JSONEncoder().encode(mutatingValues)
       //TODO: more testing on the cleaned model
         //TODO: test when decode none dynamic decoded model
         // procedure: convert model to a dictionary using json serialization
@@ -28,8 +31,15 @@ public class DynamicJSONEncoder {
     
     //T should conform to DynamicCodable not only DynamicEncodable to make sure it was decoded by DynamicDecodable
     public func encode<T>(_ value: [T]) throws -> Data where T : DynamicCodable{
-        value.forEach({$0.dynamicMapping(mappingType: .encoding)})
-        let encodedData = try JSONEncoder().encode(value)
+        //TODO: solve this for value type -done but need test-
+       // value.forEach({$0.dynamicMapping(mappingType: .encoding)})
+        var mutatingValues = value
+        for (index,item) in mutatingValues.enumerated() {
+            var mutatingItem = item
+            mutatingItem.dynamicMapping(mappingType: .decoding)
+            mutatingValues[index] = mutatingItem
+        }
+        let encodedData = try JSONEncoder().encode(mutatingValues)
         if var serializedDictionary = try JSONSerialization.jsonObject(with: encodedData, options: []) as? [[String:Any]]{
             for (index,item) in serializedDictionary.enumerated() {
                 var serializedItem =  item

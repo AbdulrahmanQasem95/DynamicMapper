@@ -18,11 +18,11 @@ class ReadingWritingNestedCustomModel :DynamicCodable{
     func dynamicMapping(mappingType: DynamicMappingType) {
         switch mappingType {
         case .decoding:
-            level_4        <--  dm.level1?.level2?.level3?.level4
-            level_6_Array  <--  dm.level1?.level2?.level3?.level4?.level5?.level6Array
+            level_4        <--  dm?.level1?.level2?.level3?.level4
+            level_6_Array  <--  dm?.level1?.level2?.level3?.level4?.level5?.level6Array
         case .encoding:
-            level_4        --> {dm.level1?.level2?.level3?.level4?.set($0)}
-            level_6_Array  --> {dm.level1?.level2?.level3?.level4?.level5?.level6Array?.set($0)}
+            level_4        --> {dm?.level1?.level2?.level3?.level4?.set($0)}
+            level_6_Array  --> {dm?.level1?.level2?.level3?.level4?.level5?.level6Array?.set($0)}
         }
     }
     
