@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol DynamicEncodable:Encodable{
+public protocol DynamicEncodable:Encodable,AnyObject{
     var  dynamicSelf:DynamicClass? { get set  }
     func dynamicMapping(mappingType:DynamicMappingType)
 }
