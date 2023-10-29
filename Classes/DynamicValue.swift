@@ -102,7 +102,7 @@ public enum DynamicValue: Codable {
         if case .arrayValue(let value) = self {
             let data = try? JSONEncoder().encode(value)
             if let data = data {
-                //TODO: test and validate this 
+                //TODO: test and validate this
                 if let model = try?  DynamicJSONDecoder().decode([T].self, from: data) {
                     return model
                 }
@@ -138,28 +138,28 @@ public enum DynamicValue: Codable {
         }
     }
     
-//    public subscript(key: String) -> DynamicValue? {
-//        get {
-//            if case .dictionaryValue(let dict) = self {
-//                return dict[key]
-//            }
-//
-//
-//            return nil
-//        }
-//        set {
-//            if let newValue = newValue {
-//                if case .dictionaryValue(var dict) = self {
-//                     dict[key] = newValue
-//                    self = .dictionaryValue(dict)
-//                }
-//            }
-//        }
-//    }
+    //    public subscript(key: String) -> DynamicValue? {
+    //        get {
+    //            if case .dictionaryValue(let dict) = self {
+    //                return dict[key]
+    //            }
+    //
+    //
+    //            return nil
+    //        }
+    //        set {
+    //            if let newValue = newValue {
+    //                if case .dictionaryValue(var dict) = self {
+    //                     dict[key] = newValue
+    //                    self = .dictionaryValue(dict)
+    //                }
+    //            }
+    //        }
+    //    }
     
     // Dynamic member lookup subscript
     public subscript(dynamicMember member: String) -> DynamicValue? {
-         get {
+        get {
             if case .dictionaryValue(var  dict) = self {
                 if let value =  dict[member] {
                     return value
@@ -183,11 +183,11 @@ public enum DynamicValue: Codable {
         set {
             if let newValue = newValue {
                 if case .dictionaryValue(var dict) = self {
-                     dict[member] = newValue
+                    dict[member] = newValue
                     self = .dictionaryValue(dict)
                 }else if case .customType(_, var dynamicModel) = self {
                     dynamicModel[member] = newValue
-                   self = .dictionaryValue(dynamicModel)
+                    self = .dictionaryValue(dynamicModel)
                 }
             }
         }
@@ -231,7 +231,7 @@ public enum DynamicValue: Codable {
         }
     }
     
-   // decoding
+    // decoding
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         if let stringValue = try? container.decode(String.self) {

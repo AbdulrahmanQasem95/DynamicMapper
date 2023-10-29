@@ -13,15 +13,10 @@ public class DynamicJSONEncoder {
     // Encoding method
     // T should conform to DynamicCodable not only DynamicEncodable to make sure it was decoded by DynamicDecodable
     public func encode<T>(_ value: T) throws -> Data where T : DynamicCodable{
-        //TODO: solve this for value type -done but need test-
-        //value.dynamicMapping(mappingType: .encoding)
-        var mutatingValues = value
-        mutatingValues.dynamicMapping(mappingType: .encoding)
-        let encodedData = try JSONEncoder().encode(mutatingValues)
-      //TODO: more testing on the cleaned model
-        //TODO: test when decode none dynamic decoded model
-        // procedure: convert model to a dictionary using json serialization
-        // fill the model based on dynamicSelf object and give the priority to the original model if the value is exist on the main model then override the
+        var mutatingValue = value
+        mutatingValue.dynamicMapping(mappingType: .encoding)
+        let encodedData = try JSONEncoder().encode(mutatingValue)
+        
         if var serializedDictionary = try JSONSerialization.jsonObject(with: encodedData, options: []) as? [String:Any]{
             performDynamicModelExtraction(dic: &serializedDictionary)
             let cleanedData = try JSONSerialization.data(withJSONObject: serializedDictionary)
@@ -35,14 +30,13 @@ public class DynamicJSONEncoder {
     // Custom array encoding method
     // T should conform to DynamicCodable not only DynamicEncodable to make sure it was decoded by DynamicDecodable
     public func encode<T>(_ value: [T]) throws -> Data where T : DynamicCodable{
-        //TODO: solve this for value type -done but need test-
-       // value.forEach({$0.dynamicMapping(mappingType: .encoding)})
         var mutatingValues = value
         for (index,item) in mutatingValues.enumerated() {
             var mutatingItem = item
             mutatingItem.dynamicMapping(mappingType: .decoding)
             mutatingValues[index] = mutatingItem
         }
+        
         let encodedData = try JSONEncoder().encode(mutatingValues)
         if var serializedDictionary = try JSONSerialization.jsonObject(with: encodedData, options: []) as? [[String:Any]]{
             for (index,item) in serializedDictionary.enumerated() {
@@ -58,7 +52,9 @@ public class DynamicJSONEncoder {
         return encodedData
     }
     
-   private func performDynamicModelExtraction(dic:inout [String:Any]) {
+    // DynamicSelf-model copy- cleaning
+    // this will give priority to item the defined in model if exist over DynamicSelf item
+    private func performDynamicModelExtraction(dic:inout [String:Any]) {
         if var innerDynamicSelf = dic[dynamicSelf] as? [String:Any] {
             for key in dic.keys {
                 // give the priority to the defined in model item over dynamic self item
@@ -79,6 +75,7 @@ public class DynamicJSONEncoder {
         }
     }
     
+    // clean array from DynamicSelf-model copy-
     private func recursivelyCleanArray(array:inout [Any]) {
         for item in array {
             if var innerItem = item as? [String:Any] {

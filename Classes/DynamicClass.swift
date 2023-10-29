@@ -41,7 +41,7 @@ open class DynamicClass: Codable {
             }
         }
         set {
-             container[key] = newValue
+            container[key] = newValue
         }
     }
     
@@ -66,4 +66,3 @@ open class DynamicClass: Codable {
         }
     }
 }
-

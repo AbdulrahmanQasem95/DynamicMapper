@@ -19,6 +19,7 @@ public func <-- (left: inout Int?, right: DynamicValue?) {
         left = value
     }
 }
+
 public func <-- (left: inout String?, right: DynamicValue?) {
     if let value = right?.stringValue  {
         left = value
@@ -36,6 +37,7 @@ public func <-- (left: inout Double?, right: DynamicValue?) {
         left = value
     }
 }
+
 public func <-- <T:DynamicDecodable> (left: inout T?, right: DynamicValue?) {
     if let value = right?.objectValue(customType: T.self)  {
         left = value
@@ -68,7 +70,6 @@ public func <-- (left: inout [Double]?, right: DynamicValue?) {
         left = value
     }
 }
-
 
 public func --> <T>(left: T, right:(T) -> Void) {
     right(left)
