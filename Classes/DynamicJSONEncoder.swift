@@ -7,8 +7,11 @@
 
 import Foundation
 public class DynamicJSONEncoder {
+    
     public init(){}
-    //T should conform to DynamicCodable not only DynamicEncodable to make sure it was decoded by DynamicDecodable
+    
+    // Encoding method
+    // T should conform to DynamicCodable not only DynamicEncodable to make sure it was decoded by DynamicDecodable
     public func encode<T>(_ value: T) throws -> Data where T : DynamicCodable{
         //TODO: solve this for value type -done but need test-
         //value.dynamicMapping(mappingType: .encoding)
@@ -29,7 +32,8 @@ public class DynamicJSONEncoder {
         return encodedData
     }
     
-    //T should conform to DynamicCodable not only DynamicEncodable to make sure it was decoded by DynamicDecodable
+    // Custom array encoding method
+    // T should conform to DynamicCodable not only DynamicEncodable to make sure it was decoded by DynamicDecodable
     public func encode<T>(_ value: [T]) throws -> Data where T : DynamicCodable{
         //TODO: solve this for value type -done but need test-
        // value.forEach({$0.dynamicMapping(mappingType: .encoding)})

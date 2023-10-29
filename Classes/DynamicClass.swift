@@ -35,6 +35,7 @@ open class DynamicClass: Codable {
                 return value
             }
             else {
+                // create value if not exist - Json Generation or Insersion-
                 container[key] = .dictionaryValue([:])
                 return container[key]!
             }
@@ -44,7 +45,7 @@ open class DynamicClass: Codable {
         }
     }
     
-    // Codable methods
+    // Decoding
     required public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: DynamicCodingKeys.self)
         var tempContainer = [String: DynamicValue]()
@@ -56,6 +57,7 @@ open class DynamicClass: Codable {
         self.container = tempContainer
     }
     
+    //Encoding
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: DynamicCodingKeys.self)
         for (key, value) in self.container {

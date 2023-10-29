@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A2C34AA03DFAD2426145ACC /* Pods_DynamicMapper_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2660BF58F9B2E677FCD5CB /* Pods_DynamicMapper_Example.framework */; };
+		197D0A383844887EF63AD3C5 /* Pods_DynamicMapper_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF8C15362D85B9A655D4255 /* Pods_DynamicMapper_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		66ADE353DFCB2674B4EE3C8A /* Pods_DynamicMapper_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E30B29E7F0FD7E4312556F2F /* Pods_DynamicMapper_Tests.framework */; };
+		8C458CD9BF2DCFEE1A820743 /* Pods_DynamicMapper_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1298A8465D00DB12BF4C668B /* Pods_DynamicMapper_Tests.framework */; };
 		F9BA4A4E2ACDA0ED00EBABA8 /* jsonExample.JSON in Sources */ = {isa = PBXBuildFile; fileRef = F9BA4A4D2ACDA0ED00EBABA8 /* jsonExample.JSON */; };
 		F9BA4A4F2ACDA80200EBABA8 /* jsonExample.JSON in Resources */ = {isa = PBXBuildFile; fileRef = F9BA4A4D2ACDA0ED00EBABA8 /* jsonExample.JSON */; };
 		F9BA4A522ACEA3CF00EBABA8 /* ReadingWritingNestedPropertiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BA4A512ACEA3CF00EBABA8 /* ReadingWritingNestedPropertiesModel.swift */; };
@@ -34,9 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		027820539B61A218448983D8 /* Pods-DynamicMapper_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicMapper_Example.release.xcconfig"; path = "Target Support Files/Pods-DynamicMapper_Example/Pods-DynamicMapper_Example.release.xcconfig"; sourceTree = "<group>"; };
-		17893765AD3B3225FAE3EB75 /* Pods-DynamicMapper_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicMapper_Example.debug.xcconfig"; path = "Target Support Files/Pods-DynamicMapper_Example/Pods-DynamicMapper_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		212E0ED863B1E0351D30C0E0 /* Pods-DynamicMapper_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicMapper_Tests.debug.xcconfig"; path = "Target Support Files/Pods-DynamicMapper_Tests/Pods-DynamicMapper_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		1298A8465D00DB12BF4C668B /* Pods_DynamicMapper_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicMapper_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		162AA8ED68A44BE01D58EA32 /* Pods-DynamicMapper_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicMapper_Tests.release.xcconfig"; path = "Target Support Files/Pods-DynamicMapper_Tests/Pods-DynamicMapper_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		4EF8C15362D85B9A655D4255 /* Pods_DynamicMapper_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicMapper_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* DynamicMapper_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicMapper_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,11 +47,11 @@
 		607FACE51AFB9204008FA782 /* DynamicMapper_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DynamicMapper_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		6C2660BF58F9B2E677FCD5CB /* Pods_DynamicMapper_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicMapper_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A63DC6B17E973832F0363680 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		B85E5EA26BE1EF7E3E4D5FC8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		E16FE62581D7654B04E5BF2A /* Pods-DynamicMapper_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicMapper_Tests.release.xcconfig"; path = "Target Support Files/Pods-DynamicMapper_Tests/Pods-DynamicMapper_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		E30B29E7F0FD7E4312556F2F /* Pods_DynamicMapper_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicMapper_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B95486382BE424F181A14005 /* Pods-DynamicMapper_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicMapper_Example.debug.xcconfig"; path = "Target Support Files/Pods-DynamicMapper_Example/Pods-DynamicMapper_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		CDA9B7D7A1BA3C7E4B63A785 /* Pods-DynamicMapper_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicMapper_Example.release.xcconfig"; path = "Target Support Files/Pods-DynamicMapper_Example/Pods-DynamicMapper_Example.release.xcconfig"; sourceTree = "<group>"; };
+		F224F4204BA2593B0450B67F /* Pods-DynamicMapper_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicMapper_Tests.debug.xcconfig"; path = "Target Support Files/Pods-DynamicMapper_Tests/Pods-DynamicMapper_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F91543CD2AB9B1E700340D63 /* DynamicMapper.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = DynamicMapper.podspec; path = ../DynamicMapper.podspec; sourceTree = "<group>"; };
 		F9BA4A4D2ACDA0ED00EBABA8 /* jsonExample.JSON */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jsonExample.JSON; sourceTree = "<group>"; };
 		F9BA4A512ACEA3CF00EBABA8 /* ReadingWritingNestedPropertiesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingWritingNestedPropertiesModel.swift; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A2C34AA03DFAD2426145ACC /* Pods_DynamicMapper_Example.framework in Frameworks */,
+				197D0A383844887EF63AD3C5 /* Pods_DynamicMapper_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,22 +73,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66ADE353DFCB2674B4EE3C8A /* Pods_DynamicMapper_Tests.framework in Frameworks */,
+				8C458CD9BF2DCFEE1A820743 /* Pods_DynamicMapper_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		474CCAC2CC1DFC14DEBDD4CF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6C2660BF58F9B2E677FCD5CB /* Pods_DynamicMapper_Example.framework */,
-				E30B29E7F0FD7E4312556F2F /* Pods_DynamicMapper_Tests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -97,7 +88,7 @@
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				9A1DBD766761DFFACC4FDDA5 /* Pods */,
-				474CCAC2CC1DFC14DEBDD4CF /* Frameworks */,
+				A5AC3B185CF5C320D697B354 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,12 +154,21 @@
 		9A1DBD766761DFFACC4FDDA5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				17893765AD3B3225FAE3EB75 /* Pods-DynamicMapper_Example.debug.xcconfig */,
-				027820539B61A218448983D8 /* Pods-DynamicMapper_Example.release.xcconfig */,
-				212E0ED863B1E0351D30C0E0 /* Pods-DynamicMapper_Tests.debug.xcconfig */,
-				E16FE62581D7654B04E5BF2A /* Pods-DynamicMapper_Tests.release.xcconfig */,
+				B95486382BE424F181A14005 /* Pods-DynamicMapper_Example.debug.xcconfig */,
+				CDA9B7D7A1BA3C7E4B63A785 /* Pods-DynamicMapper_Example.release.xcconfig */,
+				F224F4204BA2593B0450B67F /* Pods-DynamicMapper_Tests.debug.xcconfig */,
+				162AA8ED68A44BE01D58EA32 /* Pods-DynamicMapper_Tests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A5AC3B185CF5C320D697B354 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4EF8C15362D85B9A655D4255 /* Pods_DynamicMapper_Example.framework */,
+				1298A8465D00DB12BF4C668B /* Pods_DynamicMapper_Tests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F9BA4A502ACEA37D00EBABA8 /* Samples */ = {
@@ -198,11 +198,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "DynamicMapper_Example" */;
 			buildPhases = (
-				A75BA7D1DDCC1E4D090454AF /* [CP] Check Pods Manifest.lock */,
+				CC9AF10EC837FC6592E1C029 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				FF94882391666E687399FDE2 /* [CP] Embed Pods Frameworks */,
+				F3327717D5087A169BF59007 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,7 +217,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "DynamicMapper_Tests" */;
 			buildPhases = (
-				25CE3BB6371772B87B2137F6 /* [CP] Check Pods Manifest.lock */,
+				F52EB1582DF4DDAF877745B8 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
@@ -295,29 +295,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		25CE3BB6371772B87B2137F6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DynamicMapper_Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A75BA7D1DDCC1E4D090454AF /* [CP] Check Pods Manifest.lock */ = {
+		CC9AF10EC837FC6592E1C029 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -339,7 +317,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FF94882391666E687399FDE2 /* [CP] Embed Pods Frameworks */ = {
+		F3327717D5087A169BF59007 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,6 +337,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DynamicMapper_Example/Pods-DynamicMapper_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F52EB1582DF4DDAF877745B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DynamicMapper_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -517,7 +517,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17893765AD3B3225FAE3EB75 /* Pods-DynamicMapper_Example.debug.xcconfig */;
+			baseConfigurationReference = B95486382BE424F181A14005 /* Pods-DynamicMapper_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DynamicMapper/Info.plist;
@@ -533,7 +533,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 027820539B61A218448983D8 /* Pods-DynamicMapper_Example.release.xcconfig */;
+			baseConfigurationReference = CDA9B7D7A1BA3C7E4B63A785 /* Pods-DynamicMapper_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DynamicMapper/Info.plist;
@@ -549,7 +549,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 212E0ED863B1E0351D30C0E0 /* Pods-DynamicMapper_Tests.debug.xcconfig */;
+			baseConfigurationReference = F224F4204BA2593B0450B67F /* Pods-DynamicMapper_Tests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
@@ -572,7 +572,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E16FE62581D7654B04E5BF2A /* Pods-DynamicMapper_Tests.release.xcconfig */;
+			baseConfigurationReference = 162AA8ED68A44BE01D58EA32 /* Pods-DynamicMapper_Tests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",

@@ -7,7 +7,9 @@
 
 import Foundation
 public class DynamicJSONDecoder {
+    
     public init(){}
+    //dedoding method
     public func decode<T>(_ type: T.Type, from data: Data) throws -> T where T : DynamicDecodable {
         if var serializedDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]{
             performDynamicModelInjection(dic: &serializedDictionary)
@@ -23,6 +25,7 @@ public class DynamicJSONDecoder {
         }
     }
     
+    //custom array dedoding method
     public func decode<T>(_ type: [T].Type, from data: Data) throws -> [T] where T : DynamicDecodable {
         if var serializedDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [[String:Any]]{
             for (index,item) in serializedDictionary.enumerated() {
@@ -48,6 +51,7 @@ public class DynamicJSONDecoder {
         }
     }
     
+    //inject DynamicSelf-self copy- model
     private func performDynamicModelInjection(dic:inout [String:Any]) {
         if !dic.keys.contains(dynamicSelf) {
             dic[dynamicSelf] = dic
@@ -64,6 +68,5 @@ public class DynamicJSONDecoder {
             }
         }
     }
-
 }
 

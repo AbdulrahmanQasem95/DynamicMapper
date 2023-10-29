@@ -11,20 +11,15 @@ let dynamicSelf = "dynamicSelf"
 
 public protocol DynamicDecodable:BaseDynamicCodable,Decodable{
     var  dynamicSelf:DynamicClass? { get set }
-    var  dm:DynamicClass? {  get } // stands for DynamicMapper
+    // dm: stands for DynamicMapper
+    // an alias of dynamicSelf
+    var  dm:DynamicClass? {  get }
 }
 
 extension DynamicDecodable {
     public var dm: DynamicClass? {
         get {
             return dynamicSelf
-//            if let dynamicSelf = dynamicSelf{
-//                return dynamicSelf
-//            }else {
-//                let newDynamicSelf = DynamicClass([:])
-//               // self.dynamicSelf = newDynamicSelf
-//                return newDynamicSelf
-//            }
         }
     }
 }
