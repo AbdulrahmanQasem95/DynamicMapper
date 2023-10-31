@@ -11,8 +11,7 @@ public class DynamicJSONEncoder {
     public init(){}
     
     // Encoding method
-    // T should conform to DynamicCodable not only DynamicEncodable to make sure it was decoded by DynamicDecodable
-    public func encode<T>(_ value: T) throws -> Data where T : DynamicCodable{
+    public func encode<T>(_ value: T) throws -> Data where T : DynamicEncodable{
         var mutatingValue = value
         mutatingValue.dynamicMapping(mappingType: .encoding)
         let encodedData = try JSONEncoder().encode(mutatingValue)
@@ -20,16 +19,13 @@ public class DynamicJSONEncoder {
         if var serializedDictionary = try JSONSerialization.jsonObject(with: encodedData, options: []) as? [String:Any]{
             performDynamicModelExtraction(dic: &serializedDictionary)
             let cleanedData = try JSONSerialization.data(withJSONObject: serializedDictionary)
-            let decodedCleanedModel = try JSONDecoder().decode(T.self, from: cleanedData)
-            let endoedCleanedData = try JSONEncoder().encode(decodedCleanedModel)
-            return endoedCleanedData
+            return cleanedData
         }
         return encodedData
     }
     
     // Custom array encoding method
-    // T should conform to DynamicCodable not only DynamicEncodable to make sure it was decoded by DynamicDecodable
-    public func encode<T>(_ value: [T]) throws -> Data where T : DynamicCodable{
+    public func encode<T>(_ value: [T]) throws -> Data where T : DynamicEncodable{
         var mutatingValues = value
         for (index,item) in mutatingValues.enumerated() {
             var mutatingItem = item
@@ -45,9 +41,7 @@ public class DynamicJSONEncoder {
                 serializedDictionary[index] = serializedItem
             }
             let cleanedData = try JSONSerialization.data(withJSONObject: serializedDictionary)
-            let decodedCleanedModel = try JSONDecoder().decode([T].self, from: cleanedData)
-            let endoedCleanedData = try JSONEncoder().encode(decodedCleanedModel)
-            return endoedCleanedData
+            return cleanedData
         }
         return encodedData
     }
