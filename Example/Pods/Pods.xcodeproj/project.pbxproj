@@ -86,9 +86,9 @@
 		E39C87DAF1E4C1296DB50AEF0C7F5155 /* Pods-DynamicMapper_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DynamicMapper_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F2ECE7B31D4D208677FE3F8C400D15ED /* DynamicMapper.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DynamicMapper.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F594D9E7AEF843A87A1CE2EE56C14571 /* DynamicMapper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DynamicMapper-Info.plist"; sourceTree = "<group>"; };
-		F931F15B2AE6910C00AF829E /* DynamicMappingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicMappingType.swift; sourceTree = "<group>"; };
-		F931F15D2AE695CE00AF829E /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
-		F9BA18012AEAA4B30099F212 /* BaseDynamicCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDynamicCodable.swift; sourceTree = "<group>"; };
+		F931F15B2AE6910C00AF829E /* DynamicMappingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DynamicMappingType.swift; path = Classes/DynamicMappingType.swift; sourceTree = "<group>"; };
+		F931F15D2AE695CE00AF829E /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Classes/Operators.swift; sourceTree = "<group>"; };
+		F9BA18012AEAA4B30099F212 /* BaseDynamicCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseDynamicCodable.swift; path = Classes/BaseDynamicCodable.swift; sourceTree = "<group>"; };
 		FB13225F359486D2216A84184A39EEE9 /* DynamicDecodableProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicDecodableProtocol.swift; path = Classes/DynamicDecodableProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
