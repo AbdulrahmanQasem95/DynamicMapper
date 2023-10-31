@@ -27,6 +27,10 @@ class ReadingWritingNestedPropertiesModel:DynamicCodable{
     var dynamicSelf:DynamicClass?
     
     var property0:String
+    var property01:Int
+    var property02:Double
+    var property03:Bool
+    var property04:String
     var property_2:Int?
     var property_4:String?
     var secondArrayItem_1_OfLevel_6:String?

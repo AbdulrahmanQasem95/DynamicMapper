@@ -190,8 +190,8 @@
             filePath = "DynamicMapper/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -206,8 +206,8 @@
             filePath = "DynamicMapper/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -222,8 +222,8 @@
             filePath = "DynamicMapper/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -238,8 +238,8 @@
             filePath = "DynamicMapper/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -254,8 +254,8 @@
             filePath = "DynamicMapper/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -270,8 +270,8 @@
             filePath = "DynamicMapper/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -286,8 +286,8 @@
             filePath = "DynamicMapper/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -618,8 +618,8 @@
             filePath = "DynamicMapper/ReadingWritingNestedPropertiesModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "dynamicMapping(mappingType:)"
             landmarkType = "7">
             <Locations>
@@ -668,6 +668,21 @@
                   endingLineNumber = "26"
                   offsetFromSymbolStart = "2103">
                </Location>
+               <Location
+                  uuid = "66E2D316-3436-4E49-844B-E34180FC7677 - 1112acef800e2fd3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ReadingWritingNestedPropertiesModel.dynamicMapping(mappingType: DynamicMapper.DynamicMappingType) -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ReadingWritingNestedPropertiesModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "964">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -681,8 +696,8 @@
             filePath = "DynamicMapper/ReadingWritingNestedPropertiesModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "dynamicMapping(mappingType:)"
             landmarkType = "7">
             <Locations>
@@ -731,6 +746,21 @@
                   endingLineNumber = "27"
                   offsetFromSymbolStart = "4189">
                </Location>
+               <Location
+                  uuid = "BDA7D005-20F0-48EB-8ECE-32CF9429A4FA - 1112acef800e2ff4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ReadingWritingNestedPropertiesModel.dynamicMapping(mappingType: DynamicMapper.DynamicMappingType) -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ReadingWritingNestedPropertiesModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "2187">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -744,8 +774,8 @@
             filePath = "DynamicMapper/ReadingWritingNestedPropertiesModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "dynamicMapping(mappingType:)"
             landmarkType = "7">
             <Locations>
@@ -794,6 +824,21 @@
                   endingLineNumber = "29"
                   offsetFromSymbolStart = "6275">
                </Location>
+               <Location
+                  uuid = "7E96FAF2-9DA7-4817-9779-0163A54C6958 - 1112acef800e2836"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DynamicMapper_Example.ReadingWritingNestedPropertiesModel.dynamicMapping(mappingType: DynamicMapper.DynamicMappingType) -&gt; ()"
+                  moduleName = "DynamicMapper_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ReadingWritingNestedPropertiesModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "4284">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -811,6 +856,38 @@
             endingLineNumber = "284"
             landmarkName = "unknown"
             landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "39589AB4-D7F2-4285-A5A5-89D4D1DCFC12"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DynamicMapper/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "example2Action(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "96A6ABD6-86EA-449A-82B2-F32DEBFDBDEE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DynamicMapper/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "example2Action(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

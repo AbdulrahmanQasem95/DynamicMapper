@@ -1,6 +1,6 @@
 //
 //  DynamicClass.swift
-//  DynamicMemberLookupTest
+//  DynamicMapper
 //
 //  Created by Abdulrahman Qasem on 17/09/2023.
 //

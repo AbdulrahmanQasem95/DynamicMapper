@@ -1,5 +1,9 @@
 {
     "property0": "Value 0",
+    "property01": 10,
+    "property02": 10.3,
+    "property03": true,
+    "property04": "Value 04",
     "level1": {
         "property1": "Value 1",
         "level2": {
