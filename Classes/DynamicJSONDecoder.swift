@@ -36,13 +36,11 @@ public class DynamicJSONDecoder {
             let endoedData = try JSONSerialization.data(withJSONObject: serializedDictionary)
             let decoder = JSONDecoder()
             var models = try decoder.decode([T].self, from: endoedData)
-            //TODO: solve this for value type -done but need test-
             for (index,item) in models.enumerated() {
                 var mutatingItem = item
                 mutatingItem.dynamicMapping(mappingType: .decoding)
                 models[index] = mutatingItem
             }
-            //model.forEach({$0.dynamicMapping(mappingType: .decoding)})
             return models
         }else {
             let decoder = JSONDecoder()

@@ -20,9 +20,9 @@ class ReadingWritingNestedDefinedModel :DynamicCodable{
         level1.dynamicMapping(mappingType: mappingType)
         switch mappingType {
         case .decoding:
-            property_4 <--  dm?.level1?.level2?.level3?.level4?.property4
+            property_4 <--  ds?.level1?.level2?.level3?.level4?.property4
         case .encoding:
-            property_4 --> {dm?.level1?.level2?.level3?.level4?.property4?.set($0)}
+            property_4 --> {ds?.level1?.level2?.level3?.level4?.property4?.set($0)}
         }
     }
 }
@@ -47,11 +47,11 @@ class Level2Model:DynamicCodable{
     func dynamicMapping(mappingType: DynamicMappingType) {
         switch mappingType {
         case .decoding:
-            property_5                    <--  dm?.level3?.level4?.level5?.property5
-            secondArrayItem_1_OfLevel_6   <--  dm?.level3?.level4?.level5?.level6Array?[1]?.item1
+            property_5                    <--  ds?.level3?.level4?.level5?.property5
+            secondArrayItem_1_OfLevel_6   <--  ds?.level3?.level4?.level5?.level6Array?[1]?.item1
         case .encoding:
-            property_5                    --> {dm?.level3?.level4?.level5?.property5?.set($0)}
-            secondArrayItem_1_OfLevel_6   --> {dm?.level3?.level4?.level5?.level6Array?[1]?.item1?.set($0)}
+            property_5                    --> {ds?.level3?.level4?.level5?.property5?.set($0)}
+            secondArrayItem_1_OfLevel_6   --> {ds?.level3?.level4?.level5?.level6Array?[1]?.item1?.set($0)}
         }
     }
 }

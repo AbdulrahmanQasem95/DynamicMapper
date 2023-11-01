@@ -15,9 +15,9 @@ struct ReadingWritingNestedPropertiesModelValueType:DynamicDecodable{
     mutating func dynamicMapping(mappingType: DynamicMapper.DynamicMappingType) {
             switch mappingType {
             case .decoding:
-                property_2                  <--   dm?.level1?.level2?.property2
+                property_2                  <--   ds?.level1?.level2?.property2
             case .encoding:
-                property_2                  -->  {dm?.level1?.level2?.property2?.set($0)}
+                property_2                  -->  {ds?.level1?.level2?.property2?.set($0)}
             }
     }
     
@@ -40,18 +40,18 @@ class ReadingWritingNestedPropertiesModel:DynamicCodable{
     func dynamicMapping(mappingType: DynamicMapper.DynamicMappingType) {
         switch mappingType {
         case .decoding:
-            property_2                  <--   dm?.level1?.level2?.property2
-            property_4                  <--   dm?.level1?.level2?.level3?.level4?.property4
-            secondArrayItem_1_OfLevel_6 <--   dm?.level1?.level2?.level3?.level4?.level5?.level6Array?[1]?.item1
-            thirdArrayItem_2_OfLevel_6  <--   dm?.level1?.level2?.level3?.level4?.level5?.level6Array?[2]?.item2
+            property_2                  <--   ds?.level1?.level2?.property2
+            property_4                  <--   ds?.level1?.level2?.level3?.level4?.property4
+            secondArrayItem_1_OfLevel_6 <--   ds?.level1?.level2?.level3?.level4?.level5?.level6Array?[1]?.item1
+            thirdArrayItem_2_OfLevel_6  <--   ds?.level1?.level2?.level3?.level4?.level5?.level6Array?[2]?.item2
             //this will not cause index out of range error
-            nonExitArrayItem            <--   dm?.level1?.level2?.level3?.level4?.level5?.level6Array?[39845983453453]?.item2
+            nonExitArrayItem            <--   ds?.level1?.level2?.level3?.level4?.level5?.level6Array?[39845983453453]?.item2
         case .encoding:
-            property_2                  -->  {dm?.level1?.level2?.property2?.set($0)}
-            property_4                  -->  {dm?.level1?.level2?.level3?.level4?.property4?.set($0)}
-            secondArrayItem_1_OfLevel_6 -->  {dm?.level1?.level2?.level3?.level4?.level5?.level6Array?[1]?.item1?.set($0)}
-            thirdArrayItem_2_OfLevel_6  -->  {dm?.level1?.level2?.level3?.level4?.level5?.level6Array?[2]?.item2?.set($0)}
-            nonExitArrayItem            -->  {dm?.level1?.level2?.level3?.level4?.level5?.level6Array?[39845983453453]?.item2?.set($0)}
+            property_2                  -->  {ds?.level1?.level2?.property2?.set($0)}
+            property_4                  -->  {ds?.level1?.level2?.level3?.level4?.property4?.set($0)}
+            secondArrayItem_1_OfLevel_6 -->  {ds?.level1?.level2?.level3?.level4?.level5?.level6Array?[1]?.item1?.set($0)}
+            thirdArrayItem_2_OfLevel_6  -->  {ds?.level1?.level2?.level3?.level4?.level5?.level6Array?[2]?.item2?.set($0)}
+            nonExitArrayItem            -->  {ds?.level1?.level2?.level3?.level4?.level5?.level6Array?[39845983453453]?.item2?.set($0)}
         }
     }
    

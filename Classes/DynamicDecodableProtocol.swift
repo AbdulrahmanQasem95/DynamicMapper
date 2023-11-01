@@ -13,11 +13,11 @@ public protocol DynamicDecodable:BaseDynamicCodable,Decodable{
     var  dynamicSelf:DynamicClass? { get set }
     /// dm stands for Dynamic Mapper
     /// an alias of dynamicSelf
-    var  dm:DynamicClass? {  get }
+    var  ds:DynamicClass? {  get }
 }
 
 extension DynamicDecodable {
-    public var dm: DynamicClass? {
+    public var ds: DynamicClass? {
         get {
             return dynamicSelf
         }

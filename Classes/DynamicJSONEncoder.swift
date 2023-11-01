@@ -47,11 +47,11 @@ public class DynamicJSONEncoder {
     }
     
     // DynamicSelf-model copy- cleaning
-    // this will give priority to item the defined in model if exist over DynamicSelf item
+    // this will give priority to the item defined in model if exist over the corresponding DynamicSelf item
     private func performDynamicModelExtraction(dic:inout [String:Any]) {
         if var innerDynamicSelf = dic[dynamicSelf] as? [String:Any] {
             for key in dic.keys {
-                // give the priority to the defined in model item over dynamic self item
+                // this will give priority to the item defined in model if exist over the corresponding DynamicSelf item
                 if var internalDic = dic[key] as?  [String:Any], key != dynamicSelf {
                     //handle internal Models
                     performDynamicModelExtraction(dic: &internalDic)
