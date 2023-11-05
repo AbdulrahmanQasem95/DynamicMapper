@@ -1,5 +1,5 @@
 //
-//  ReadingWritingNestedPropertiesModel.swift
+//  NestedPropertiesModel.swift
 //  DynamicMapper_Example
 //
 //  Created by Abdulrahman Qasem on 05/10/2023.
@@ -23,7 +23,7 @@ struct ReadingWritingNestedPropertiesModelValueType:DynamicDecodable{
     
     
 }
-class ReadingWritingNestedPropertiesModel:DynamicCodable{
+class NestedPropertiesModel:DynamicCodable{
     var dynamicSelf:DynamicClass?
     
     var property0:String

@@ -8,12 +8,12 @@
 
 import Foundation
 import DynamicMapper
-class ReadingWritingNestedCustomModel :DynamicCodable{
+class NestedCustomModel :DynamicCodable{
     var dynamicSelf:DynamicClass?
     
     var property0:String
-    var level_4:Level4Model?
-    var level_6_Array:[ArrayItemModel]?
+    var level_4:Level4Model? // nested custom model
+    var level_6_Array:[ArrayItemModel]? // nested custom array model
     
     func dynamicMapping(mappingType: DynamicMappingType) {
         switch mappingType {
@@ -25,7 +25,6 @@ class ReadingWritingNestedCustomModel :DynamicCodable{
             level_6_Array  --> {ds?.level1?.level2?.level3?.level4?.level5?.level6Array?.set($0)}
         }
     }
-    
 }
 
 class Level4Model:DynamicCodable{

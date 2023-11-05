@@ -9,12 +9,12 @@
 import Foundation
 import DynamicMapper
 
-class ReadingWritingNestedDefinedModel :DynamicCodable{
+class ReadingWritingInnerModel :DynamicCodable{
     var dynamicSelf:DynamicClass?
     
     var property0:String
     var property_4:String?
-    var level1:Level1Model
+    var level1:Level1Model // inner model
     
     func dynamicMapping(mappingType: DynamicMappingType) {
         level1.dynamicMapping(mappingType: mappingType)

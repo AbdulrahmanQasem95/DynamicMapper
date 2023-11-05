@@ -756,9 +756,9 @@
             filePath = "DynamicMapper/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "example2Action(_:)"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "innerModelAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -772,9 +772,9 @@
             filePath = "DynamicMapper/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "example2Action(_:)"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "innerModelAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
