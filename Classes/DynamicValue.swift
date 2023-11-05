@@ -302,6 +302,7 @@ public enum DynamicValue: Codable {
     // decoding
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
+        // conditions order is important
          if let dateValue = try? container.decode(Date.self) {
             self = .dateValue(dateValue)
         }else if let stringValue = try? container.decode(String.self) {
