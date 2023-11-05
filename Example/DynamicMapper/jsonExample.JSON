@@ -5,6 +5,9 @@
     "property03": true,
     "property04": "Value 04",
     "level1": {
+        "flaotV": 1.234234,
+        "dateV": "2023-10-30T19:00:00Z",
+        "urlv": "https://nsdateformatter.com/",
         "property1": "Value 1",
         "level2": {
             "property2": 10,

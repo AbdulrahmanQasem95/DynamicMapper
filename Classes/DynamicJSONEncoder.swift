@@ -6,15 +6,15 @@
 //
 
 import Foundation
-public class DynamicJSONEncoder {
+public class DynamicJSONEncoder:JSONEncoder {
     
-    public init(){}
+    //public init(){}
     
     // Encoding method
     public func encode<T>(_ value: T) throws -> Data where T : DynamicEncodable{
         var mutatingValue = value
         mutatingValue.dynamicMapping(mappingType: .encoding)
-        let encodedData = try JSONEncoder().encode(mutatingValue)
+        let encodedData = try super.encode(mutatingValue)
         
         if var serializedDictionary = try JSONSerialization.jsonObject(with: encodedData, options: []) as? [String:Any]{
             performDynamicModelExtraction(dic: &serializedDictionary)
@@ -33,7 +33,7 @@ public class DynamicJSONEncoder {
             mutatingValues[index] = mutatingItem
         }
         
-        let encodedData = try JSONEncoder().encode(mutatingValues)
+        let encodedData = try super.encode(mutatingValues)
         if var serializedDictionary = try JSONSerialization.jsonObject(with: encodedData, options: []) as? [[String:Any]]{
             for (index,item) in serializedDictionary.enumerated() {
                 var serializedItem =  item

@@ -33,6 +33,9 @@ class NestedPropertiesModel:DynamicCodable{
     var property04:String
     var property_2:Int?
     var property_4:String?
+    var flaotv:Float?
+    var datev:Date?
+    var urlv:URL?
     var secondArrayItem_1_OfLevel_6:String?
     var thirdArrayItem_2_OfLevel_6:Int?
     var nonExitArrayItem:Int? 
@@ -42,6 +45,9 @@ class NestedPropertiesModel:DynamicCodable{
         case .decoding:
             property_2                  <--   ds?.level1?.level2?.property2
             property_4                  <--   ds?.level1?.level2?.level3?.level4?.property4
+            flaotv                  <--   ds?.level1?.flaotV
+            datev                   <--   ds?.level1?.dateV
+            urlv                    <--   ds?.level1?.urlv
             secondArrayItem_1_OfLevel_6 <--   ds?.level1?.level2?.level3?.level4?.level5?.level6Array?[1]?.item1
             thirdArrayItem_2_OfLevel_6  <--   ds?.level1?.level2?.level3?.level4?.level5?.level6Array?[2]?.item2
             //this will not cause index out of range error

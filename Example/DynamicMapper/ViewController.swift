@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     //MARK: done---- test for value and refernce types
     //MARK:  code documentation above each method and var
     //TODO:  clean project
+    //TODO: test json insertion 
     let data = JsonReader.getJsonSampleData()
     let decoder = DynamicJSONDecoder()
     let encoder = DynamicJSONEncoder()
@@ -26,12 +27,16 @@ class ViewController: UIViewController {
     
     //MARK: reading and wirting nested properties
     @IBAction func nestedPropertiesAction(_ sender: UIButton) {
+        decoder.dateDecodingStrategy = .iso8601
         if let model = try?  decoder.decode(NestedPropertiesModel.self, from: data) {
             print("property 0: \(model.property0)")
             print("property 01: \(model.property01)")
             print("property 02: \(model.property02)")
             print("property 03: \(model.property03)")
             print("property 04: \(model.property04)")
+            print("property 04: \(model.flaotv)")
+            print("property 04: \(model.datev)")
+            print("property 04: \(model.urlv)")
             print("property 2: \(model.property_2)")
             
             print("property 4: \(model.property_4)")

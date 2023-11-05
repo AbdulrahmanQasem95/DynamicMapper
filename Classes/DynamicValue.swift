@@ -14,6 +14,10 @@ public enum DynamicValue: Codable {
     case stringValue(String)
     case boolValue(Bool)
     case doubleValue(Double)
+    case floatValue(Float)
+    case dateValue(Date)
+    case dataValue(Data)
+    case urlValue(URL)
     case arrayValue(Array<DynamicValue>)
     case dictionaryValue(Dictionary<String, DynamicValue>)
     case customType(customModel:DynamicCodable, dynamicModel: Dictionary<String, DynamicValue>)
@@ -48,6 +52,38 @@ public enum DynamicValue: Codable {
     public var doubleValue: Double? {
         if case .doubleValue(let double) = self {
             return double
+        }
+        return nil
+    }
+    
+    //Float value
+    public var floatValue: Float? {
+        if case .doubleValue(let double) = self {
+            return Float(double)
+        }
+        return nil
+    }
+    
+    //Date value
+    public var dateValue: Date? {
+        if case .dateValue(let date) = self {
+            return date
+        }
+        return nil
+    }
+    
+    //Data value
+    public var dataValue: Data? {
+        if case .dataValue(let data) = self {
+            return data
+        }
+        return nil
+    }
+    
+    //URL value
+    public var urlValue: URL? {
+        if case .stringValue(let string) = self {
+            return URL(string: string)
         }
         return nil
     }
@@ -93,6 +129,38 @@ public enum DynamicValue: Codable {
     public  func doubleArrayValue()-> [Double] {
         if case .arrayValue(let value) = self {
             return value.compactMap({$0.doubleValue}).map({$0  })
+        }
+        return []
+    }
+    
+    //Array of Floats
+    public  func floatArrayValue()-> [Float] {
+        if case .arrayValue(let value) = self {
+            return value.compactMap({$0.floatValue}).map({$0  })
+        }
+        return []
+    }
+    
+    //Array of Dates
+    public  func dateArrayValue()-> [Date] {
+        if case .arrayValue(let value) = self {
+            return value.compactMap({$0.dateValue}).map({$0  })
+        }
+        return []
+    }
+    
+    //Array of Data
+    public  func dataArrayValue()-> [Data] {
+        if case .arrayValue(let value) = self {
+            return value.compactMap({$0.dataValue}).map({$0  })
+        }
+        return []
+    }
+    
+    //Array of URLs
+    public  func urlArrayValue()-> [URL] {
+        if case .arrayValue(let value) = self {
+            return value.compactMap({$0.urlValue}).map({$0  })
         }
         return []
     }
@@ -234,7 +302,9 @@ public enum DynamicValue: Codable {
     // decoding
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
-        if let stringValue = try? container.decode(String.self) {
+         if let dateValue = try? container.decode(Date.self) {
+            self = .dateValue(dateValue)
+        }else if let stringValue = try? container.decode(String.self) {
             self = .stringValue(stringValue)
         } else if let intValue = try? container.decode(Int.self) {
             self = .intValue(intValue)
@@ -242,6 +312,8 @@ public enum DynamicValue: Codable {
             self = .boolValue(boolValue)
         }else if let doubleValue = try? container.decode(Double.self) {
             self = .doubleValue(doubleValue)
+        }else if let dataValue = try? container.decode(Data.self) {
+            self = .dataValue(dataValue)
         }else if let arrayValue = try? container.decode(Array<DynamicValue>.self) {
             self = .arrayValue(arrayValue)
         } else if let dictionaryValue = try? container.decode(Dictionary<String, DynamicValue>.self) {
@@ -268,6 +340,14 @@ public enum DynamicValue: Codable {
             try container.encode(bool)
         case .doubleValue(let double):
             try container.encode(double)
+        case .floatValue(let float):
+            try container.encode(float)
+        case .dateValue(let date):
+            try container.encode(date)
+        case .dataValue(let data):
+            try container.encode(data)
+        case .urlValue(let url):
+            try container.encode(url)
         case .arrayValue(let array):
             try container.encode(array)
         case .dictionaryValue(let dictionary):

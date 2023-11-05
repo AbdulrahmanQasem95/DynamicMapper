@@ -38,6 +38,30 @@ public func <-- (left: inout Double?, right: DynamicValue?) {
     }
 }
 
+public func <-- (left: inout Float?, right: DynamicValue?) {
+    if let value = right?.floatValue  {
+        left = value
+    }
+}
+
+public func <-- (left: inout Date?, right: DynamicValue?) {
+    if let value = right?.dateValue  {
+        left = value
+    }
+}
+
+public func <-- (left: inout Data?, right: DynamicValue?) {
+    if let value = right?.dataValue  {
+        left = value
+    }
+}
+
+public func <-- (left: inout URL?, right: DynamicValue?) {
+    if let value = right?.urlValue  {
+        left = value
+    }
+}
+
 public func <-- <T:DynamicDecodable> (left: inout T?, right: DynamicValue?) {
     if let value = right?.objectValue(customType: T.self)  {
         left = value
@@ -55,18 +79,45 @@ public func <-- (left: inout [Int]?, right: DynamicValue?) {
         left = value
     }
 }
+
 public func <-- (left: inout [String]?, right: DynamicValue?) {
     if let value = right?.stringArrayValue() {
         left = value
     }
 }
+
 public func <-- (left: inout [Bool]?, right: DynamicValue?) {
     if let value = right?.boolArrayValue() {
         left = value
     }
 }
+
 public func <-- (left: inout [Double]?, right: DynamicValue?) {
     if let value = right?.doubleArrayValue() {
+        left = value
+    }
+}
+
+public func <-- (left: inout [Float]?, right: DynamicValue?) {
+    if let value = right?.floatArrayValue() {
+        left = value
+    }
+}
+
+public func <-- (left: inout [Date]?, right: DynamicValue?) {
+    if let value = right?.dateArrayValue() {
+        left = value
+    }
+}
+
+public func <-- (left: inout [Data]?, right: DynamicValue?) {
+    if let value = right?.dataArrayValue() {
+        left = value
+    }
+}
+
+public func <-- (left: inout [URL]?, right: DynamicValue?) {
+    if let value = right?.urlArrayValue() {
         left = value
     }
 }

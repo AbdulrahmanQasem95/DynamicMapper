@@ -6,21 +6,21 @@
 //
 
 import Foundation
-public class DynamicJSONDecoder {
+public class DynamicJSONDecoder:JSONDecoder {
     
-    public init(){}
+    //public init(){}
     //dedoding method
     public func decode<T>(_ type: T.Type, from data: Data) throws -> T where T : DynamicDecodable {
         if var serializedDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]{
             performDynamicModelInjection(dic: &serializedDictionary)
             let endoedData = try JSONSerialization.data(withJSONObject: serializedDictionary)
-            let decoder = JSONDecoder()
-            var model = try decoder.decode(T.self, from: endoedData)
+            //let decoder = JSONDecoder()
+            var model = try super.decode(T.self, from: endoedData)
             model.dynamicMapping(mappingType: .decoding)
             return model
         }else {
-            let decoder = JSONDecoder()
-            let model = try decoder.decode(T.self, from: data)
+           // let decoder = JSONDecoder()
+            let model = try super.decode(T.self, from: data)
             return model
         }
     }
@@ -34,8 +34,8 @@ public class DynamicJSONDecoder {
                 serializedDictionary[index] = serializedItem
             }
             let endoedData = try JSONSerialization.data(withJSONObject: serializedDictionary)
-            let decoder = JSONDecoder()
-            var models = try decoder.decode([T].self, from: endoedData)
+          //  let decoder = JSONDecoder()
+            var models = try super.decode([T].self, from: endoedData)
             for (index,item) in models.enumerated() {
                 var mutatingItem = item
                 mutatingItem.dynamicMapping(mappingType: .decoding)
@@ -43,8 +43,8 @@ public class DynamicJSONDecoder {
             }
             return models
         }else {
-            let decoder = JSONDecoder()
-            let model = try decoder.decode([T].self, from: data)
+           // let decoder = JSONDecoder()
+            let model = try super.decode([T].self, from: data)
             return model
         }
     }
