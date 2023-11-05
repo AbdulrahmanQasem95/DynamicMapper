@@ -1,10 +1,10 @@
 PODS:
   - DynamicMapper (1.0.4)
-  - Realm (10.39.1):
-    - Realm/Headers (= 10.39.1)
-  - Realm/Headers (10.39.1)
-  - RealmSwift (10.39.1):
-    - Realm (= 10.39.1)
+  - Realm (10.43.1):
+    - Realm/Headers (= 10.43.1)
+  - Realm/Headers (10.43.1)
+  - RealmSwift (10.43.1):
+    - Realm (= 10.43.1)
 
 DEPENDENCIES:
   - DynamicMapper (from `../`)
@@ -21,9 +21,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   DynamicMapper: 952a739a9f85c4b3d9171ddb61da23f9f4a0a5d5
-  Realm: 1f3157edf145f4d9036765ab550c8cb18f62b700
-  RealmSwift: 8a69a1cb788cd5865966f49667b130567e07bceb
+  Realm: d97b438de77459e443bd2c8ad5ca0f95107aee4b
+  RealmSwift: 6be3f27a7fd3f5cc8f99f4b187cc4e7150299e32
 
-PODFILE CHECKSUM: 76d76bf18d24eef04df3645c09af83bdeea8e523
+PODFILE CHECKSUM: dc2c37a84d92850ddab01068e6257e4901d95e1b
 
 COCOAPODS: 1.13.0
