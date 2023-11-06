@@ -20,8 +20,6 @@ public enum DynamicValue: Codable {
     case urlValue(URL)
     case arrayValue(Array<DynamicValue>)
     case dictionaryValue(Dictionary<String, DynamicValue>)
-    case customType(customModel:DynamicCodable, dynamicModel: Dictionary<String, DynamicValue>)
-    case customArrayType(customArray:[DynamicCodable],dynamicArray:Array<DynamicValue>)
     case null(Int?)
     
     //string value
@@ -184,8 +182,6 @@ public enum DynamicValue: Codable {
         get {
             if case .arrayValue(let arr) = self {
                 return index < arr.count ? arr[index] : nil
-            }else if case .customArrayType(_, let dynamicArray) = self {
-                return index < dynamicArray.count ? dynamicArray[index] : nil
             }
             return nil
         }
@@ -195,11 +191,6 @@ public enum DynamicValue: Codable {
                     if index < arr.count {
                         arr[index] = newValue
                         self = .arrayValue(arr)
-                    }
-                }else if case .customArrayType(_, var dynamicArray) = self {
-                    if index < dynamicArray.count {
-                        dynamicArray[index] = newValue
-                        self = .arrayValue(dynamicArray)
                     }
                 }
             }
@@ -236,14 +227,6 @@ public enum DynamicValue: Codable {
                     dict[member] = newDic
                     return newDic
                 }
-            }else if case .customType(_, var dynamicModel) = self {
-                if let value =  dynamicModel[member] {
-                    return value
-                }else {
-                    let newDic =  DynamicValue.dictionaryValue([:])
-                    dynamicModel[member] = newDic
-                    return newDic
-                }
             }
             return nil
         }
@@ -253,9 +236,6 @@ public enum DynamicValue: Codable {
                 if case .dictionaryValue(var dict) = self {
                     dict[member] = newValue
                     self = .dictionaryValue(dict)
-                }else if case .customType(_, var dynamicModel) = self {
-                    dynamicModel[member] = newValue
-                    self = .dictionaryValue(dynamicModel)
                 }
             }
         }
@@ -355,10 +335,6 @@ public enum DynamicValue: Codable {
             try container.encode(dictionary)
         case .null(let null):
             try container.encode(null)
-        case .customType(customModel: _, dynamicModel: let dynamicModel) :
-            try container.encode(dynamicModel)
-        case .customArrayType(customArray: _ , dynamicArray: let dynamicArray):
-            try container.encode(dynamicArray)
         }
     }
 }
