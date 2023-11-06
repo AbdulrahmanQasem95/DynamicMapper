@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     //MARK: done---- reading and writing and compatility with Realm
     //MARK: done---- example use different names than json keys
     //MARK: done---- test for value and refernce types
+    //MARK: done---- support codable types (flaot, date, data,url)
     //MARK:  code documentation above each method and var
     //TODO:  clean project
     //TODO: test json insertion 
@@ -102,6 +103,7 @@ class ViewController: UIViewController {
         
         print("Array second item item1: \(model.level1.level2.secondArrayItem_1_OfLevel_6)")
         model.level1.level2.secondArrayItem_1_OfLevel_6? += " modified"
+        model.ds?.custom?.custom2?.set(["check my love"])
         print("Array second item item1: \(model.level1.level2.secondArrayItem_1_OfLevel_6)")
         
         guard let encodedData = try?  encoder.encode(model) else {return}
