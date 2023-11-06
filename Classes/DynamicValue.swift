@@ -10,12 +10,12 @@ import Foundation
 @dynamicMemberLookup
 public enum DynamicValue: Codable {
     
-    case intValue(Int)
     case stringValue(String)
+    case intValue(Int)
     case boolValue(Bool)
     case doubleValue(Double)
     case floatValue(Float)
-    case dateValue(Date)
+    case dateValue(Date,String?)
     case dataValue(Data)
     case urlValue(URL)
     case arrayValue(Array<DynamicValue>)
@@ -26,6 +26,8 @@ public enum DynamicValue: Codable {
     public var stringValue: String? {
         if case .stringValue(let str) = self {
             return str
+        }else if case .dateValue(_, let originalString) = self {
+            return originalString
         }
         return nil
     }
@@ -56,7 +58,9 @@ public enum DynamicValue: Codable {
     
     //Float value
     public var floatValue: Float? {
-        if case .doubleValue(let double) = self {
+        if case .floatValue(let float) = self {
+            return float
+        }else if case .doubleValue(let double) = self {
             return Float(double)
         }
         return nil
@@ -64,7 +68,7 @@ public enum DynamicValue: Codable {
     
     //Date value
     public var dateValue: Date? {
-        if case .dateValue(let date) = self {
+        if case .dateValue(let date,_) = self {
             return date
         }
         return nil
@@ -80,7 +84,9 @@ public enum DynamicValue: Codable {
     
     //URL value
     public var urlValue: URL? {
-        if case .stringValue(let string) = self {
+        if case .urlValue(let url) = self {
+            return url
+        }else if case .stringValue(let string) = self {
             return URL(string: string)
         }
         return nil
@@ -179,9 +185,19 @@ public enum DynamicValue: Codable {
     
     //Safe access of array item by index
     public subscript(index: Int) -> DynamicValue? {
-        get {
-            if case .arrayValue(let arr) = self {
-                return index < arr.count ? arr[index] : nil
+        mutating get {
+            if case .arrayValue(var arr) = self {
+                if index < arr.count {
+                   return arr[index]
+                }else {
+                    arr.append(.dictionaryValue([:]))
+                    self = .arrayValue(arr)
+                    return self
+                }
+            }else {
+                var arr:[DynamicValue] = []
+                self = .arrayValue(arr)
+                return self
             }
             return nil
         }
@@ -190,6 +206,9 @@ public enum DynamicValue: Codable {
                 if case .arrayValue(var arr) = self {
                     if index < arr.count {
                         arr[index] = newValue
+                        self = .arrayValue(arr)
+                    }else{
+                        arr.append(newValue)
                         self = .arrayValue(arr)
                     }
                 }
@@ -218,15 +237,20 @@ public enum DynamicValue: Codable {
     
     // Dynamic member lookup subscript
     public subscript(dynamicMember member: String) -> DynamicValue? {
-        get {
+        mutating get {
             if case .dictionaryValue(var  dict) = self {
                 if let value =  dict[member] {
                     return value
                 }else {
                     let newDic =  DynamicValue.dictionaryValue([:])
                     dict[member] = newDic
-                    return newDic
+                    self = newDic
+                    return self
                 }
+            } else {
+                let newDic =  DynamicValue.dictionaryValue([:])
+                self = newDic
+                return self
             }
             return nil
         }
@@ -240,18 +264,28 @@ public enum DynamicValue: Codable {
             }
         }
     }
-    
+   
+    //MARK: - Set Value
     // set any value (Integer, String, Boolean, Double, null)
     public mutating func set(_ value:Any?) {
         switch value.self {
+        case let date as Date:
+            // save string to null, if user set value as Date he should get it as Date also
+            self = .dateValue(date,nil)
+        case let url as URL:
+            self = .urlValue(url)
         case let string as String:
             self = .stringValue(string)
         case let int as Int:
             self = .intValue(int)
         case let bool as Bool:
             self = .boolValue(bool)
+        case let float as Float:
+            self = .floatValue(float)
         case let double as Double:
             self = .doubleValue(double)
+        case let data as Data:
+            self = .dataValue(data)
         case Optional<Any>.none:
             self = .null(nil)
         case is [Encodable]:
@@ -260,6 +294,7 @@ public enum DynamicValue: Codable {
             print("Error in \(#function): object must conform to \(String(describing: DynamicEncodable.self)) protocol")
         }
     }
+    
     
     //set array of custom object that conform to DynamicEncodable protocol
     public mutating func set<T:DynamicEncodable>(_ customObject:T?) {
@@ -270,8 +305,9 @@ public enum DynamicValue: Codable {
         }
     }
     
-    //set custom object that conform to DynamicEncodable protocol
-    public mutating func set<T:DynamicEncodable>(_ customArray:[T]?) {
+    //set custom object that conform to "Encodable" not "DynamicEncodable" protocol
+    //this will work for all custom objects and Dynamic value supported types arrays [string,int,date .....]
+    public mutating func set<T:Encodable>(_ customArray:[T]?) {
         if let data =  try? JSONEncoder().encode(customArray) {
             if let model = try? JSONDecoder().decode([DynamicValue].self, from: data){
                 self = .arrayValue(model)
@@ -284,14 +320,16 @@ public enum DynamicValue: Codable {
         let container = try decoder.singleValueContainer()
         // conditions order is important
          if let dateValue = try? container.decode(Date.self) {
-            self = .dateValue(dateValue)
+             self = .dateValue(dateValue, try? container.decode(String.self))
         }else if let stringValue = try? container.decode(String.self) {
+            // used for String, URL
             self = .stringValue(stringValue)
         } else if let intValue = try? container.decode(Int.self) {
             self = .intValue(intValue)
         }else if let boolValue = try? container.decode(Bool.self) {
             self = .boolValue(boolValue)
         }else if let doubleValue = try? container.decode(Double.self) {
+            // used for Double, Float
             self = .doubleValue(doubleValue)
         }else if let dataValue = try? container.decode(Data.self) {
             self = .dataValue(dataValue)
@@ -323,7 +361,7 @@ public enum DynamicValue: Codable {
             try container.encode(double)
         case .floatValue(let float):
             try container.encode(float)
-        case .dateValue(let date):
+        case .dateValue(let date, _):
             try container.encode(date)
         case .dataValue(let data):
             try container.encode(data)

@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     //TODO: done---- clean project
     //TODO: test json insertion
     //MARK: code documentation above each method and var
+    //MARK: example enhancement
     //MARK: pod document
     let data = JsonReader.getJsonSampleData()
     let decoder = DynamicJSONDecoder()
@@ -93,7 +94,7 @@ class ViewController: UIViewController {
     //MARK: Dynamic Encoding
     @IBAction func encodingAction(_ sender: UIButton) {
         
-        guard let model = try?  decoder.decode(ReadingWritingInnerModel.self, from: data) else {return}
+        guard var model = try?  decoder.decode(ReadingWritingInnerModel.self, from: data) else {return}
         print("property 0: \(model.property0)")
         model.property0 += " modified"
         print("property 0: \(model.property0)")
@@ -104,7 +105,8 @@ class ViewController: UIViewController {
         
         print("Array second item item1: \(model.level1.level2.secondArrayItem_1_OfLevel_6)")
         model.level1.level2.secondArrayItem_1_OfLevel_6? += " modified"
-        model.ds?.custom?.custom2?.set(["check my love"])
+        model.ds?.custom?[0]?.custom2?.set(["check my love"])
+        model.ds?.custom?[1]?.custom1?.set(2)
         print("Array second item item1: \(model.level1.level2.secondArrayItem_1_OfLevel_6)")
         
         guard let encodedData = try?  encoder.encode(model) else {return}
