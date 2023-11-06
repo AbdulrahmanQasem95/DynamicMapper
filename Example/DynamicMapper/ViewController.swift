@@ -14,9 +14,10 @@ class ViewController: UIViewController {
     //MARK: done---- example use different names than json keys
     //MARK: done---- test for value and refernce types
     //MARK: done---- support codable types (flaot, date, data,url)
-    //MARK:  code documentation above each method and var
-    //TODO:  clean project
-    //TODO: test json insertion 
+    //TODO: done---- clean project
+    //TODO: test json insertion
+    //MARK: code documentation above each method and var
+    //MARK: pod document
     let data = JsonReader.getJsonSampleData()
     let decoder = DynamicJSONDecoder()
     let encoder = DynamicJSONEncoder()

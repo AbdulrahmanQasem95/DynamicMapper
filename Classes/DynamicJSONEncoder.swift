@@ -15,7 +15,6 @@ public class DynamicJSONEncoder:JSONEncoder {
         var mutatingValue = value
         mutatingValue.dynamicMapping(mappingType: .encoding)
         let encodedData = try super.encode(mutatingValue)
-        
         if var serializedDictionary = try JSONSerialization.jsonObject(with: encodedData, options: []) as? [String:Any]{
             performDynamicModelExtraction(dic: &serializedDictionary)
             let cleanedData = try JSONSerialization.data(withJSONObject: serializedDictionary)

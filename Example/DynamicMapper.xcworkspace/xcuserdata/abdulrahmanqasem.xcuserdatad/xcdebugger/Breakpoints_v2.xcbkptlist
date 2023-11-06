@@ -476,8 +476,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
             endingLineNumber = "27"
-            landmarkName = "DynamicValue"
-            landmarkType = "13">
+            landmarkName = "stringValue"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -758,8 +758,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "341"
             endingLineNumber = "341"
-            landmarkName = "encode(to:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -772,8 +772,8 @@
             filePath = "DynamicMapper/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "innerModelAction(_:)"
             landmarkType = "7">
             <Locations>
@@ -820,8 +820,8 @@
             filePath = "DynamicMapper/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "innerModelAction(_:)"
             landmarkType = "7">
             <Locations>
@@ -868,8 +868,8 @@
             filePath = "../Classes/DynamicJSONEncoder.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "encode(_:)"
             landmarkType = "7">
             <Locations>
@@ -916,8 +916,8 @@
             filePath = "../Classes/DynamicJSONEncoder.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "encode(_:)"
             landmarkType = "7">
             <Locations>
@@ -1094,54 +1094,6 @@
                   startingLineNumber = "327"
                   endingLineNumber = "327"
                   offsetFromSymbolStart = "3830">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "82C95EF7-E4DC-498D-8F33-83AC1E419F41"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/DynamicJSONDecoder.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "decode(_:from:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "82C95EF7-E4DC-498D-8F33-83AC1E419F41 - 49a2109f14e1029f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DynamicMapper.DynamicJSONDecoder.decode&lt;&#x3c4;_0_0 where &#x3c4;_0_0: DynamicMapper.DynamicDecodable&gt;(_: &#x3c4;_0_0.Type, from: Foundation.Data) throws -&gt; &#x3c4;_0_0"
-                  moduleName = "DynamicMapper"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicJSONDecoder.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "1182">
-               </Location>
-               <Location
-                  uuid = "82C95EF7-E4DC-498D-8F33-83AC1E419F41 - 49a2109f14e1029f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DynamicMapper.DynamicJSONDecoder.decode&lt;&#x3c4;_0_0 where &#x3c4;_0_0: DynamicMapper.DynamicDecodable&gt;(_: &#x3c4;_0_0.Type, from: Foundation.Data) throws -&gt; &#x3c4;_0_0"
-                  moduleName = "DynamicMapper"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicJSONDecoder.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "1171">
                </Location>
             </Locations>
          </BreakpointContent>
