@@ -53,8 +53,10 @@ DynamicMapper is a framework written in Swift for dynnamically decoding and enco
 - [Installation](#installation)
 
 # Features:
-- Decoding and encoding using native ```swift JSONDecoder``` and ```swift JSONEncoder```
-- Has the full functionality of ```swift Codable = Decodable & Encodable``` protocol
+- Decoding and encoding using native `swiftJSONDecoder` and ```JSONEncoder```
+- Has the full functionality of ```swift
+ Codable = Decodable & Encodable``` 
+ protocol
 -  objects to JSON
 - Nested Objects (stand alone, in arrays or in dictionaries)
 - Custom transformations during mapping
