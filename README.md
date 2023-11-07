@@ -53,65 +53,70 @@ DynamicMapper is a framework written in Swift for dynnamically decoding and enco
 - [Installation](#installation)
 
 # Features:
-- Decoding and encoding using native `swiftJSONDecoder` and ```JSONEncoder```
-- Has the full functionality of ```swift
- Codable = Decodable & Encodable``` 
- protocol
--  objects to JSON
-- Nested Objects (stand alone, in arrays or in dictionaries)
-- Custom transformations during mapping
-- Struct support
-- [Immutable support](#immutablemappable-protocol)
+- Decoding and encoding using native `JSONDecoder` and `JSONEncoder`
+- Has the full functionality of `Codable = Decodable & Encodable` protocols
+- Nested Objects encoding and decoding (Dynamic Mapping)
+- Rreference & Value Types support
+- Dynamic Object Insertion and Creation
+- smooth transformation since it works directly with your `Codable`  models without any changes
+- Native replacment of [ObjectMapper](https://github.com/tristanhimmelman/ObjectMapper)
 
 # The Basics
-To support mapping, a class or struct just needs to implement the ```Mappable``` protocol which includes the following functions:
+Like native `JSONDecoder` and `JSONEncoder` To support dynamic mapping, a class or struct just needs to implement the `DynamicDecodable` protocol for decoding, `DynamicEncodable` protocol for encoding or `DynamicCodable` protocol for both decoding and encoding togoether
 ```swift
-init?(map: Map)
-mutating func mapping(map: Map)
+ var dynamicSelf: DynamicClass?
+ func dynamicMapping(mappingType: DynamicMappingType) {}
 ```
-ObjectMapper uses the ```<-``` operator to define how each member variable maps to and from JSON.
+DynamicMapper uses the ```<--``` operator to set nested member variable.
 
 ```swift
-class User: Mappable {
+class User: DynamicDecodable {
+    var dynamicSelf: DynamicClass?
+    
     var username: String?
+    var lastname: String?
     var age: Int?
     var weight: Double!
-    var array: [Any]?
-    var dictionary: [String : Any] = [:]
+    var birthday: Date?
+    var bestFamilyPhoto:URL?                    // Nested URL 
+    var numberOfChildren:Int?                   // Nested Int 
     var bestFriend: User?                       // Nested User object
     var friends: [User]?                        // Array of Users
-    var birthday: Date?
-
-    required init?(map: Map) {
-
-    }
-
-    // Mappable
-    func mapping(map: Map) {
-        username    <- map["username"]
-        age         <- map["age"]
-        weight      <- map["weight"]
-        array       <- map["arr"]
-        dictionary  <- map["dict"]
-        bestFriend  <- map["best_friend"]
-        friends     <- map["friends"]
-        birthday    <- (map["birthday"], DateTransform())
+    
+    func dynamicMapping(mappingType: DynamicMappingType) {
+        bestFamilyPhoto   <--  ds.alboms.familyAlbom.bestPhoto
+        numberOfChildren  <--  ds.familyInfo.childrenCount
+        bestFriend?.dynamicMapping(mappingType: mappingType)
+        friends?.dynamicMapping(mappingType: mappingType)
     }
 }
 
-struct Temperature: Mappable {
+
+struct Temperature: DynamicDecodable {
+    var dynamicSelf: DynamicClass?
+    
     var celsius: Double?
     var fahrenheit: Double?
-
-    init?(map: Map) {
-
-    }
-
-    mutating func mapping(map: Map) {
-        celsius     <- map["celsius"]
-        fahrenheit     <- map["fahrenheit"]
+    
+    mutating func dynamicMapping(mappingType: DynamicMapper.DynamicMappingType) {
+        // nothing to do with model level parameters, Codable will take care of them
+        // unless you want to use custom name
     }
 }
+
+// Custom names
+struct Temperature: DynamicDecodable {
+    var dynamicSelf: DynamicClass?
+    
+    var celsiusTemperature: Double?
+    var fahrenheitTemperature: Double?
+    
+    mutating func dynamicMapping(mappingType: DynamicMapper.DynamicMappingType) {
+        celsiusTemperature     <--  ds.celsius
+        fahrenheitTemperature  <--  ds.fahrenheit
+    }
+}
+
 ```
 
 Once your class implements `Mappable`, ObjectMapper allows you to easily convert to and from JSON. 
