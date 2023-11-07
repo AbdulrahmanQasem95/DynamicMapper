@@ -188,9 +188,9 @@ public enum DynamicValue: Codable {
         mutating get {
             if case .arrayValue(var arr) = self {
                 if index < arr.count {
-                   return arr[index]
+                    return arr[index]
                 }else {
-                    arr.append(.dictionaryValue([:]))
+                   // arr.append(.dictionaryValue([:]))
                     self = .arrayValue(arr)
                     return self
                 }
@@ -201,17 +201,15 @@ public enum DynamicValue: Codable {
             }
         }
         set {
-           // if let newValue = newValue {
-                if case .arrayValue(var arr) = self {
-                    if index < arr.count {
-                        arr[index] = newValue
-                        self = .arrayValue(arr)
-                    }else{
-                        arr.append(newValue)
-                        self = .arrayValue(arr)
-                    }
+            if case .arrayValue(var arr) = self {
+                if index < arr.count {
+                    arr[index] = newValue
+                    self = .arrayValue(arr)
+                }else{
+                    arr.append(newValue)
+                    self = .arrayValue(arr)
                 }
-            //}
+            }
         }
     }
     
@@ -254,12 +252,10 @@ public enum DynamicValue: Codable {
         }
         
         set {
-           // if let newValue = newValue {
-                if case .dictionaryValue(var dict) = self {
-                    dict[member] = newValue
-                    self = .dictionaryValue(dict)
-                }
-            //}
+            if case .dictionaryValue(var dict) = self {
+                dict[member] = newValue
+                self = .dictionaryValue(dict)
+            }
         }
     }
    

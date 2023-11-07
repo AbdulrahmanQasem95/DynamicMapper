@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5iA-xT-OmB">
-                                <rect key="frame" x="26" y="205" width="323" height="257"/>
+                                <rect key="frame" x="26" y="160.5" width="323" height="346"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTn-wU-ChM">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="34.5"/>
@@ -99,6 +99,32 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="ValueTypeExample:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3D9-TX-QcP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83h-zj-MHE">
+                                        <rect key="frame" x="0.0" y="267" width="323" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Custom Json Insertion">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                            </backgroundConfiguration>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="customJsonInsertionExample:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="SqI-6I-uIY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guc-vr-u5f">
+                                        <rect key="frame" x="0.0" y="311.5" width="323" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Custom Json Creation">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                            </backgroundConfiguration>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="customJsonCreationExample:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Vxy-lZ-1EJ"/>
                                         </connections>
                                     </button>
                                 </subviews>

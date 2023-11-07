@@ -23,7 +23,7 @@ struct ValueTypeModel:DynamicCodable{
     var thirdArrayItem_2_OfLevel_6:Int?
     var nonExitArrayItem:Int? 
     
-    mutating func dynamicMapping(mappingType: DynamicMapper.DynamicMappingType) {
+    mutating func dynamicMapping(mappingType: DynamicMappingType) {
         switch mappingType {
         case .decoding:
             property_2                  <--   ds.level1.level2.property2

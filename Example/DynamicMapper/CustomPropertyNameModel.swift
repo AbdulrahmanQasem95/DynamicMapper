@@ -15,14 +15,14 @@ class CustomPropertyNameModel:DynamicCodable{
     var property0_CustomName:String?
     var property04_CustomName:String?
     
-    func dynamicMapping(mappingType: DynamicMapper.DynamicMappingType) {
+    func dynamicMapping(mappingType: DynamicMappingType) {
         switch mappingType {
         case .decoding:
             property0_CustomName     <--   ds.property0
             property04_CustomName    <--   ds.property04
         case .encoding:
             property0_CustomName     -->  {ds.property0.set($0)}
-            property04_CustomName    -->   {ds.property04.set($0)}
+            property04_CustomName    -->  {ds.property04.set($0)}
         }
     }
    

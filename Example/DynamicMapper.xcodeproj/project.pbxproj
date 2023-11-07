@@ -17,6 +17,8 @@
 		66ADE353DFCB2674B4EE3C8A /* Pods_DynamicMapper_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E30B29E7F0FD7E4312556F2F /* Pods_DynamicMapper_Tests.framework */; };
 		F919D4962AF78BE600B7D4D4 /* CustomPropertyNameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F919D4952AF78BE600B7D4D4 /* CustomPropertyNameModel.swift */; };
 		F919D4982AF78D9600B7D4D4 /* ValueTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F919D4972AF78D9600B7D4D4 /* ValueTypeModel.swift */; };
+		F919D49C2AFA50B900B7D4D4 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F919D49B2AFA50B900B7D4D4 /* Helper.swift */; };
+		F919D49E2AFA540700B7D4D4 /* CustomInsertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F919D49D2AFA540700B7D4D4 /* CustomInsertModel.swift */; };
 		F9BA4A4E2ACDA0ED00EBABA8 /* jsonExample.JSON in Sources */ = {isa = PBXBuildFile; fileRef = F9BA4A4D2ACDA0ED00EBABA8 /* jsonExample.JSON */; };
 		F9BA4A4F2ACDA80200EBABA8 /* jsonExample.JSON in Resources */ = {isa = PBXBuildFile; fileRef = F9BA4A4D2ACDA0ED00EBABA8 /* jsonExample.JSON */; };
 		F9BA4A522ACEA3CF00EBABA8 /* NestedPropertiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BA4A512ACEA3CF00EBABA8 /* NestedPropertiesModel.swift */; };
@@ -57,6 +59,8 @@
 		F91543CD2AB9B1E700340D63 /* DynamicMapper.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = DynamicMapper.podspec; path = ../DynamicMapper.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F919D4952AF78BE600B7D4D4 /* CustomPropertyNameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPropertyNameModel.swift; sourceTree = "<group>"; };
 		F919D4972AF78D9600B7D4D4 /* ValueTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTypeModel.swift; sourceTree = "<group>"; };
+		F919D49B2AFA50B900B7D4D4 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		F919D49D2AFA540700B7D4D4 /* CustomInsertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInsertModel.swift; sourceTree = "<group>"; };
 		F9BA4A4D2ACDA0ED00EBABA8 /* jsonExample.JSON */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jsonExample.JSON; sourceTree = "<group>"; };
 		F9BA4A512ACEA3CF00EBABA8 /* NestedPropertiesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedPropertiesModel.swift; sourceTree = "<group>"; };
 		F9BA4A532ACEA72C00EBABA8 /* JsonReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				F919D49B2AFA50B900B7D4D4 /* Helper.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -180,12 +185,12 @@
 			children = (
 				F9BA4A4D2ACDA0ED00EBABA8 /* jsonExample.JSON */,
 				F9BA4A532ACEA72C00EBABA8 /* JsonReader.swift */,
-				F9BA4A552ACEABD800EBABA8 /* Sample1 */,
+				F9BA4A552ACEABD800EBABA8 /* Sample */,
 			);
 			name = Samples;
 			sourceTree = "<group>";
 		};
-		F9BA4A552ACEABD800EBABA8 /* Sample1 */ = {
+		F9BA4A552ACEABD800EBABA8 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
 				F9BA4A512ACEA3CF00EBABA8 /* NestedPropertiesModel.swift */,
@@ -193,8 +198,9 @@
 				F9BA4A582ACEEDCF00EBABA8 /* NestedCustomModel.swift */,
 				F919D4952AF78BE600B7D4D4 /* CustomPropertyNameModel.swift */,
 				F919D4972AF78D9600B7D4D4 /* ValueTypeModel.swift */,
+				F919D49D2AFA540700B7D4D4 /* CustomInsertModel.swift */,
 			);
-			name = Sample1;
+			name = Sample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,8 +383,10 @@
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				F9BA4A592ACEEDCF00EBABA8 /* NestedCustomModel.swift in Sources */,
 				F9BA4A572ACEE54F00EBABA8 /* ReadingWritingInnerModel.swift in Sources */,
+				F919D49C2AFA50B900B7D4D4 /* Helper.swift in Sources */,
 				F919D4962AF78BE600B7D4D4 /* CustomPropertyNameModel.swift in Sources */,
 				F9BA4A4E2ACDA0ED00EBABA8 /* jsonExample.JSON in Sources */,
+				F919D49E2AFA540700B7D4D4 /* CustomInsertModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

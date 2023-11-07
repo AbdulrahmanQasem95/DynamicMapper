@@ -24,6 +24,11 @@ open class DynamicClass: Codable {
     
     private var container: [String: DynamicValue]
     
+    // init() For Json Creation 
+    public init(){
+        container = [:]
+    }
+    
     init(_ dictionary: [String: DynamicValue]) {
         self.container = dictionary
     }

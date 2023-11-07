@@ -14,8 +14,8 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "328"
-            endingLineNumber = "328"
+            startingLineNumber = "324"
+            endingLineNumber = "324"
             landmarkName = "init(from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "331"
-            endingLineNumber = "331"
+            startingLineNumber = "327"
+            endingLineNumber = "327"
             landmarkName = "init(from:)"
             landmarkType = "7">
             <Locations>
@@ -78,8 +78,8 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "335"
-            endingLineNumber = "335"
+            startingLineNumber = "331"
+            endingLineNumber = "331"
             landmarkName = "init(from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "337"
-            endingLineNumber = "337"
+            startingLineNumber = "333"
+            endingLineNumber = "333"
             landmarkName = "init(from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,8 +110,8 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "341"
-            endingLineNumber = "341"
+            startingLineNumber = "337"
+            endingLineNumber = "337"
             landmarkName = "init(from:)"
             landmarkType = "7">
             <Locations>
@@ -158,8 +158,8 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "343"
-            endingLineNumber = "343"
+            startingLineNumber = "339"
+            endingLineNumber = "339"
             landmarkName = "init(from:)"
             landmarkType = "7">
             <Locations>
@@ -206,8 +206,8 @@
             filePath = "../Classes/DynamicClass.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "subscript(dynamicMember:)"
             landmarkType = "7">
             <Locations>
@@ -254,8 +254,8 @@
             filePath = "../Classes/DynamicClass.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "subscript(dynamicMember:)"
             landmarkType = "7">
             <Locations>
@@ -302,8 +302,8 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
             landmarkName = "subscript(dynamicMember:)"
             landmarkType = "7">
             <Locations>
@@ -678,8 +678,8 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "377"
-            endingLineNumber = "377"
+            startingLineNumber = "373"
+            endingLineNumber = "373"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -694,8 +694,8 @@
             filePath = "DynamicMapper/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "innerModelAction(_:)"
             landmarkType = "7">
             <Locations>
@@ -757,8 +757,8 @@
             filePath = "DynamicMapper/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "innerModelAction(_:)"
             landmarkType = "7">
             <Locations>
@@ -916,8 +916,8 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "339"
-            endingLineNumber = "339"
+            startingLineNumber = "335"
+            endingLineNumber = "335"
             landmarkName = "init(from:)"
             landmarkType = "7">
             <Locations>
@@ -964,8 +964,8 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "333"
-            endingLineNumber = "333"
+            startingLineNumber = "329"
+            endingLineNumber = "329"
             landmarkName = "init(from:)"
             landmarkType = "7">
             <Locations>
@@ -1012,8 +1012,8 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "340"
-            endingLineNumber = "340"
+            startingLineNumber = "336"
+            endingLineNumber = "336"
             landmarkName = "init(from:)"
             landmarkType = "7">
             <Locations>
@@ -1053,54 +1053,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A21433A2-4781-4538-A5B0-729E7D53DDEF"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/DynamicValue.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
-            landmarkName = "subscript(index:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A21433A2-4781-4538-A5B0-729E7D53DDEF - f64b331a001574f0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DynamicMapper.DynamicValue.subscript.setter : (Swift.Int) -&gt; Swift.Optional&lt;DynamicMapper.DynamicValue&gt;"
-                  moduleName = "DynamicMapper"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicValue.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "200"
-                  endingLineNumber = "200"
-                  offsetFromSymbolStart = "370">
-               </Location>
-               <Location
-                  uuid = "A21433A2-4781-4538-A5B0-729E7D53DDEF - f64b331a001574d1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DynamicMapper.DynamicValue.subscript.setter : (Swift.Int) -&gt; Swift.Optional&lt;DynamicMapper.DynamicValue&gt;"
-                  moduleName = "DynamicMapper"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Classes/DynamicValue.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "201"
-                  endingLineNumber = "201"
-                  offsetFromSymbolStart = "370">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A890CA3C-AB1E-422F-AAB3-6F0F79D33636"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1108,8 +1060,8 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
             landmarkName = "subscript(index:)"
             landmarkType = "7">
             <Locations>
@@ -1156,8 +1108,8 @@
             filePath = "../Classes/DynamicValue.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
             landmarkName = "subscript(index:)"
             landmarkType = "7">
             <Locations>
