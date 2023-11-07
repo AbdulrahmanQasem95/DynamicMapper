@@ -8,8 +8,6 @@
 import Foundation
 public class DynamicJSONEncoder:JSONEncoder {
     
-    //public init(){}
-    
     // Encoding method
     public func encode<T>(_ value: T) throws -> Data where T : DynamicEncodable{
         var mutatingValue = value

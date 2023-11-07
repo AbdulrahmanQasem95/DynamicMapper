@@ -13,8 +13,8 @@ let dynamicSelf = "dynamicSelf"
 public protocol BaseDynamicCodable{
     mutating func dynamicMapping(mappingType:DynamicMappingType)
     var  dynamicSelf:DynamicClass? { get set }
-    /// dm stands for Dynamic Mapper
-    /// an alias of dynamicSelf
+    /// ds stands for Dynamic Self
+    /// an alias of dynamicSelf property
     var  ds:DynamicClass {  get }
 }
 

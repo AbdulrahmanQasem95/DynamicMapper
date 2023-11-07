@@ -17,7 +17,8 @@ class ViewController: UIViewController {
     //TODO: done---- clean project
     //TODO: done---- test json insertion
     //TODO: done---- remove optional chaining for get, set and insert operations
-    //MARK: code documentation above each method and var
+    //TODO: done---- remove unwanted public methods
+    //MARK: done---- code documentation above each method and var
     //MARK: example enhancement
     //MARK: pod document
     let data = JsonReader.getJsonSampleData()

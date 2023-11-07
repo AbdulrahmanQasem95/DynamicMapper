@@ -7,5 +7,6 @@
 
 import Foundation
 
+/// DynamicCodable dynamically encode and decode models
 public protocol DynamicCodable:DynamicDecodable,DynamicEncodable{
 }
