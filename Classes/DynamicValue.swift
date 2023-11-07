@@ -23,7 +23,7 @@ public enum DynamicValue: Codable {
     case null(Int?)
     
     //string value
-    public var stringValue: String? {
+     var stringValue: String? {
         if case .stringValue(let str) = self {
             return str
         }else if case .dateValue(_, let originalString) = self {
@@ -33,7 +33,7 @@ public enum DynamicValue: Codable {
     }
     
     //Integer value
-    public var intValue: Int? {
+     var intValue: Int? {
         if case .intValue(let int) = self {
             return int
         }
@@ -41,7 +41,7 @@ public enum DynamicValue: Codable {
     }
     
     //Boolean value
-    public var boolValue: Bool? {
+     var boolValue: Bool? {
         if case .boolValue(let bool) = self {
             return bool
         }
@@ -49,7 +49,7 @@ public enum DynamicValue: Codable {
     }
     
     //Double value
-    public var doubleValue: Double? {
+     var doubleValue: Double? {
         if case .doubleValue(let double) = self {
             return double
         }
@@ -57,7 +57,7 @@ public enum DynamicValue: Codable {
     }
     
     //Float value
-    public var floatValue: Float? {
+     var floatValue: Float? {
         if case .floatValue(let float) = self {
             return float
         }else if case .doubleValue(let double) = self {
@@ -67,7 +67,7 @@ public enum DynamicValue: Codable {
     }
     
     //Date value
-    public var dateValue: Date? {
+     var dateValue: Date? {
         if case .dateValue(let date,_) = self {
             return date
         }
@@ -75,7 +75,7 @@ public enum DynamicValue: Codable {
     }
     
     //Data value
-    public var dataValue: Data? {
+     var dataValue: Data? {
         if case .dataValue(let data) = self {
             return data
         }
@@ -83,7 +83,7 @@ public enum DynamicValue: Codable {
     }
     
     //URL value
-    public var urlValue: URL? {
+     var urlValue: URL? {
         if case .urlValue(let url) = self {
             return url
         }else if case .stringValue(let string) = self {
@@ -93,7 +93,7 @@ public enum DynamicValue: Codable {
     }
     
     //Custom object conform to DynamicDecodable protocol
-    public  func objectValue<T:DynamicDecodable>(customType:T.Type)-> T? {
+      func objectValue<T:DynamicDecodable>(customType:T.Type)-> T? {
         if case .dictionaryValue(let value) = self {
             let data = try? JSONEncoder().encode(value)
             if let data = data {
@@ -106,7 +106,7 @@ public enum DynamicValue: Codable {
     }
     
     //Array of Integers
-    public  func intArrayValue()-> [Int] {
+      func intArrayValue()-> [Int] {
         if case .arrayValue(let value) = self {
             return value.compactMap({$0.intValue}).map({$0  })
         }
@@ -114,7 +114,7 @@ public enum DynamicValue: Codable {
     }
     
     //Array of Strings
-    public  func stringArrayValue()-> [String] {
+      func stringArrayValue()-> [String] {
         if case .arrayValue(let value) = self {
             return value.compactMap({$0.stringValue}).map({$0  })
         }
@@ -122,7 +122,7 @@ public enum DynamicValue: Codable {
     }
     
     //Array of Booleans
-    public  func boolArrayValue()-> [Bool] {
+      func boolArrayValue()-> [Bool] {
         if case .arrayValue(let value) = self {
             return value.compactMap({$0.boolValue}).map({$0  })
         }
@@ -130,7 +130,7 @@ public enum DynamicValue: Codable {
     }
     
     //Array of Doubles
-    public  func doubleArrayValue()-> [Double] {
+      func doubleArrayValue()-> [Double] {
         if case .arrayValue(let value) = self {
             return value.compactMap({$0.doubleValue}).map({$0  })
         }
@@ -138,7 +138,7 @@ public enum DynamicValue: Codable {
     }
     
     //Array of Floats
-    public  func floatArrayValue()-> [Float] {
+      func floatArrayValue()-> [Float] {
         if case .arrayValue(let value) = self {
             return value.compactMap({$0.floatValue}).map({$0  })
         }
@@ -146,7 +146,7 @@ public enum DynamicValue: Codable {
     }
     
     //Array of Dates
-    public  func dateArrayValue()-> [Date] {
+      func dateArrayValue()-> [Date] {
         if case .arrayValue(let value) = self {
             return value.compactMap({$0.dateValue}).map({$0  })
         }
@@ -154,7 +154,7 @@ public enum DynamicValue: Codable {
     }
     
     //Array of Data
-    public  func dataArrayValue()-> [Data] {
+      func dataArrayValue()-> [Data] {
         if case .arrayValue(let value) = self {
             return value.compactMap({$0.dataValue}).map({$0  })
         }
@@ -162,7 +162,7 @@ public enum DynamicValue: Codable {
     }
     
     //Array of URLs
-    public  func urlArrayValue()-> [URL] {
+      func urlArrayValue()-> [URL] {
         if case .arrayValue(let value) = self {
             return value.compactMap({$0.urlValue}).map({$0  })
         }
@@ -170,7 +170,7 @@ public enum DynamicValue: Codable {
     }
     
     //Array of custom objects that confrom to DynamicDecodable
-    public  func customArrayValue<T:DynamicDecodable>(type:T.Type)-> [T] {
+      func customArrayValue<T:DynamicDecodable>(type:T.Type)-> [T] {
         if case .arrayValue(let value) = self {
             let data = try? JSONEncoder().encode(value)
             if let data = data {
@@ -215,7 +215,7 @@ public enum DynamicValue: Codable {
         }
     }
     
-    //    public subscript(key: String) -> DynamicValue? {
+    //     subscript(key: String) -> DynamicValue? {
     //        get {
     //            if case .dictionaryValue(let dict) = self {
     //                return dict[key]

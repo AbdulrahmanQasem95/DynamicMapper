@@ -35,7 +35,7 @@ open class DynamicClass: Codable {
                 return value
             }
             else {
-                // create value if not exist - Json Generation or Insersion-
+                // create value if not exist - Json Generation or Insertion-
                 container[key] = .dictionaryValue([:])
                 return container[key]!
             }

@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     //MARK: done---- support codable types (flaot, date, data,url)
     //TODO: done---- clean project
     //TODO: done---- test json insertion
+    //TODO: done---- remove optional chaining for get, set and insert operations
     //MARK: code documentation above each method and var
     //MARK: example enhancement
     //MARK: pod document
