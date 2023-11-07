@@ -184,7 +184,7 @@ public enum DynamicValue: Codable {
     }
     
     //Safe access of array item by index
-    public subscript(index: Int) -> DynamicValue? {
+    public subscript(index: Int) -> DynamicValue {
         mutating get {
             if case .arrayValue(var arr) = self {
                 if index < arr.count {
@@ -199,10 +199,9 @@ public enum DynamicValue: Codable {
                 self = .arrayValue(arr)
                 return self
             }
-            return nil
         }
         set {
-            if let newValue = newValue {
+           // if let newValue = newValue {
                 if case .arrayValue(var arr) = self {
                     if index < arr.count {
                         arr[index] = newValue
@@ -212,7 +211,7 @@ public enum DynamicValue: Codable {
                         self = .arrayValue(arr)
                     }
                 }
-            }
+            //}
         }
     }
     
@@ -236,7 +235,7 @@ public enum DynamicValue: Codable {
     //    }
     
     // Dynamic member lookup subscript
-    public subscript(dynamicMember member: String) -> DynamicValue? {
+    public subscript(dynamicMember member: String) -> DynamicValue {
         mutating get {
             if case .dictionaryValue(var  dict) = self {
                 if let value =  dict[member] {
@@ -252,16 +251,15 @@ public enum DynamicValue: Codable {
                 self = newDic
                 return self
             }
-            return nil
         }
         
         set {
-            if let newValue = newValue {
+           // if let newValue = newValue {
                 if case .dictionaryValue(var dict) = self {
                     dict[member] = newValue
                     self = .dictionaryValue(dict)
                 }
-            }
+            //}
         }
     }
    

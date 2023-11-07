@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     //MARK: done---- test for value and refernce types
     //MARK: done---- support codable types (flaot, date, data,url)
     //TODO: done---- clean project
-    //TODO: test json insertion
+    //TODO: done---- test json insertion
     //MARK: code documentation above each method and var
     //MARK: example enhancement
     //MARK: pod document
@@ -105,8 +105,8 @@ class ViewController: UIViewController {
         
         print("Array second item item1: \(model.level1.level2.secondArrayItem_1_OfLevel_6)")
         model.level1.level2.secondArrayItem_1_OfLevel_6? += " modified"
-        model.ds?.custom?[0]?.custom2?.set(["check my love"])
-        model.ds?.custom?[1]?.custom1?.set(2)
+        model.ds.custom[0].custom2.set(["check my love"])
+        model.ds.custom[1].custom1.set(2)
         print("Array second item item1: \(model.level1.level2.secondArrayItem_1_OfLevel_6)")
         
         guard let encodedData = try?  encoder.encode(model) else {return}

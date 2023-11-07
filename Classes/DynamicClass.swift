@@ -29,7 +29,7 @@ open class DynamicClass: Codable {
     }
     
     // Dynamic member lookup subscript
-    public subscript(dynamicMember key: String) -> DynamicValue? {
+    public subscript(dynamicMember key: String) -> DynamicValue {
         get {
             if let value = container[key] {
                 return value
