@@ -10,8 +10,17 @@ import UIKit
 import DynamicMapper
 class ViewController: UIViewController {
     
-    //MARK: forth example about reading and writing and compatility with Realm
-    
+    //MARK: done---- reading and writing and compatility with Realm
+    //MARK: done---- example use different names than json keys
+    //MARK: done---- test for value and refernce types
+    //MARK: done---- support codable types (flaot, date, data,url)
+    //TODO: done---- clean project
+    //TODO: done---- test json insertion
+    //TODO: done---- remove optional chaining for get, set and insert operations
+    //TODO: done---- remove unwanted public methods
+    //MARK: done---- code documentation above each method and var
+    //MARK: done---- example enhancement
+    //MARK: pod document
     let data = JsonReader.getJsonSampleData()
     let decoder = DynamicJSONDecoder()
     let encoder = DynamicJSONEncoder()
@@ -21,205 +30,180 @@ class ViewController: UIViewController {
     }
     
     
-    //MARK: reading and wirting nested properties
-    @IBAction func example1Action(_ sender: UIButton) {
-        if let model = try?  decoder.decode(ReadingWritingNestedPropertiesModel.self, from: data) {
+    
+    //MARK: -Reading and Wirting nested properties
+    @IBAction func nestedPropertiesAction(_ sender: UIButton) {
+        decoder.dateDecodingStrategy = .iso8601
+        if let model = try?  decoder.decode(NestedPropertiesModel.self, from: data) {
             print("property 0: \(model.property0)")
-            print("property 2: \(model.property_2)")
+            print("property 01: \(model.property01)")
+            print("property 02: \(model.property02)")
+            print("property 03: \(model.property03)")
+            print("property 04: \(model.property04)")
+            print("Flaot: \(model.flaotValue ?? 0)")
+            print("Date: \(model.dateValue ?? Date())")
+            print("Url: \(model.urlValue?.absoluteString ?? "")")
+            print("property 2: \(model.property_2 ?? 0)")
             
-            print("property 4: \(model.property_4)")
-            model.property_4 += " modefied"
-            print("property 4: \(model.property_4)")
+            print("property 4: \(model.property_4 ?? "")")
+            model.property_4? += " modefied"
+            print("property 4: \(model.property_4 ?? "")")
             
             
-            print("level 6 second array item1: \(model.secondArrayItem_1_OfLevel_6)")
+            print("level 6 second array item1: \(model.secondArrayItem_1_OfLevel_6 ?? "")")
             
-            print("level 6 third array item2: \(model.thirdArrayItem_2_OfLevel_6)")
-            model.thirdArrayItem_2_OfLevel_6 += 10
-            print("level 6 third array item2: \(model.thirdArrayItem_2_OfLevel_6)")
+            print("level 6 third array item2: \(model.thirdArrayItem_2_OfLevel_6 ?? 0)")
+            model.thirdArrayItem_2_OfLevel_6? += 10
+            print("level 6 third array item2 modified: \(model.thirdArrayItem_2_OfLevel_6 ?? 0)")
             
-            print("non exit array item: \(model.nonExitArrayItem)")
+            print("non exit array item: \(model.nonExitArrayItem ?? 0)")
         }
     }
     
+   
     
-    //MARK: reading and writing from nested definded model that containd dynamic properties
-    @IBAction func example2Action(_ sender: UIButton) {
-        if let model = try?  decoder.decode(ReadingWritingNestedDefinedModel.self, from: data) {
+    
+    //MARK: -Reading and Writing from inner model that contains dynamic properties
+    @IBAction func innerModelAction(_ sender: UIButton) {
+        if let model = try?  decoder.decode(ReadingWritingInnerModel.self, from: data) {
             print("property 0: \(model.property0)")
             print("property 1: \(model.level1.property1)")
             
             print("property 2: \(model.level1.level2.property2)")
-           
-            print("property 5: \(model.level1.level2.property_5)")
-            model.level1.level2.property_5 += " modified"
-            print("property 5: \(model.level1.level2.property_5)")
             
-            print("level 6 second array item1: \(model.level1.level2.secondArrayItem_1_OfLevel_6)")
+            print("property 4: \(model.property_4 ?? "")")
+            model.property_4? += " modefied"
+            print("property 4: \(model.property_4 ?? "")")
+            
+            print("property 5: \(model.level1.level2.property_5 ?? "")")
+            model.level1.level2.property_5? += " modified"
+            print("property 5 modified: \(model.level1.level2.property_5 ?? "")")
+            
+            print("level 6 second array item1: \(model.level1.level2.secondArrayItem_1_OfLevel_6 ?? "")")
         }
     }
     
-    //MARK:  reading and writing nested custom models
-    @IBAction func example3Action(_ sender: UIButton) {
-        if let model = try?  decoder.decode(ReadingWritingNestedCustomModel.self, from: data) {
+    
+    
+    
+    //MARK:  -Reading and Writing nested custom models
+    @IBAction func nestedCustomModelAction(_ sender: UIButton) {
+        if let model = try?  decoder.decode(NestedCustomModel.self, from: data) {
             print("property 0: \(model.property0)")
             print("property 4: \(model.level_4?.property4 ?? "not found")")
             
-            print("Array second item item1: \(model.level_6_Array[1].item1)")
-            model.level_6_Array[1].item1 += " modified"
-            print("Array second item item1: \(model.level_6_Array[1].item1)")
+            print("Array second item item1: \(model.level_6_Array?[1].item1 ?? "")")
+            model.level_6_Array?[1].item1 += " modified"
+            print("Array second item item1: \(model.level_6_Array?[1].item1 ?? "")")
         }
     }
     
     
-    //MARK: Dynamic Encoding
-    @IBAction func example4Action(_ sender: UIButton) {
+    
+    
+    //MARK: -Dynamic Encoding
+    @IBAction func encodingAction(_ sender: UIButton) {
         
-        guard let model = try?  decoder.decode(ReadingWritingNestedDefinedModel.self, from: data) else {return}
+        guard let model = try?  decoder.decode(ReadingWritingInnerModel.self, from: data) else {return}
         print("property 0: \(model.property0)")
         model.property0 += " modified"
         print("property 0: \(model.property0)")
         
-        print("property 5: \(model.level1.level2.property_5)")
-        model.level1.level2.property_5 += " modified"
-        print("property 5: \(model.level1.level2.property_5)")
+        print("property 5: \(model.level1.level2.property_5 ?? "")")
+        model.level1.level2.property_5? += " modified"
+        print("property 5: \(model.level1.level2.property_5 ?? "")")
         
-        print("Array second item item1: \(model.level1.level2.secondArrayItem_1_OfLevel_6)")
-        model.level1.level2.secondArrayItem_1_OfLevel_6 += " modified"
-        print("Array second item item1: \(model.level1.level2.secondArrayItem_1_OfLevel_6)")
+        print("Array second item item1: \(model.level1.level2.secondArrayItem_1_OfLevel_6 ?? "")")
+        model.level1.level2.secondArrayItem_1_OfLevel_6? += " modified"
+        print("Array second item item1 modified: \(model.level1.level2.secondArrayItem_1_OfLevel_6 ?? "")")
         
         guard let encodedData = try?  encoder.encode(model) else {return}
-        print(String(data: encodedData, encoding: .utf8))
-        guard let decodedModel = try?  decoder.decode(ReadingWritingNestedDefinedModel.self, from: encodedData) else {return}
+        guard let decodedModel = try?  decoder.decode(ReadingWritingInnerModel.self, from: encodedData) else {return}
         print("\nAfter endode and decode model again:")
         print("property 0: \(decodedModel.property0)")
-        print("property 5: \(decodedModel.level1.level2.property_5)")
-        print("Array second item item1: \(model.level1.level2.secondArrayItem_1_OfLevel_6)")
+        print("property 5: \(decodedModel.level1.level2.property_5 ?? "")")
+        print("Array second item item1: \(model.level1.level2.secondArrayItem_1_OfLevel_6 ?? "")")
+        
+        Helper.prettyPrint(data: encodedData)
     }
     
-}
-
-
-
-
-
-class arrayItem:DynamicCodable {
-    var dynamicSelf: DynamicMapper.DynamicClass?
-    
-    var title:String
-    
-//    var bodyme:String? {
-//        get {
-//            dynamicSelf?.body?.stringValue
-//        }
-//        set {
-//            dynamicSelf?.body?.setDynamicProperty(value: newValue )
-//        }
-//    }
-    //MARK: Realm format
-//    @objc dynamic var bodyme:String {
-//        get{
-//            dm.intenralArray?[0]?.bodyinternal?.stringValue ?? ""
-//        }
-//        set{
-//            dm.intenralArray?[0]?.bodyinternal?.setDynamicProperty(value: newValue )
-//        }
-//    }
-//    @objc dynamic private var bodyme_holder:String?
-//    var bodyme:String? {
-//        get {
-//            bodyme_holder ?? dynamicSelf?.body?.stringValue
-//        }
-//        set {
-//            bodyme_holder = newValue
-//            dynamicSelf?.body?.setDynamicProperty(value: bodyme_holder )
-//        }
-//    }
-    
-//    @objc dynamic private var bodyme:String? = {dynamicSelf?.body?.stringValue}()
-
-    //MARK: Normal get set format
-//    lazy var bodyme:String? = dynamicSelf?.intenralArray?[0]?.bodyinternal?.stringValue
-//    {
-//        didSet {
-//            //TODO: need to test with dynamic items
-//            dynamicSelf?.intenralArray?[0]?.bodyinternal?.setDynamicProperty(value: bodyme ?? "" )
-//        }
-//    }
-//
-    var bodyme:String {
-        get{
-            dm.intenralArray?[0]?.bodyinternal?.stringValue ?? ""
-        }
-        set{
-            dm.intenralArray?[0]?.bodyinternal?.setDynamicProperty(value: newValue )
-        }
-    }
-//
-//
     
     
-    //MARK: Normal get only
-    //var bodyme:String? {dynamicSelf?.body?.stringValue}
-  
-//    lazy var bodyme:String? = {
-//        dynamicSelf?.body?.stringValue ?? ""
-//    }() {
-//        didSet {
-//            dynamicSelf?.body?.setDynamicProperty(value: bodyme ?? "")
-//        }
-//    }
-    var flag:Bool
-   // var intenralArray:[IntenralArray]
- 
-}
-
-
-
-struct DM<T:Codable>:Codable{
-
-    var path:DynamicValue?
-    var value:T?
-    func set(_ value: T){
-
+    
+    @IBAction func customPropertyNameExample(_ sender: UIButton) {
+        guard let model = try?  decoder.decode(CustomPropertyNameModel.self, from: data) else {return}
+        print("property 0 custom name: \(model.property0_CustomName ?? "")")
+        model.property0_CustomName? += " modified"
+        print("property 0 custom name modified: \(model.property0_CustomName ?? "")")
+        print("property 04 custom name: \(model.property04_CustomName ?? "")")
+        
+        
+        guard let encodedData = try?  encoder.encode(model) else {return}
+        guard let decodedModel = try?  decoder.decode(CustomPropertyNameModel.self, from: encodedData) else {return}
+        print("\nAfter endode and decode model again:")
+        print("property 0 custom name: \(decodedModel.property0_CustomName ?? "")")
+        print("property 04 custom name: \(decodedModel.property04_CustomName ?? "")")
     }
-
-    init(path:DynamicValue?) {
-        self.path = path
-    }
-    func get() -> T?{
-       return value
-    }
-//    subscript() -> T{
-//        set{
-//            path?.setDynamicProperty(value: "name")
-//        }
-//        get{
-//            return "" as! T
-//        }
-//    }
-    init(from decoder: Decoder) throws {
-        let value = try? T(from: decoder)
-        self.value = value
-    }
-
-    func encode(to encoder: Encoder) throws {
-        if let value = value {
-            try "\(value)".encode(to: encoder)
+    
+    
+    
+    
+    @IBAction func ValueTypeExample(_ sender: UIButton) {
+        if var model = try?  decoder.decode(ValueTypeModel.self, from: data) {
+            print("property 0:  \(model.property0)")
+            print("property 01: \(model.property01)")
+            print("property 02: \(model.property02)")
+            print("property 03: \(model.property03)")
+            print("property 04: \(model.property04)")
+            print("property 2:  \(model.property_2 ?? 0)")
+            print("property 4:  \(model.property_4 ?? "")")
+            model.property_4? += " modefied"
+            print("property 4 modified: \(model.property_4 ?? "")")
+            print("level 6 second array item1: \(model.secondArrayItem_1_OfLevel_6 ?? "")")
+            print("level 6 third array item2: \(model.thirdArrayItem_2_OfLevel_6 ?? 0)")
+            model.thirdArrayItem_2_OfLevel_6? += 10
+            print("level 6 third array item2 modified: \(model.thirdArrayItem_2_OfLevel_6 ?? 0)")
+            print("non exit array item: \(model.nonExitArrayItem ?? 0)")
+            
+            guard let encodedData = try?  encoder.encode(model) else {return}
+            guard let decodedModel = try?  decoder.decode(ValueTypeModel.self, from: encodedData) else {return}
+            print("\nAfter endode and decode model again:")
+            print("property 0: \(decodedModel.property0)")
+            print("property 01: \(decodedModel.property01)")
+            print("property 02: \(decodedModel.property02)")
+            print("property 03: \(decodedModel.property03)")
+            print("property 04: \(decodedModel.property04)")
+            print("property 2: \(decodedModel.property_2 ?? 0)")
+            print("property 4: \(decodedModel.property_4 ?? "")")
+            print("level 6 second array item1: \(decodedModel.secondArrayItem_1_OfLevel_6 ?? "")")
+            print("level 6 third array item2: \(decodedModel.thirdArrayItem_2_OfLevel_6 ?? 0)")
+            print("non exit array item: \(decodedModel.nonExitArrayItem ?? 0)")
         }
     }
     
-}
-
-class test:DynamicCodable {
-    var dynamicSelf: DynamicMapper.DynamicClass?
-
-   // var myValue: DM<Int> = DM(path: dm.what?.ksdhjsf)
-    var myValue:Int
-    func dsdf() {
-//        myValue.set(30)
-//        let i = myValue.get()
+    @IBAction func customJsonInsertionExample(_ sender: UIButton) {
+        guard let model = try?  decoder.decode(ReadingWritingInnerModel.self, from: data) else {return}
+        
+        model.ds.custom[0].stringArray.set(["custom item 1", "custom item 2"])
+        model.ds.custom[1].integer.set(2)
+        model.ds.custom[20].boolean.set(true) // if index is not exist it appends
+        
+        let customModelToInsert = CustomInsertModel()
+        model.ds.secondCustom.customModel.set(customModelToInsert)
+        
+        guard let encodedData = try?  encoder.encode(model) else {return}
+        Helper.prettyPrint(data: encodedData)
+    }
+    
+    @IBAction func customJsonCreationExample(_ sender: UIButton) {
+        let customModelToInsert = CustomInsertModel()
+        customModelToInsert.dynamicSelf = DynamicClass()
+        customModelToInsert.ds.custom[0].stringArray.set(["custom item 1","custom item 2"])
+        customModelToInsert.ds.custom[1].integer.set(2)
+        customModelToInsert.ds.custom[20].boolean.set(true) // if index is not exist it appends
+        customModelToInsert.ds.secondCustom.boolean.set(true)
+        
+        guard let encodedData = try?  encoder.encode(customModelToInsert) else {return}
+        Helper.prettyPrint(data: encodedData)
     }
 }
-
-

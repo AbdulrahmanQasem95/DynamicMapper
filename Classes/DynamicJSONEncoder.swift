@@ -1,55 +1,78 @@
 //
 //  DynamicJSONDecoder.swift
-//  DynamicMemberLookupTest
+//  DynamicMapper
 //
 //  Created by Abdulrahman Qasem on 17/09/2023.
 //
 
 import Foundation
-public class DynamicJSONEncoder {
-    public init(){}
+public class DynamicJSONEncoder:JSONEncoder {
+    
+    // Encoding method
     public func encode<T>(_ value: T) throws -> Data where T : DynamicEncodable{
-        let endoedData = try JSONEncoder().encode(value)
-      //TODO: more testing on the cleaned model
-        //TODO: test when decode none dynamic decoded model
-        // procedure: convert model to a dictionary using json serialization
-        // fill the model based on dynamicSelf object and give the priority to the original model if the value is exist on the main model then override the
-        if var serializedDictionary = try JSONSerialization.jsonObject(with: endoedData, options: []) as? [String:Any]{
-            dataCleaning(dic: &serializedDictionary)
-            let cleanedEndoedData = try JSONSerialization.data(withJSONObject: serializedDictionary)
-            return cleanedEndoedData
+        var mutatingValue = value
+        mutatingValue.dynamicMapping(mappingType: .encoding)
+        let encodedData = try super.encode(mutatingValue)
+        if var serializedDictionary = try JSONSerialization.jsonObject(with: encodedData, options: []) as? [String:Any]{
+            performDynamicModelExtraction(dic: &serializedDictionary)
+            let cleanedData = try JSONSerialization.data(withJSONObject: serializedDictionary)
+            return cleanedData
         }
-        return endoedData
+        return encodedData
     }
     
-    //TODO: change method name to more suitable one
-   private func dataCleaning(dic:inout [String:Any]) {
+    // Custom array encoding method
+    public func encode<T>(_ value: [T]) throws -> Data where T : DynamicEncodable{
+        var mutatingValues = value
+        for (index,item) in mutatingValues.enumerated() {
+            var mutatingItem = item
+            mutatingItem.dynamicMapping(mappingType: .decoding)
+            mutatingValues[index] = mutatingItem
+        }
+        
+        let encodedData = try super.encode(mutatingValues)
+        if var serializedDictionary = try JSONSerialization.jsonObject(with: encodedData, options: []) as? [[String:Any]]{
+            for (index,item) in serializedDictionary.enumerated() {
+                var serializedItem =  item
+                performDynamicModelExtraction(dic: &serializedItem)
+                serializedDictionary[index] = serializedItem
+            }
+            let cleanedData = try JSONSerialization.data(withJSONObject: serializedDictionary)
+            return cleanedData
+        }
+        return encodedData
+    }
+    
+    // DynamicSelf-model copy- cleaning
+    // this will give priority to the item defined in model if exist over the corresponding DynamicSelf item
+    private func performDynamicModelExtraction(dic:inout [String:Any]) {
         if var innerDynamicSelf = dic[dynamicSelf] as? [String:Any] {
             for key in dic.keys {
-                // give the proriority to the defined in model item over dynamic self item
+                // this will give priority to the item defined in model if exist over the corresponding DynamicSelf item
                 if var internalDic = dic[key] as?  [String:Any], key != dynamicSelf {
-                    //handel internalModels
-                    dataCleaning(dic: &internalDic)
+                    //handle internal Models
+                    performDynamicModelExtraction(dic: &internalDic)
                     innerDynamicSelf[key] = internalDic
                 }else  if  var internalArray = dic[key] as?  [Any], key != dynamicSelf {
-                    // handel array of properties and it can be array of arrays
-                    arrayDataCleaning(array: &internalArray)
+                    // handle array of properties or dimensional array (array of arrays)
+                    recursivelyCleanArray(array: &internalArray)
                     innerDynamicSelf[key] = internalArray
                 }else if key != dynamicSelf  {
-                    //handel property
+                    //handle property
                     innerDynamicSelf[key] = dic[key]
                 }
             }
             dic = innerDynamicSelf
         }
     }
-    //TODO: change method name to more suitable one
-    private func arrayDataCleaning(array:inout [Any]) {
+    
+    // clean array from DynamicSelf-model copy-
+    private func recursivelyCleanArray(array:inout [Any]) {
         for item in array {
             if var innerItem = item as? [String:Any] {
-                dataCleaning(dic: &innerItem)
+                performDynamicModelExtraction(dic: &innerItem)
             }else if var innerArray = item as? [Any] {
-                arrayDataCleaning(array: &innerArray)
+                recursivelyCleanArray(array: &innerArray)
             }
         }
     }

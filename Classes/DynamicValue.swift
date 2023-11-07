@@ -1,6 +1,6 @@
 //
 //  DynamicValue.swift
-//  DynamicMemberLookupTest
+//  DynamicMapper
 //
 //  Created by Abdulrahman Qasem on 17/09/2023.
 //
@@ -10,52 +10,94 @@ import Foundation
 @dynamicMemberLookup
 public enum DynamicValue: Codable {
     
-    case intValue(Int)
     case stringValue(String)
+    case intValue(Int)
     case boolValue(Bool)
     case doubleValue(Double)
+    case floatValue(Float)
+    case dateValue(Date,String?)
+    case dataValue(Data)
+    case urlValue(URL)
     case arrayValue(Array<DynamicValue>)
     case dictionaryValue(Dictionary<String, DynamicValue>)
-    case customType(customModel:DynamicCodable, dynamicModel: Dictionary<String, DynamicValue>)
-    case customArrayType(customArray:[DynamicCodable],dynamicArray:Array<DynamicValue>)
     case null(Int?)
     
-    public var stringValue: String? {
+    //string value
+     var stringValue: String? {
         if case .stringValue(let str) = self {
             return str
+        }else if case .dateValue(_, let originalString) = self {
+            return originalString
         }
         return nil
     }
     
-    public var intValue: Int? {
+    //Integer value
+     var intValue: Int? {
         if case .intValue(let int) = self {
             return int
         }
         return nil
     }
     
-    public var boolValue: Bool? {
+    //Boolean value
+     var boolValue: Bool? {
         if case .boolValue(let bool) = self {
             return bool
         }
         return nil
     }
     
-    public var doubleValue: Double? {
+    //Double value
+     var doubleValue: Double? {
         if case .doubleValue(let double) = self {
             return double
         }
         return nil
     }
     
-    public mutating func objectValue<T:DynamicCodable>(customType:T.Type)-> T? {
-        if case .customType(customModel: let customModel, dynamicModel: _) = self {
-            return customModel as? T
-        }else if case .dictionaryValue(let value) = self {
+    //Float value
+     var floatValue: Float? {
+        if case .floatValue(let float) = self {
+            return float
+        }else if case .doubleValue(let double) = self {
+            return Float(double)
+        }
+        return nil
+    }
+    
+    //Date value
+     var dateValue: Date? {
+        if case .dateValue(let date,_) = self {
+            return date
+        }
+        return nil
+    }
+    
+    //Data value
+     var dataValue: Data? {
+        if case .dataValue(let data) = self {
+            return data
+        }
+        return nil
+    }
+    
+    //URL value
+     var urlValue: URL? {
+        if case .urlValue(let url) = self {
+            return url
+        }else if case .stringValue(let string) = self {
+            return URL(string: string)
+        }
+        return nil
+    }
+    
+    //Custom object conform to DynamicDecodable protocol
+      func objectValue<T:DynamicDecodable>(customType:T.Type)-> T? {
+        if case .dictionaryValue(let value) = self {
             let data = try? JSONEncoder().encode(value)
             if let data = data {
                 if let model = try? DynamicJSONDecoder().decode(T.self, from: data) {
-                    self = .customType(customModel: model, dynamicModel: value)
                     return (model)
                 }
             }
@@ -63,123 +105,181 @@ public enum DynamicValue: Codable {
         return nil
     }
     
-    public mutating func arrayValue<T:DynamicCodable>(type:DynamicArrayValues<T>)-> [T] {
+    //Array of Integers
+      func intArrayValue()-> [Int] {
         if case .arrayValue(let value) = self {
-            switch type{
-            case .int:
-                return value.compactMap({$0.intValue}).map({$0  as! T})
-            case .string:
-                return value.compactMap({$0.stringValue}).map({$0  as! T})
-            case .double:
-                return value.compactMap({$0.doubleValue}).map({$0  as! T})
-            case .bool:
-                return value.compactMap({$0.boolValue}).map({$0  as! T})
-            case .customObject(ofType: _):
-                let data = try? JSONEncoder().encode(value)
-                if let data = data {
-                    if let model = try?  JSONDecoder().decode([T].self, from: data) {
-                        self = .customArrayType(customArray: model, dynamicArray: value)
-                        return model
-                    }
-                }
-            }
-        }else if case .customArrayType(let customArray, _) = self , let customArray = customArray as? [T] {
-            return customArray
+            return value.compactMap({$0.intValue}).map({$0  })
         }
         return []
     }
     
-    public subscript(index: Int) -> DynamicValue? {
-        get {
-            if case .arrayValue(let arr) = self {
-                return index < arr.count ? arr[index] : nil
-            }else if case .customArrayType(_, let dynamicArray) = self {
-                return index < dynamicArray.count ? dynamicArray[index] : nil
+    //Array of Strings
+      func stringArrayValue()-> [String] {
+        if case .arrayValue(let value) = self {
+            return value.compactMap({$0.stringValue}).map({$0  })
+        }
+        return []
+    }
+    
+    //Array of Booleans
+      func boolArrayValue()-> [Bool] {
+        if case .arrayValue(let value) = self {
+            return value.compactMap({$0.boolValue}).map({$0  })
+        }
+        return []
+    }
+    
+    //Array of Doubles
+      func doubleArrayValue()-> [Double] {
+        if case .arrayValue(let value) = self {
+            return value.compactMap({$0.doubleValue}).map({$0  })
+        }
+        return []
+    }
+    
+    //Array of Floats
+      func floatArrayValue()-> [Float] {
+        if case .arrayValue(let value) = self {
+            return value.compactMap({$0.floatValue}).map({$0  })
+        }
+        return []
+    }
+    
+    //Array of Dates
+      func dateArrayValue()-> [Date] {
+        if case .arrayValue(let value) = self {
+            return value.compactMap({$0.dateValue}).map({$0  })
+        }
+        return []
+    }
+    
+    //Array of Data
+      func dataArrayValue()-> [Data] {
+        if case .arrayValue(let value) = self {
+            return value.compactMap({$0.dataValue}).map({$0  })
+        }
+        return []
+    }
+    
+    //Array of URLs
+      func urlArrayValue()-> [URL] {
+        if case .arrayValue(let value) = self {
+            return value.compactMap({$0.urlValue}).map({$0  })
+        }
+        return []
+    }
+    
+    //Array of custom objects that confrom to DynamicDecodable
+      func customArrayValue<T:DynamicDecodable>(type:T.Type)-> [T] {
+        if case .arrayValue(let value) = self {
+            let data = try? JSONEncoder().encode(value)
+            if let data = data {
+                //TODO: test and validate this
+                if let model = try?  DynamicJSONDecoder().decode([T].self, from: data) {
+                    return model
+                }
             }
-            return nil
+        }
+        return []
+    }
+    
+    //Safe access of array item by index
+    public subscript(index: Int) -> DynamicValue {
+        mutating get {
+            if case .arrayValue(var arr) = self {
+                if index < arr.count {
+                    return arr[index]
+                }else {
+                   // arr.append(.dictionaryValue([:]))
+                    self = .arrayValue(arr)
+                    return self
+                }
+            }else {
+                var arr:[DynamicValue] = []
+                self = .arrayValue(arr)
+                return self
+            }
         }
         set {
-            if let newValue = newValue {
-                if case .arrayValue(var arr) = self {
-                    if index < arr.count {
-                        arr[index] = newValue
-                        self = .arrayValue(arr)
-                    }
-                }else if case .customArrayType(_, var dynamicArray) = self {
-                    if index < dynamicArray.count {
-                        dynamicArray[index] = newValue
-                        self = .arrayValue(dynamicArray)
-                    }
+            if case .arrayValue(var arr) = self {
+                if index < arr.count {
+                    arr[index] = newValue
+                    self = .arrayValue(arr)
+                }else{
+                    arr.append(newValue)
+                    self = .arrayValue(arr)
                 }
             }
         }
     }
     
-//    public subscript(key: String) -> DynamicValue? {
-//        get {
-//            if case .dictionaryValue(let dict) = self {
-//                return dict[key]
-//            }
-//
-//
-//            return nil
-//        }
-//        set {
-//            if let newValue = newValue {
-//                if case .dictionaryValue(var dict) = self {
-//                     dict[key] = newValue
-//                    self = .dictionaryValue(dict)
-//                }
-//            }
-//        }
-//    }
+    //     subscript(key: String) -> DynamicValue? {
+    //        get {
+    //            if case .dictionaryValue(let dict) = self {
+    //                return dict[key]
+    //            }
+    //
+    //
+    //            return nil
+    //        }
+    //        set {
+    //            if let newValue = newValue {
+    //                if case .dictionaryValue(var dict) = self {
+    //                     dict[key] = newValue
+    //                    self = .dictionaryValue(dict)
+    //                }
+    //            }
+    //        }
+    //    }
     
-    public subscript(dynamicMember member: String) -> DynamicValue? {
-         get {
+    // Dynamic member lookup subscript
+    public subscript(dynamicMember member: String) -> DynamicValue {
+        mutating get {
             if case .dictionaryValue(var  dict) = self {
                 if let value =  dict[member] {
                     return value
                 }else {
                     let newDic =  DynamicValue.dictionaryValue([:])
                     dict[member] = newDic
-                    return newDic
+                    self = newDic
+                    return self
                 }
-            }else if case .customType(_, var dynamicModel) = self {
-                if let value =  dynamicModel[member] {
-                    return value
-                }else {
-                    let newDic =  DynamicValue.dictionaryValue([:])
-                    dynamicModel[member] = newDic
-                    return newDic
-                }
+            } else {
+                let newDic =  DynamicValue.dictionaryValue([:])
+                self = newDic
+                return self
             }
-            return nil
         }
         
         set {
-            if let newValue = newValue {
-                if case .dictionaryValue(var dict) = self {
-                     dict[member] = newValue
-                    self = .dictionaryValue(dict)
-                }else if case .customType(_, var dynamicModel) = self {
-                    dynamicModel[member] = newValue
-                   self = .dictionaryValue(dynamicModel)
-                }
+            if case .dictionaryValue(var dict) = self {
+                dict[member] = newValue
+                self = .dictionaryValue(dict)
             }
         }
     }
-    
-    
-    public mutating func setDynamicProperty(value:Any) {
+   
+    //MARK: - Set Value
+    // set any value (Integer, String, Boolean, Double, null)
+    public mutating func set(_ value:Any?) {
         switch value.self {
+        case let date as Date:
+            // save string to null, if user set value as Date he should get it as Date also
+            self = .dateValue(date,nil)
+        case let url as URL:
+            self = .urlValue(url)
         case let string as String:
             self = .stringValue(string)
         case let int as Int:
             self = .intValue(int)
         case let bool as Bool:
             self = .boolValue(bool)
+        case let float as Float:
+            self = .floatValue(float)
         case let double as Double:
             self = .doubleValue(double)
+        case let data as Data:
+            self = .dataValue(data)
         case Optional<Any>.none:
             self = .null(nil)
         case is [Encodable]:
@@ -189,15 +289,9 @@ public enum DynamicValue: Codable {
         }
     }
     
-    public mutating func setDynamicProperty<T:DynamicEncodable>(customArray:[T?]) {
-        if let data =  try? JSONEncoder().encode(customArray) {
-            if let model = try? JSONDecoder().decode([DynamicValue].self, from: data){
-                self = .arrayValue(model)
-            }
-        }
-    }
     
-    public mutating func setDynamicProperty<T:DynamicEncodable>(customObject:T?) {
+    //set array of custom object that conform to DynamicEncodable protocol
+    public mutating func set<T:DynamicEncodable>(_ customObject:T?) {
         if let data =  try? JSONEncoder().encode(customObject) {
             if let model = try? JSONDecoder().decode([String:DynamicValue].self, from: data){
                 self = .dictionaryValue(model)
@@ -205,16 +299,34 @@ public enum DynamicValue: Codable {
         }
     }
     
+    //set custom object that conform to "Encodable" not "DynamicEncodable" protocol
+    //this will work for all custom objects and Dynamic value supported types arrays [string,int,date .....]
+    public mutating func set<T:Encodable>(_ customArray:[T]?) {
+        if let data =  try? JSONEncoder().encode(customArray) {
+            if let model = try? JSONDecoder().decode([DynamicValue].self, from: data){
+                self = .arrayValue(model)
+            }
+        }
+    }
+    
+    // decoding
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
-        if let stringValue = try? container.decode(String.self) {
+        // conditions order is important
+         if let dateValue = try? container.decode(Date.self) {
+             self = .dateValue(dateValue, try? container.decode(String.self))
+        }else if let stringValue = try? container.decode(String.self) {
+            // used for String, URL
             self = .stringValue(stringValue)
         } else if let intValue = try? container.decode(Int.self) {
             self = .intValue(intValue)
         }else if let boolValue = try? container.decode(Bool.self) {
             self = .boolValue(boolValue)
         }else if let doubleValue = try? container.decode(Double.self) {
+            // used for Double, Float
             self = .doubleValue(doubleValue)
+        }else if let dataValue = try? container.decode(Data.self) {
+            self = .dataValue(dataValue)
         }else if let arrayValue = try? container.decode(Array<DynamicValue>.self) {
             self = .arrayValue(arrayValue)
         } else if let dictionaryValue = try? container.decode(Dictionary<String, DynamicValue>.self) {
@@ -229,6 +341,7 @@ public enum DynamicValue: Codable {
         }
     }
     
+    // encoding
     public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         switch self {
@@ -240,16 +353,20 @@ public enum DynamicValue: Codable {
             try container.encode(bool)
         case .doubleValue(let double):
             try container.encode(double)
+        case .floatValue(let float):
+            try container.encode(float)
+        case .dateValue(let date, _):
+            try container.encode(date)
+        case .dataValue(let data):
+            try container.encode(data)
+        case .urlValue(let url):
+            try container.encode(url)
         case .arrayValue(let array):
             try container.encode(array)
         case .dictionaryValue(let dictionary):
             try container.encode(dictionary)
         case .null(let null):
             try container.encode(null)
-        case .customType(customModel: _, dynamicModel: let dynamicModel) :
-            try container.encode(dynamicModel)
-        case .customArrayType(customArray: _ , dynamicArray: let dynamicArray):
-            try container.encode(dynamicArray)
         }
     }
 }

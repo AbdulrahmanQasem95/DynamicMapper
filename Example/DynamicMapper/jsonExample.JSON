@@ -1,7 +1,14 @@
 {
     "property0": "Value 0",
+    "property01": 10,
+    "property02": 10.3,
+    "property03": true,
+    "property04": "Value 04",
     "level1": {
         "property1": "Value 1",
+        "flaotValue": 1.234234,
+        "dateValue": "2023-10-30T19:00:00Z",
+        "urlValue": "https://nsdateformatter.com/",
         "level2": {
             "property2": 10,
             "level3": {

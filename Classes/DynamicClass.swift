@@ -1,6 +1,6 @@
 //
 //  DynamicClass.swift
-//  DynamicMemberLookupTest
+//  DynamicMapper
 //
 //  Created by Abdulrahman Qasem on 17/09/2023.
 //
@@ -24,27 +24,33 @@ open class DynamicClass: Codable {
     
     private var container: [String: DynamicValue]
     
+    // init() For Json Creation 
+    public init(){
+        container = [:]
+    }
+    
     init(_ dictionary: [String: DynamicValue]) {
         self.container = dictionary
     }
     
     // Dynamic member lookup subscript
-    public subscript(dynamicMember key: String) -> DynamicValue? {
+    public subscript(dynamicMember key: String) -> DynamicValue {
         get {
             if let value = container[key] {
                 return value
             }
             else {
+                // create value if not exist - Json Generation or Insertion-
                 container[key] = .dictionaryValue([:])
                 return container[key]!
             }
         }
         set {
-             container[key] = newValue
+            container[key] = newValue
         }
     }
     
-    // Codable methods
+    // Decoding
     required public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: DynamicCodingKeys.self)
         var tempContainer = [String: DynamicValue]()
@@ -56,6 +62,7 @@ open class DynamicClass: Codable {
         self.container = tempContainer
     }
     
+    //Encoding
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: DynamicCodingKeys.self)
         for (key, value) in self.container {
@@ -64,4 +71,3 @@ open class DynamicClass: Codable {
         }
     }
 }
-

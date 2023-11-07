@@ -22,7 +22,7 @@ pod 'DynamicMapper'
 
 ## Author
 
-Abdulrahman Qasem, Abdulrahman.qasem@baaz.com
+Abdulrahman Qasem, Abdulrahmanq1995@gmail.com
 
 ## License
 

@@ -1,34 +1,12 @@
 //
 //  DynamicDecodableProtocol.swift
-//  DynamicMemberLookupTest
+//  DynamicMapper
 //
 //  Created by Abdulrahman Qasem on 17/09/2023.
 //
 
 import Foundation
-//should match dynamicSelf parameter in DynamicDecodable protocol
-let dynamicSelf = "dynamicSelf"
 
-//TODO: DynamicDecodable for structs 
-public protocol DynamicDecodable:Decodable,AnyObject{
-    var dynamicSelf:DynamicClass? { get set }
-    var realmData:Data? { get set }
-    var dm:DynamicClass {  get } // stands for DynamicMapper
+/// DynamicDecodable dynamically decode models
+public protocol DynamicDecodable:BaseDynamicCodable,Decodable{
 }
-extension DynamicDecodable {
-    public var dm: DynamicClass {
-         get {
-            if let dynamicSelf = dynamicSelf{
-                return dynamicSelf
-            }else if let realmData = realmData, let model = try? JSONDecoder().decode(DynamicClass.self, from: realmData) {
-                    dynamicSelf = model
-                    return model
-            }else {
-                let newDynamicSelf = DynamicClass([:])
-                self.dynamicSelf = newDynamicSelf 
-                return newDynamicSelf
-            }
-        }
-    }
-}
-
