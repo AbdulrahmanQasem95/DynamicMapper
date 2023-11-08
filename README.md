@@ -1,35 +1,3 @@
-# DynamicMapper
-
-[![CI Status](https://img.shields.io/travis/Abdulrahman Qasem/DynamicMapper.svg?style=flat)](https://travis-ci.org/Abdulrahman Qasem/DynamicMapper)
-[![Version](https://img.shields.io/cocoapods/v/DynamicMapper.svg?style=flat)](https://cocoapods.org/pods/DynamicMapper)
-[![License](https://img.shields.io/cocoapods/l/DynamicMapper.svg?style=flat)](https://cocoapods.org/pods/DynamicMapper)
-[![Platform](https://img.shields.io/cocoapods/p/DynamicMapper.svg?style=flat)](https://cocoapods.org/pods/DynamicMapper)
-
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
-
-## Installation
-
-DynamicMapper is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod 'DynamicMapper'
-```
-
-## Author
-
-Abdulrahman Qasem, Abdulrahmanq1995@gmail.com
-
-## License
-
-DynamicMapper is available under the MIT license. See the LICENSE file for more info.
-
-
-
 DynamicMapper
 ============
 [![Version](https://img.shields.io/cocoapods/v/DynamicMapper.svg?style=flat)](https://cocoapods.org/pods/DynamicMapper)
@@ -52,6 +20,22 @@ DynamicMapper is a framework written in Swift for dynamically decoding and encod
 - [Contributing](#contributing)
 - [Installation](#installation)
 
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+## Requirements
+
+## Installation
+
+DynamicMapper is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'DynamicMapper'
+```
+
+
 # Features:
 - Decoding and encoding using native `JSONDecoder` and `JSONEncoder`
 - Has the full functionality of `Codable = Decodable & Encodable` protocols
@@ -59,6 +43,7 @@ DynamicMapper is a framework written in Swift for dynamically decoding and encod
 - Rreference & Value Types support
 - Dynamic Object Insertion and Creation
 - Safely nested item fetching
+- support subclassing
 - smooth transformation since it works directly with your `Codable`  models without any changes
 - Native replacment of [ObjectMapper](https://github.com/tristanhimmelman/ObjectMapper)
 
@@ -192,12 +177,12 @@ Dynamic copy of the object that we will use to dynamically access the nested pro
   </tr>
   <tr>
     <td>
-<th>
+<pre>
 func dynamicMapping(mappingType: DynamicMappingType) {
     bestFamilyPhoto   <--  ds.alboms.familyAlbom.bestPhoto
     numberOfChildren  <--  ds.familyInfo.childrenCount
 }
-</th>
+</pre>
   </td>
   </tr>
   <tr>
@@ -235,38 +220,7 @@ func dynamicMapping(mappingType: DynamicMappingType) {
     </td>
 </table>
 
-#### `init(map: Map) throws`
 
-This throwable initializer is used to map immutable properties from the given `Map`. Every immutable property should be initialized in this initializer.
-
-This initializer throws an error when:
-- `Map` fails to get a value for the given key
-- `Map` fails to transform a value using `Transform`
-
-`ImmutableMappable` uses `Map.value(_:using:)` method to get values from the `Map`. This method should be used with the `try` keyword as it is throwable. `Optional` properties can easily be handled using `try?`.
-
-```swift
-init(map: Map) throws {
-    name      = try map.value("name") // throws an error when it fails
-    createdAt = try map.value("createdAt", using: DateTransform()) // throws an error when it fails
-    updatedAt = try? map.value("updatedAt", using: DateTransform()) // optional
-    posts     = (try? map.value("posts")) ?? [] // optional + default value
-    surname    = try? map.value("surname", default: "DefaultSurname") // optional + default value as an argument
-}
-```
-
-#### `mutating func mapping(map: Map)`
-
-This method is where the reverse transform is performed (model to JSON). Since immutable properties cannot be mapped with the `<-` operator, developers have to define the reverse transform using the `>>>` operator.
-
-```swift
-mutating func mapping(map: Map) {
-    name      >>> map["name"]
-    createdAt >>> (map["createdAt"], DateTransform())
-    updatedAt >>> (map["updatedAt"], DateTransform())
-    posts     >>> map["posts"]
-}
-```
 
 # Easy Mapping of Nested Objects
 ObjectMapper supports dot notation within keys for easy mapping of nested objects. Given the following JSON String:
@@ -502,3 +456,11 @@ Otherwise, ObjectMapper can be added as a submodule:
 5. In the tab bar at the top of that window, open the "Build Phases" panel.
 6. Expand the "Target Dependencies" group, and add `ObjectMapper.framework`.
 7. Click on the `+` button at the top left of the panel and select "New Copy Files Phase". Rename this new phase to "Copy Frameworks", set the "Destination" to "Frameworks", and add `ObjectMapper.framework`.
+
+## Author
+
+Abdulrahman Qasem, Abdulrahmanq1995@gmail.com
+
+## License
+
+DynamicMapper is available under the MIT license. See the LICENSE file for more info.
