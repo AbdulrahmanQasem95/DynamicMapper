@@ -58,11 +58,22 @@ DynamicMapper is a framework written in Swift for dynnamically decoding and enco
 - Nested Objects encoding and decoding (Dynamic Mapping)
 - Rreference & Value Types support
 - Dynamic Object Insertion and Creation
+- Safely nested item fetching
 - smooth transformation since it works directly with your `Codable`  models without any changes
 - Native replacment of [ObjectMapper](https://github.com/tristanhimmelman/ObjectMapper)
 
 # The Basics
 Like native `JSONDecoder` and `JSONEncoder` To support dynamic mapping, a class or struct just needs to implement the `DynamicDecodable` protocol for decoding, `DynamicEncodable` protocol for encoding or `DynamicCodable` protocol for both decoding and encoding togoether
+```swift
+public protocol DynamicDecodable:Decodable
+```
+```swift
+public protocol DynamicEncodable:Encodable
+```
+```swift
+public protocol DynamicCodable:DynamicDecodable,DynamicEncodable
+```
+
 ```swift
  var dynamicSelf: DynamicClass?
  func dynamicMapping(mappingType: DynamicMappingType) {}
@@ -119,58 +130,53 @@ struct Temperature: DynamicDecodable {
 
 ```
 
-Once your class implements `Mappable`, ObjectMapper allows you to easily convert to and from JSON. 
+Once your class implements `DynamicDecodable` it can be easily decoded using `DynamicJSONDecoder` class behaviour. 
 
-Convert a JSON string to a model object:
+Decoding:
 ```swift
-let user = User(JSONString: JSONString)
+ do {
+     let userModel = try DynamicJSONDecoder().decode(User.self, from: serDataFromServer)
+ } catch  {
+     print(error.localizedDescription)
+ }
 ```
 
-Convert a model object to a JSON string:
+Encoding:
 ```swift
-let JSONString = user.toJSONString(prettyPrint: true)
+  do {
+      let data = try DynamicJSONEncoder().encode(userModel)
+  } catch  {
+      print(error.localizedDescription)
+  }
 ```
 
-Alternatively, the `Mapper.swift` class can also be used to accomplish the above (it also provides extra functionality for other situations):
-```swift
-// Convert JSON String to Model
-let user = Mapper<User>().map(JSONString: JSONString)
-// Create JSON String from Model
-let JSONString = Mapper().toJSONString(user, prettyPrint: true)
-```
 
-ObjectMapper can map classes composed of the following types:
-- `Int`
-- `Bool`
-- `Double`
-- `Float`
+DynamicMapper can decode and encode all types supported by `JSONDecoder` and `JSONEncoder`:
 - `String`
-- `RawRepresentable` (Enums)
-- `Array<Any>`
-- `Dictionary<String, Any>`
-- `Object<T: Mappable>`
-- `Array<T: Mappable>`
-- `Array<Array<T: Mappable>>`
-- `Set<T: Mappable>` 
-- `Dictionary<String, T: Mappable>`
-- `Dictionary<String, Array<T: Mappable>>`
-- Optionals of all the above
-- Implicitly Unwrapped Optionals of the above
+- `Int`
+- `Float`
+- `Double`
+- `Bool`
+- `Array` (as long as the elements are also `Codable` or )
+- `Dictionary` (as long as the keys and values are `Codable`)
+- Custom structs and classes that conform to `Codable`
+- Optional types that conform to `Codable`
+- Enumerations with associated values (as long as the associated values are `Codable`)
+- `Date`
+- `URL`
+- `Data`
 
-## `Mappable` Protocol
+## `DynamicCodable` Protocol
 
-#### `mutating func mapping(map: Map)` 
-This function is where all mapping definitions should go. When parsing JSON, this function is executed after successful object creation. When generating JSON, it is the only function that is called on the object.
+#### `mutating func dynamicMapping(mappingType:DynamicMappingType)` 
+This function is where all nested items and models definitions should go. this function is executed after successful  encoding and decoding proccess. It is the only function that is called on the object.
 
-#### `init?(map: Map)` 
-This failable initializer is used by ObjectMapper for object creation. It can be used by developers to validate JSON prior to object serialization. Returning nil within the function will prevent the mapping from occuring. You can inspect the JSON stored within the `Map` object to do your validation:
+#### `var  dynamicSelf:DynamicClass?` 
+Dynamic copy of the object that we will use to dynamically access the nested property or model, we can use either `dynamicSelf` or its alias `ds` to access the dynamic model when `dynamicMapping(mappingType:DynamicMappingType)` function get called
 ```swift
-required init?(map: Map){
-    // check if a required "name" property exists within the JSON.
-    if map.JSON["name"] == nil {
-        return nil
-    }
-}
+// the results of the following two lines are the same
+        bestFamilyPhoto   <--            ds.alboms.familyAlbom.bestPhoto
+        bestFamilyPhoto   <--  dynamicSelf?.alboms.familyAlbom.bestPhoto
 ```
 
 ## `StaticMappable` Protocol
