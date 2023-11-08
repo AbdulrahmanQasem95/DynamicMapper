@@ -35,23 +35,21 @@ it, simply add the following line to your Podfile:
 pod 'DynamicMapper'
 ```
 
-
 # Features:
 - Decoding and encoding using native `JSONDecoder` and `JSONEncoder`
 - Has the full functionality of `Codable = Decodable & Encodable` protocols
 - Nested Objects encoding and decoding (Dynamic Mapping)
-- Rreference & Value Types support
-- Dynamic Object Insertion and Creation
+- Rreference & Value types support
+- Dynamic object insertion and creation
 - Safely nested item fetching
-- support subclassing
-- smooth transformation since it works directly with your `Codable`  models without any changes
+- Support subclassing
+- Smooth transformation since it works directly with your `Codable` models without any changes
+- Compatible with [Realm](https://github.com/realm/realm-swift)
 - Native replacment of [ObjectMapper](https://github.com/tristanhimmelman/ObjectMapper)
 
 # The Basics
 Like native `JSONDecoder` and `JSONEncoder` To support dynamic mapping, a class or struct just needs to implement the `DynamicDecodable` protocol for decoding, `DynamicEncodable` protocol for encoding or `DynamicCodable` protocol for both decoding and encoding togoether
 ```swift
- protocol DynamicDecodable:Decodable
- protocol DynamicEncodable:Encodable
  protocol DynamicCodable:DynamicDecodable,DynamicEncodable
 ```
 
@@ -223,239 +221,191 @@ func dynamicMapping(mappingType: DynamicMappingType) {
 
 
 # Easy Mapping of Nested Objects
-ObjectMapper supports dot notation within keys for easy mapping of nested objects. Given the following JSON String:
+DynamicMapper supports dot notation within keys for easy mapping of nested objects. Given the following JSON String:
 ```json
-"distance" : {
-     "text" : "102 ft",
-     "value" : 31
+{
+    "property0": "Value 0",
+    "level1": {
+        "property1": "Value 1",
+        "level2": {
+            "property2": 10,
+            "level3": {
+                "property3": "Value 3",
+                "level4": {
+                    "property4": "Value 4",
+                    "level5": {
+                        "property5": "Value 5",
+                        "level6Array": [
+                            {
+                                "item1": "Item A",
+                                "item2": 100
+                            },
+                            {
+                                "item1": "Item C",
+                                "item2": 200
+                            },
+                            {
+                                "item1": "Item E",
+                                "item2": 300
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    }
 }
 ```
 You can access the nested objects as follows:
 ```swift
-func mapping(map: Map) {
-    distance <- map["distance.value"]
+ var property2:Int?
+ func dynamicMapping(mappingType: DynamicMappingType) {
+     property2   <--   ds.level1.level2.property2
+ }
+```
+Nested keys also support accessing values from an array
+```swift
+ var secondArrayItem_1_OfLevel_6:String?
+ func dynamicMapping(mappingType: DynamicMappingType) {
+    secondArrayItem_1_OfLevel_6 <--  ds.level1.level2.level3.level4.level5.level6Array[1].item1
+ }
+```
+fetching array item by index is safe
+```swift
+// this will do nothing
+ var secondArrayItem_1_OfLevel_6:String? = "Abed"
+ secondArrayItem_1_OfLevel_6 <--  ds.level1.level2.level3.level4.level5.level6Array[1200].item1
+ print(secondArrayItem_1_OfLevel_6) // this will print 'Abed'
+```
+You can access nested custom model as follows:
+```swift
+var level_6_Array:[ArrayItemModel]? 
+func dynamicMapping(mappingType: DynamicMappingType) {
+    level_6_Array  <--  ds.level1.level2.level3.level4.level5.level6Array
 }
-```
-Nested keys also support accessing values from an array. Given a JSON response with an array of distances, the value could be accessed as follows:
-```swift
-distance <- map["distances.0.value"]
-```
-If you have a key that contains `.`, you can individually disable the above feature as follows:
-```swift
-func mapping(map: Map) {
-    identifier <- map["app.identifier", nested: false]
-}
-```
-When you have nested keys which contain `.`, you can pass the custom nested key delimiter as follows ([#629](https://github.com/tristanhimmelman/ObjectMapper/pull/629)):
-```swift
-func mapping(map: Map) {
-    appName <- map["com.myapp.info->com.myapp.name", delimiter: "->"]
-}
-```
 
-# Custom Transforms
-ObjectMapper also supports custom transforms that convert values during the mapping process. To use a transform, simply create a tuple with `map["field_name"]` and the transform of your choice on the right side of the `<-` operator:
-```swift
-birthday <- (map["birthday"], DateTransform())
-```
-The above transform will convert the JSON Int value to an Date when reading JSON and will convert the Date to an Int when converting objects to JSON.
-
-You can easily create your own custom transforms by adopting and implementing the methods in the `TransformType` protocol:
-```swift
-public protocol TransformType {
-    associatedtype Object
-    associatedtype JSON
-
-    func transformFromJSON(_ value: Any?) -> Object?
-    func transformToJSON(_ value: Object?) -> JSON?
-}
-```
-
-### TransformOf
-In a lot of situations you can use the built-in transform class `TransformOf` to quickly perform a desired transformation. `TransformOf` is initialized with two types and two closures. The types define what the transform is converting to and from and the closures perform the actual transformation. 
-
-For example, if you want to transform a JSON `String` value to an `Int` you could use `TransformOf` as follows:
-```swift
-let transform = TransformOf<Int, String>(fromJSON: { (value: String?) -> Int? in 
-    // transform value from String? to Int?
-    return Int(value!)
-}, toJSON: { (value: Int?) -> String? in
-    // transform value from Int? to String?
-    if let value = value {
-        return String(value)
-    }
-    return nil
-})
-
-id <- (map["id"], transform)
-```
-Here is a more condensed version of the above:
-```swift
-id <- (map["id"], TransformOf<Int, String>(fromJSON: { Int($0!) }, toJSON: { $0.map { String($0) } }))
-```
-
-# Subclasses
-
-Classes that implement the `Mappable` protocol can easily be subclassed. When subclassing mappable classes, follow the structure below:
-
-```swift
-class Base: Mappable {
-    var base: String?
+struct ArrayItemModel:DynamicCodable{
+    var dynamicSelf:DynamicClass?
     
-    required init?(map: Map) {
-
-    }
-
-    func mapping(map: Map) {
-        base <- map["base"]
-    }
-}
-
-class Subclass: Base {
-    var sub: String?
-
-    required init?(map: Map) {
-        super.init(map)
-    }
-
-    override func mapping(map: Map) {
-        super.mapping(map)
-        
-        sub <- map["sub"]
-    }
+    var item1:String
+    var item2:Int
+    
+    func dynamicMapping(mappingType: DynamicMappingType) {}
 }
 ```
 
-Make sure your subclass implementation calls the right initializers and mapping functions to also apply the mappings from your superclass.
+## Easy Json Insersion
+Using the same josn above, You can insert any object or array same like when you access it
 
-# Generic Objects
-
-ObjectMapper can handle classes with generic types as long as the generic type also conforms to `Mappable`. See the following example:
 ```swift
-class Result<T: Mappable>: Mappable {
-    var result: T?
-
-    required init?(map: Map){
-
-    }
-
-    func mapping(map: Map) {
-        result <- map["result"]
-    }
-}
-
-let result = Mapper<Result<User>>().map(JSON)
+ds.level1.level2.level3.insertedProperty.set("nested item")
+ds.level1.level2.insertedArray[0].set(["inserted item 1","inserted item 2"])
+ds.level1.level2.level3.level4.level5.level6Array[4].set(ArrayItemModel(item1: "inserted item 1", item2: 5))
 ```
+json will be 
 
-# Mapping Context
-
-The `Map` object which is passed around during mapping, has an optional `MapContext` object that is available for developers to use if they need to pass information around during mapping. 
-
-To take advantage of this feature, simply create an object that implements `MapContext` (which is an empty protocol) and pass it into `Mapper` during initialization. 
-```swift
-struct Context: MapContext {
-    var importantMappingInfo = "Info that I need during mapping"
-}
-
-class User: Mappable {
-    var name: String?
-    
-    required init?(map: Map){
-    
-    }
-    
-    func mapping(map: Map){
-        if let context = map.context as? Context {
-            // use context to make decisions about mapping
+```json
+{
+    "property0": "Value 0",
+    "level1": {
+        "property1": "Value 1",
+        "level2": {
+            "property2": 10,
+            "insertedArray": [
+             "inserted item 1",
+             "inserted item 2"
+            ],
+            "level3": {
+                "property3": "Value 3",
+                "insertedProperty": "nested item",
+                "level4": {
+                    "property4": "Value 4",
+                    "level5": {
+                        "property5": "Value 5",
+                        "level6Array": [
+                            {
+                                "item1": "Item A",
+                                "item2": 100
+                            },
+                            {
+                                "item1": "Item C",
+                                "item2": 200
+                            },
+                            {
+                                "item1": "Item E",
+                                "item2": 300
+                            },
+                            {
+                                "item1": "inserted item 1",
+                                "item2": 5
+                            }
+                        ]
+                    }
+                }
+            }
         }
     }
 }
-
-let context = Context()
-let user = Mapper<User>(context: context).map(JSONString)
+```
+# Extend `JSONDecoder` & `JSONEncoder`
+`DynamicJSONDecoder` and `DynamicJSONEncoder` inherit  `JSONDecoder` and `JSONEncoder` respectively, so you have the full power of native `Codable`
+for example, date decoding 
+```json
+{
+    "user":{
+        "personalInfo":{
+            "birthDate": "2023-10-30T19:00:00Z"
+            .
+            .
+            .
+        }
+        .
+        .
+        .
+    }
+    .
+    .
+    .
+}
+```
+```swift
+ let decoder = DynamicJSONDecoder()
+ decoder.dateDecodingStrategy = .iso8601
+ 
+ var birthDate:Date?
+ func dynamicMapping(mappingType: DynamicMappingType) {
+     birthDate  <--  ds.user.personalInfo.birthDate
+ }
 ```
 
-# ObjectMapper + Alamofire
-
-If you are using [Alamofire](https://github.com/Alamofire/Alamofire) for networking and you want to convert your responses to Swift objects, you can use [AlamofireObjectMapper](https://github.com/tristanhimmelman/AlamofireObjectMapper). It is a simple Alamofire extension that uses ObjectMapper to automatically map JSON response data to Swift objects.
 
 
 # ObjectMapper + Realm
 
-ObjectMapper and Realm can be used together. Simply follow the class structure below and you will be able to use ObjectMapper to generate your Realm models:
+DynamicMapper and Realm can be used together
 
 ```swift
-class Model: Object, Mappable {
-    dynamic var name = ""
-
-    required convenience init?(map: Map) {
-        self.init()
-    }
-
-    func mapping(map: Map) {
-        name <- map["name"]
+class Model: Object, DynamicCodable {
+    var dynamicSelf:DynamicClass?
+    
+    @objc dynamic var name:String? = ""
+    
+    func dynamicMapping(mappingType: DynamicMappingType) {
+        switch mappingType {
+        case .decoding:
+            name  <--  ds.user.personalInfo.name
+        case .encoding:
+            name  -->  {ds.user.personalInfo.name.set($0)}
+        }
     }
 }
 ```
-
-If you want to serialize associated RealmObjects, you can use [ObjectMapper+Realm](https://github.com/jakenberg/ObjectMapper-Realm). It is a simple Realm extension that serializes arbitrary JSON into Realm's `List` class.
-
-To serialize Swift `String`, `Int`, `Double` and `Bool` arrays you can use [ObjectMapperAdditions/Realm](https://github.com/APUtils/ObjectMapperAdditions#realm-features). It'll wrap Swift types into RealmValues that can be stored in Realm's `List` class.
-
-Note: Generating a JSON string of a Realm Object using ObjectMappers' `toJSON` function only works within a Realm write transaction. This is because ObjectMapper uses the `inout` flag in its mapping functions (`<-`) which are used both for serializing and deserializing. Realm detects the flag and forces the `toJSON` function to be called within a write block even though the objects are not being modified.
-
-# Projects Using ObjectMapper
-- [Xcode Plugin for generating `Mappable` and `ImmutableMappable` code](https://github.com/liyanhuadev/ObjectMapper-Plugin)
-
-- [Json4Swift - Supports generating `ImmutableMappable` structs online (no plugins needed)](http://www.json4swift.com)
-
-- [JSON to Model - Template based MacOS app which generates structs with customisation.](https://github.com/chanonly123/Json-Model-Generator)  [⬇️Download App](https://github.com/chanonly123/Json-Model-Generator/raw/master/JsonToModel.zip)
-
-If you have a project that utilizes, extends or provides tooling for ObjectMapper, please submit a PR with a link to your project in this section of the README.
-
-# To Do
-- Improve error handling. Perhaps using `throws`
-- Class cluster documentation
 
 # Contributing
 
 Contributions are very welcome 👍😃. 
 
-Before submitting any pull request, please ensure you have run the included tests and they have passed. If you are including new functionality, please write test cases for it as well.
-
-# Installation
-### Cocoapods
-ObjectMapper can be added to your project using [CocoaPods 0.36 or later](http://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks/) by adding the following line to your `Podfile`:
-
-```ruby
-pod 'ObjectMapper', '~> 3.5' (check releases to make sure this is the latest version)
-```
-
-### Carthage
-If you're using [Carthage](https://github.com/Carthage/Carthage) you can add a dependency on ObjectMapper by adding it to your `Cartfile`:
-
-```
-github "tristanhimmelman/ObjectMapper" ~> 3.5 (check releases to make sure this is the latest version)
-```
-
-### Swift Package Manager
-To add ObjectMapper to a [Swift Package Manager](https://swift.org/package-manager/) based project, add:
-
-```swift
-.package(url: "https://github.com/tristanhimmelman/ObjectMapper.git", .upToNextMajor(from: "4.1.0")),
-```
-to your `Package.swift` files `dependencies` array.
-
-### Submodule
-Otherwise, ObjectMapper can be added as a submodule:
-
-1. Add ObjectMapper as a [submodule](http://git-scm.com/docs/git-submodule) by opening the terminal, `cd`-ing into your top-level project directory, and entering the command `git submodule add https://github.com/tristanhimmelman/ObjectMapper.git`
-2. Open the `ObjectMapper` folder, and drag `ObjectMapper.xcodeproj` into the file navigator of your app project.
-3. In Xcode, navigate to the target configuration window by clicking on the blue project icon, and selecting the application target under the "Targets" heading in the sidebar.
-4. Ensure that the deployment target of `ObjectMapper.framework` matches that of the application target.
-5. In the tab bar at the top of that window, open the "Build Phases" panel.
-6. Expand the "Target Dependencies" group, and add `ObjectMapper.framework`.
-7. Click on the `+` button at the top left of the panel and select "New Copy Files Phase". Rename this new phase to "Copy Frameworks", set the "Destination" to "Frameworks", and add `ObjectMapper.framework`.
+Before submitting any pull request, If you are including new functionality, please write test cases for it.
 
 ## Author
 
