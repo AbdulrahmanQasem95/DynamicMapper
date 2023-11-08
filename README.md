@@ -36,7 +36,7 @@ DynamicMapper
 [![License](https://img.shields.io/cocoapods/l/DynamicMapper.svg?style=flat)](https://cocoapods.org/pods/DynamicMapper)
 [![Platform](https://img.shields.io/cocoapods/p/DynamicMapper.svg?style=flat)](https://cocoapods.org/pods/DynamicMapper)
 
-DynamicMapper is a framework written in Swift for dynnamically decoding and encoding models (reference and value types) using Apple native Decodable and Encodable protocols. 
+DynamicMapper is a framework written in Swift for dynamically decoding and encoding models (reference and value types) using Apple native `Decodable` and `Encodable` protocols. 
 
 - [Features](#features)
 - [The Basics](#the-basics)
@@ -65,13 +65,9 @@ DynamicMapper is a framework written in Swift for dynnamically decoding and enco
 # The Basics
 Like native `JSONDecoder` and `JSONEncoder` To support dynamic mapping, a class or struct just needs to implement the `DynamicDecodable` protocol for decoding, `DynamicEncodable` protocol for encoding or `DynamicCodable` protocol for both decoding and encoding togoether
 ```swift
-public protocol DynamicDecodable:Decodable
-```
-```swift
-public protocol DynamicEncodable:Encodable
-```
-```swift
-public protocol DynamicCodable:DynamicDecodable,DynamicEncodable
+ protocol DynamicDecodable:Decodable
+ protocol DynamicEncodable:Encodable
+ protocol DynamicCodable:DynamicDecodable,DynamicEncodable
 ```
 
 ```swift
@@ -110,7 +106,7 @@ struct Temperature: DynamicDecodable {
     var fahrenheit: Double?
     
     mutating func dynamicMapping(mappingType: DynamicMapper.DynamicMappingType) {
-        // nothing to do with model level parameters, Codable will take care of them
+        // nothing to do with model's level parameters, Codable will take care of them
         // unless you want to use custom name
     }
 }
@@ -122,7 +118,7 @@ struct Temperature: DynamicDecodable {
     var celsiusTemperature: Double?
     var fahrenheitTemperature: Double?
     
-    mutating func dynamicMapping(mappingType: DynamicMapper.DynamicMappingType) {
+    mutating func dynamicMapping(mappingType: DynamicMappingType) {
         celsiusTemperature     <--  ds.celsius
         fahrenheitTemperature  <--  ds.fahrenheit
     }
@@ -130,12 +126,12 @@ struct Temperature: DynamicDecodable {
 
 ```
 
-Once your class implements `DynamicDecodable` it can be easily decoded using `DynamicJSONDecoder` class behaviour. 
+Once your class implements `DynamicDecodable` it can be easily decoded using `DynamicJSONDecoder` class. 
 
 Decoding:
 ```swift
  do {
-     let userModel = try DynamicJSONDecoder().decode(User.self, from: serDataFromServer)
+     let userModel = try DynamicJSONDecoder().decode(User.self, from: userDataFromServer)
  } catch  {
      print(error.localizedDescription)
  }
@@ -144,7 +140,7 @@ Decoding:
 Encoding:
 ```swift
   do {
-      let data = try DynamicJSONEncoder().encode(userModel)
+      let userData = try DynamicJSONEncoder().encode(userModel)
   } catch  {
       print(error.localizedDescription)
   }
@@ -157,7 +153,7 @@ DynamicMapper can decode and encode all types supported by `JSONDecoder` and `JS
 - `Float`
 - `Double`
 - `Bool`
-- `Array` (as long as the elements are also `Codable` or )
+- `Array` (as long as the elements are also `Codable`)
 - `Dictionary` (as long as the keys and values are `Codable`)
 - Custom structs and classes that conform to `Codable`
 - Optional types that conform to `Codable`
@@ -171,26 +167,13 @@ DynamicMapper can decode and encode all types supported by `JSONDecoder` and `JS
 #### `mutating func dynamicMapping(mappingType:DynamicMappingType)` 
 This function is where all nested items and models definitions should go. this function is executed after successful  encoding and decoding proccess. It is the only function that is called on the object.
 
-#### `var  dynamicSelf:DynamicClass?` 
+#### `var dynamicSelf:DynamicClass?` 
 Dynamic copy of the object that we will use to dynamically access the nested property or model, we can use either `dynamicSelf` or its alias `ds` to access the dynamic model when `dynamicMapping(mappingType:DynamicMappingType)` function get called
 ```swift
-// the results of the following two lines are the same
-        bestFamilyPhoto   <--            ds.alboms.familyAlbom.bestPhoto
-        bestFamilyPhoto   <--  dynamicSelf?.alboms.familyAlbom.bestPhoto
+ // the results of the following two lines are the same
+  bestFamilyPhoto   <--            ds.alboms.familyAlbom.bestPhoto
+  bestFamilyPhoto   <--  dynamicSelf?.alboms.familyAlbom.bestPhoto
 ```
-
-## `StaticMappable` Protocol
-`StaticMappable` is an alternative to `Mappable`. It provides developers with a static function that is used by ObjectMapper for object initialization instead of `init?(map: Map)`. 
-
-Note: `StaticMappable`, like `Mappable`, is a sub protocol of `BaseMappable` which is where the `mapping(map: Map)` function is defined.
-
-#### `static func objectForMapping(map: Map) -> BaseMappable?` 
-ObjectMapper uses this function to get objects to use for mapping. Developers should return an instance of an object that conforms to `BaseMappable` in this function. This function can also be used to:
-- validate JSON prior to object serialization
-- provide an existing cached object to be used for mapping
-- return an object of another type (which also conforms to `BaseMappable`) to be used for mapping. For instance, you may inspect the JSON to infer the type of object that should be used for mapping ([see examples in ClassClusterTests.swift](https://github.com/Hearst-DD/ObjectMapper/blob/master/Tests/ObjectMapperTests/ClassClusterTests.swift#L67))
-
-If you need to implement ObjectMapper in an extension, you will need to adopt this protocol instead of `Mappable`. 
 
 ## `ImmutableMappable` Protocol
 
@@ -198,8 +181,7 @@ If you need to implement ObjectMapper in an extension, you will need to adopt th
 
 <table>
   <tr>
-    <th>ImmutableMappable</th>
-    <th>Mappable</th>
+    <th>DynamicCodable</th>
   </tr>
   <tr>
     <th colspan="2">Properties</th>
@@ -207,74 +189,36 @@ If you need to implement ObjectMapper in an extension, you will need to adopt th
   <tr>
     <td>
 <pre>
-<strong>let</strong> id: Int
-<strong>let</strong> name: String?
+<strong>var</strong> bestFamilyPhoto: URL?
+<strong>var</strong> numberOfChildren: Int?
 </pre>
   </td>
-    <td>
-<pre>
-var id: Int!
-var name: String?
-</pre>
-    </td>
   </tr>
   <tr>
-    <th colspan="2">JSON -> Model</th>
+    <th colspan="2">Data -> Model</th>
   </tr>
   <tr>
     <td>
 <pre>
-init(map: Map) <strong>throws</strong> {
-  id   = <strong>try</strong> map.value("id")
-  name = <strong>try?</strong> map.value("name")
-}
+    func dynamicMapping(mappingType: DynamicMappingType) {
+        bestFamilyPhoto   <--  ds.alboms.familyAlbom.bestPhoto
+        numberOfChildren  <--  ds.familyInfo.childrenCount
+    }
 </pre>
   </td>
-    <td>
-<pre>
-mutating func mapping(map: Map) {
-  id   <- map["id"]
-  name <- map["name"]
-}
-</pre>
-    </td>
   </tr>
   <tr>
-    <th colspan="2">Model -> JSON</th>
+    <th colspan="2">Model -> Data</th>
   </tr>
   <tr>
     <td>
 <pre>
-func mapping(map: Map) {
-  id   <strong>>>></strong> map["id"]
-  name <strong>>>></strong> map["name"]
-}
+    func dynamicMapping(mappingType: DynamicMappingType) {
+        bestFamilyPhoto   -->  {ds.alboms.familyAlbom.bestPhoto.set($0)}
+        numberOfChildren  -->  {ds.familyInfo.childrenCount.set($0)}
+    }
 </pre>
     </td>
-    <td>
-<pre>
-mutating func mapping(map: Map) {
-  id   <- map["id"]
-  name <- map["name"]
-}
-</pre>
-    </td>
-  </tr>
-  <tr>
-    <th colspan="2">Initializing</th>
-  </tr>
-  <tr>
-    <td>
-<pre>
-<strong>try</strong> User(JSONString: JSONString)
-</pre>
-    </td>
-    <td>
-<pre>
-User(JSONString: JSONString)
-</pre>
-    </td>
-  </tr>
 </table>
 
 #### `init(map: Map) throws`
