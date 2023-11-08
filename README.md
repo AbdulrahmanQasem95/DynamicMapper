@@ -274,8 +274,10 @@ fetching array item by index is safe
 ```swift
 // this will do nothing
  var secondArrayItem_1_OfLevel_6:String? = "Abed"
- secondArrayItem_1_OfLevel_6 <--  ds.level1.level2.level3.level4.level5.level6Array[1200].item1
- print(secondArrayItem_1_OfLevel_6) // this will print 'Abed'
+ func dynamicMapping(mappingType: DynamicMappingType) {
+    secondArrayItem_1_OfLevel_6 <--  ds.level1.level2.level3.level4.level5.level6Array[1200].item1
+     print(secondArrayItem_1_OfLevel_6) // this will print 'Abed'
+ }
 ```
 You can access nested custom model as follows:
 ```swift
@@ -295,7 +297,7 @@ struct ArrayItemModel:DynamicCodable{
 ```
 
 ## Easy Json Insersion
-Using the same josn above, You can insert any object or array same like when you access it
+Using the same Json above, You can insert any object or array same like when you access it
 
 ```swift
 ds.level1.level2.level3.insertedProperty.set("nested item")
@@ -317,7 +319,7 @@ json will be
             ],
             "level3": {
                 "property3": "Value 3",
-                "insertedProperty": "nested item",
+                **"insertedProperty": "nested item",**
                 "level4": {
                     "property4": "Value 4",
                     "level5": {
