@@ -170,6 +170,8 @@ This function is where all nested items and models definitions should go. this f
 #### `var dynamicSelf:DynamicClass?` 
 Dynamic copy of the object that we will use to dynamically access the nested property or model, we can use either `dynamicSelf` or its alias `ds` to access the dynamic model when `dynamicMapping(mappingType:DynamicMappingType)` function get called
 
+
+
 <table>
   <tr>
     <th>DynamicCodable</th>
@@ -190,12 +192,12 @@ Dynamic copy of the object that we will use to dynamically access the nested pro
   </tr>
   <tr>
     <td>
-<pre>
+<th>
 func dynamicMapping(mappingType: DynamicMappingType) {
     bestFamilyPhoto   <--  ds.alboms.familyAlbom.bestPhoto
     numberOfChildren  <--  ds.familyInfo.childrenCount
 }
-</pre>
+</th>
   </td>
   </tr>
   <tr>
