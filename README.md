@@ -293,7 +293,7 @@ Using the same Json above, You can insert any object or array same like when you
 
 ```swift
 ds.level1.level2.level3.insertedProperty.set("nested item")
-ds.level1.level2.insertedArray[0].set(["inserted item 1","inserted item 2"])
+ds.level1.level2.insertedArray.set(["inserted item 1","inserted item 2"])
 ds.level1.level2.level3.level4.level5.level6Array[4].set(ArrayItemModel(item1: "inserted item 1", item2: 5))
 ```
 json will be 
