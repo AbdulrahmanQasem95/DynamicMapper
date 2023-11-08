@@ -320,6 +320,8 @@ json will be
             "level3": {
                 "property3": "Value 3",
                 **"insertedProperty": "nested item",**
+                **"insertedProperty": "nested item"**,
+                *"insertedProperty": "nested item"*,
                 "level4": {
                     "property4": "Value 4",
                     "level5": {
