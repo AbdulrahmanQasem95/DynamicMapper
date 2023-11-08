@@ -169,15 +169,6 @@ This function is where all nested items and models definitions should go. this f
 
 #### `var dynamicSelf:DynamicClass?` 
 Dynamic copy of the object that we will use to dynamically access the nested property or model, we can use either `dynamicSelf` or its alias `ds` to access the dynamic model when `dynamicMapping(mappingType:DynamicMappingType)` function get called
-```swift
- // the results of the following two lines are the same
-  bestFamilyPhoto   <--            ds.alboms.familyAlbom.bestPhoto
-  bestFamilyPhoto   <--  dynamicSelf?.alboms.familyAlbom.bestPhoto
-```
-
-## `ImmutableMappable` Protocol
-
-`ImmutableMappable` provides the ability to map immutable properties. This is how `ImmutableMappable` differs from `Mappable`:
 
 <table>
   <tr>
@@ -195,28 +186,49 @@ Dynamic copy of the object that we will use to dynamically access the nested pro
   </td>
   </tr>
   <tr>
-    <th colspan="2">Data -> Model</th>
+    <th colspan="2">Data -> Model (Decoding)</th>
   </tr>
   <tr>
     <td>
 <pre>
-    func dynamicMapping(mappingType: DynamicMappingType) {
-        bestFamilyPhoto   <--  ds.alboms.familyAlbom.bestPhoto
-        numberOfChildren  <--  ds.familyInfo.childrenCount
-    }
+func dynamicMapping(mappingType: DynamicMappingType) {
+    bestFamilyPhoto   <--  ds.alboms.familyAlbom.bestPhoto
+    numberOfChildren  <--  ds.familyInfo.childrenCount
+}
 </pre>
   </td>
   </tr>
   <tr>
-    <th colspan="2">Model -> Data</th>
+    <th colspan="2">Model -> Data (Encoding)</th>
   </tr>
   <tr>
     <td>
 <pre>
-    func dynamicMapping(mappingType: DynamicMappingType) {
-        bestFamilyPhoto   -->  {ds.alboms.familyAlbom.bestPhoto.set($0)}
-        numberOfChildren  -->  {ds.familyInfo.childrenCount.set($0)}
-    }
+func dynamicMapping(mappingType: DynamicMappingType) {
+    bestFamilyPhoto   -->  {ds.alboms.familyAlbom.bestPhoto.set($0)}
+    numberOfChildren  -->  {ds.familyInfo.childrenCount.set($0)}
+}
+</pre>
+    </td>
+    </pre>
+  </td>
+  </tr>
+  <tr>
+    <th colspan="2">Decoding & Encoding</th>
+  </tr>
+  <tr>
+    <td>
+<pre>
+func dynamicMapping(mappingType: DynamicMappingType) {
+    switch mappingType {
+        case .decoding:
+            bestFamilyPhoto   <--  ds.alboms.familyAlbom.bestPhoto
+            numberOfChildren  <--  ds.familyInfo.childrenCount
+        case .encoding:
+            bestFamilyPhoto   -->  {ds.alboms.familyAlbom.bestPhoto.set($0)}
+            numberOfChildren  -->  {ds.familyInfo.childrenCount.set($0)}        
+        }
+}
 </pre>
     </td>
 </table>
