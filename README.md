@@ -6,25 +6,17 @@ DynamicMapper
 
 DynamicMapper is a framework written in Swift for dynamically decoding and encoding models (reference and value types) using Apple native `Decodable` and `Encodable` protocols. 
 
+- [Installation](#installation)
 - [Features](#features)
 - [The Basics](#the-basics)
 - [Mapping Nested Objects](#easy-mapping-of-nested-objects)
-- [Custom Transformations](#custom-transforms)
-- [Subclassing](#subclasses)
-- [Generic Objects](#generic-objects)
-- [Mapping Context](#mapping-context)
-- [ObjectMapper + Alamofire](#objectmapper--alamofire) 
-- [ObjectMapper + Realm](#objectmapper--realm)
-- [Projects using ObjectMapper](#projects-using-objectmapper)
-- [To Do](#to-do)
+- [Easy Json Insersion](#easy-lson-insersion)
+- [DynamicMapper + Realm](#dynamicmapper--realm)
 - [Contributing](#contributing)
-- [Installation](#installation)
 
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
 
 ## Installation
 
@@ -382,7 +374,7 @@ for example, date decoding
 
 
 
-# ObjectMapper + Realm
+# DynamicMapper + Realm
 
 DynamicMapper and Realm can be used together
 
