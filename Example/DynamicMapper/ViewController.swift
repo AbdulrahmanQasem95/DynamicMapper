@@ -9,20 +9,7 @@
 import UIKit
 import DynamicMapper
 class ViewController: UIViewController {
-    
-    //MARK: done---- reading and writing and compatility with Realm
-    //MARK: done---- example use different names than json keys
-    //MARK: done---- test for value and refernce types
-    //MARK: done---- support codable types (flaot, date, data,url)
-    //TODO: done---- clean project
-    //TODO: done---- test json insertion
-    //TODO: done---- remove optional chaining for get, set and insert operations
-    //TODO: done---- remove unwanted public methods
-    //MARK: done---- code documentation above each method and var
-    //MARK: done---- example enhancement
-    //MARK: done---- pod document
-    //MARK: wirte test case
-    //MARK: edit document 'contribution' part where contributer have to pass successfully the test cases and add new test cases for the added new functionality
+
     let data = JsonReader.getJsonSampleData()
     let decoder = DynamicJSONDecoder()
     let encoder = DynamicJSONEncoder()

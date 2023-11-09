@@ -694,72 +694,10 @@
             filePath = "DynamicMapper/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "innerModelAction(_:)"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "nestedPropertiesAction(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "39589AB4-D7F2-4285-A5A5-89D4D1DCFC12 - 4ef592872ff7c28f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DynamicMapper_Example.ViewController.innerModelAction(__C.UIButton) -&gt; ()"
-                  moduleName = "DynamicMapper_Example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "398">
-               </Location>
-               <Location
-                  uuid = "39589AB4-D7F2-4285-A5A5-89D4D1DCFC12 - 4ef592872ff7c28f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DynamicMapper_Example.ViewController.innerModelAction(__C.UIButton) -&gt; ()"
-                  moduleName = "DynamicMapper_Example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "59">
-               </Location>
-               <Location
-                  uuid = "39589AB4-D7F2-4285-A5A5-89D4D1DCFC12 - 4ef592872ff7c212"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DynamicMapper_Example.ViewController.innerModelAction(__C.UIButton) -&gt; ()"
-                  moduleName = "DynamicMapper_Example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "59">
-               </Location>
-               <Location
-                  uuid = "39589AB4-D7F2-4285-A5A5-89D4D1DCFC12 - 4ef592872ff7c379"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DynamicMapper_Example.ViewController.innerModelAction(__C.UIButton) -&gt; ()"
-                  moduleName = "DynamicMapper_Example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "59">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -772,72 +710,10 @@
             filePath = "DynamicMapper/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "innerModelAction(_:)"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "nestedPropertiesAction(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "96A6ABD6-86EA-449A-82B2-F32DEBFDBDEE - 4ef592872ff7c250"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DynamicMapper_Example.ViewController.innerModelAction(__C.UIButton) -&gt; ()"
-                  moduleName = "DynamicMapper_Example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "850">
-               </Location>
-               <Location
-                  uuid = "96A6ABD6-86EA-449A-82B2-F32DEBFDBDEE - 4ef592872ff7c250"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DynamicMapper_Example.ViewController.innerModelAction(__C.UIButton) -&gt; ()"
-                  moduleName = "DynamicMapper_Example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "398">
-               </Location>
-               <Location
-                  uuid = "96A6ABD6-86EA-449A-82B2-F32DEBFDBDEE - 4ef592872ff7c233"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DynamicMapper_Example.ViewController.innerModelAction(__C.UIButton) -&gt; ()"
-                  moduleName = "DynamicMapper_Example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "64"
-                  endingLineNumber = "64"
-                  offsetFromSymbolStart = "398">
-               </Location>
-               <Location
-                  uuid = "96A6ABD6-86EA-449A-82B2-F32DEBFDBDEE - 4ef592872ff7c31a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DynamicMapper_Example.ViewController.innerModelAction(__C.UIButton) -&gt; ()"
-                  moduleName = "DynamicMapper_Example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulrahmanqasem/Desktop/Abdulrahman/DynamicMapper/Example/DynamicMapper/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "398">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
