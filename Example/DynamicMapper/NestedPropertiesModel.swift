@@ -49,23 +49,3 @@ class NestedPropertiesModel:DynamicCodable{
     }
    
 }
-
-class Subject:DynamicCodable {
-    var dynamicSelf: DynamicClass?
-    
-    var title:String
-    var category:String
-    var teacherName:String?
-    
-    func dynamicMapping(mappingType: DynamicMappingType) {
-        teacherName   <--   ds.teacher.firstName
-    }
-}
-
- do {
-     let subjectModel = try DynamicJSONDecoder().decode(Subject.self, from: subjectData)
-     print(teacherName)
- } catch  {
-     print(error.localizedDescription)
- }
-
