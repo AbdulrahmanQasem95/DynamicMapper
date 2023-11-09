@@ -143,9 +143,11 @@ DynamicMapper can decode and encode all types supported by `JSONDecoder` and `JS
 
 
 # Easy Transformation from `Codable`
-Since `DynamicJSONDecoder` inherit `JSONDecoder` and `DynamicJSONEncoder` inherit `JSONEncoder` all your `Codable` classes will work same like before with the new dynamic decoder and encoder without any changes
-this will allow you to move smoothly and easily from ordinary `Codable` to `DynamicCodable` and you can even mix them togethor 
-you can keep the ordinary `Codable` and use `DynamicCodable` only for models where you need to access nested object without defining the implecit objects or where you need to use custom names ...
+Since `DynamicJSONDecoder` inherit `JSONDecoder` and `DynamicJSONEncoder` inherit `JSONEncoder`, all your `Codable` classes will work same like before with the new dynamic decoder and encoder without any changes.
+
+This will allow you to move smoothly and easily from ordinary `Codable` to `DynamicCodable` and you can even mix them togethor.
+ 
+You can keep the ordinary `Codable` and use `DynamicCodable` only for models where you need to access nested object without defining the implecit objects or where you need to use custom names ...
 ```swift
 class Subject:Codable {
     var title:String
@@ -315,10 +317,9 @@ Nested keys also support accessing values from an array
 fetching array item by index is safe
 ```swift
 // this will do nothing
- var secondArrayItem_1_OfLevel_6:String? = "Abed"
+ var secondArrayItem_1_OfLevel_6:String?
  func dynamicMapping(mappingType: DynamicMappingType) {
     secondArrayItem_1_OfLevel_6 <--  ds.level1.level2.level3.level4.level5.level6Array[1200].item1
-    print(secondArrayItem_1_OfLevel_6) // this will print 'Abed'
  }
 ```
 You can access nested custom model as follows:
