@@ -148,6 +148,16 @@ Since `DynamicJSONDecoder` inherit `JSONDecoder` and `DynamicJSONEncoder` inheri
 This will allow you to move smoothly and easily from ordinary `Codable` to `DynamicCodable` and you can even mix them togethor.
  
 You can keep the ordinary `Codable` and use `DynamicCodable` only for models where you need to access nested object without defining the implecit objects or where you need to use custom names ...
+```json
+{
+  "title": "Swift",
+  "category": "Programming Languages",
+  "teacher": {
+    "firstName": "Abdulrahman",
+    "lastName": "Qasem"
+  }
+}
+```
 ```swift
 class Subject:Codable {
     var title:String
