@@ -20,7 +20,9 @@ class ViewController: UIViewController {
     //TODO: done---- remove unwanted public methods
     //MARK: done---- code documentation above each method and var
     //MARK: done---- example enhancement
-    //MARK: pod document
+    //MARK: done---- pod document
+    //MARK: wirte test case
+    //MARK: edit document 'contribution' part where contributer have to pass successfully the test cases and add new test cases for the added new functionality
     let data = JsonReader.getJsonSampleData()
     let decoder = DynamicJSONDecoder()
     let encoder = DynamicJSONEncoder()

@@ -4,15 +4,18 @@ DynamicMapper
 [![License](https://img.shields.io/cocoapods/l/DynamicMapper.svg?style=flat)](https://cocoapods.org/pods/DynamicMapper)
 [![Platform](https://img.shields.io/cocoapods/p/DynamicMapper.svg?style=flat)](https://cocoapods.org/pods/DynamicMapper)
 
-DynamicMapper is a framework written in Swift for dynamically decoding and encoding models (reference and value types) using Apple native `Decodable` and `Encodable` protocols. 
+DynamicMapper is a framework written in Swift for dynamically decoding and encoding models (reference and value types) using Swift native `Decodable` and `Encodable` protocols. 
 
 - [Installation](#installation)
 - [Features](#features)
 - [The Basics](#the-basics)
+- [Easy Transformation from `Codable`](#easy-transformation-from-codable)
 - [Mapping Nested Objects](#easy-mapping-of-nested-objects)
-- [Easy Json Insersion](#easy-lson-insersion)
+- [Easy Json Insersion](#easy-json-insersion)
 - [DynamicMapper + Realm](#dynamicmapper--realm)
 - [Contributing](#contributing)
+- [Author](#author)
+- [License](#license)
 
 ## Example
 
@@ -24,7 +27,7 @@ DynamicMapper is available through [CocoaPods](https://cocoapods.org). To instal
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'DynamicMapper'
+pod 'DynamicMapper', '~> 2.0.0' (check releases to make sure this is the latest version)
 ```
 
 # Features:
@@ -33,7 +36,7 @@ pod 'DynamicMapper'
 - Nested Objects encoding and decoding (Dynamic Mapping)
 - Rreference & Value types support
 - Dynamic object insertion and creation
-- Safely nested item fetching
+- Safely nested object fetching
 - Support subclassing
 - Smooth transformation since it works directly with your `Codable` models without any changes
 - Compatible with [Realm](https://github.com/realm/realm-swift)
@@ -49,7 +52,8 @@ Like native `JSONDecoder` and `JSONEncoder` To support dynamic mapping, a class 
  var dynamicSelf: DynamicClass?
  func dynamicMapping(mappingType: DynamicMappingType) {}
 ```
-DynamicMapper uses the ```<--``` operator to set nested member variable.
+DynamicMapper uses the ```<--``` operator and `ds` to set nested member variable.
+`ds` is a safe non optional alias of `dynamicSelf`
 
 ```swift
 class User: DynamicDecodable {
@@ -137,13 +141,59 @@ DynamicMapper can decode and encode all types supported by `JSONDecoder` and `JS
 - `URL`
 - `Data`
 
+
+# Easy Transformation from `Codable`
+Since `DynamicJSONDecoder` inherit `JSONDecoder` and `DynamicJSONEncoder` inherit `JSONEncoder` all your `Codable` classes will work same like before with the new dynamic decoder and encoder without any changes
+this will allow you to move smoothly and easily from ordinary `Codable` to `DynamicCodable` and you can even mix them togethor 
+you can keep the ordinary `Codable` and use `DynamicCodable` only for models where you need to access nested object without defining the implecit objects or where you need to use custom names ...
+```swift
+class Subject:Codable {
+    var title:String
+    var category:String
+    var teacher:User?
+}
+
+class User:Codable {
+    var firstName:String
+    var lastName:String
+}
+
+ do {
+     let subjectModel = try DynamicJSONDecoder().decode(Subject.self, from: subjectData)
+     print(subjectModel.teacher.firstName)
+ } catch  {
+     print(error.localizedDescription)
+ }
+```
+or using DynamicMapper
+```swift
+class Subject:DynamicCodable {
+    var dynamicSelf: DynamicClass?
+    
+    var title:String
+    var category:String
+    var teacherName:String?
+    
+    func dynamicMapping(mappingType: DynamicMappingType) {
+        teacherName   <--   ds.teacher.firstName
+    }
+}
+
+ do {
+     let subjectModel = try DynamicJSONDecoder().decode(Subject.self, from: subjectData)
+     print(teacherName)
+ } catch  {
+     print(error.localizedDescription)
+ }
+```
+
 ## `DynamicCodable` Protocol
 
 #### `mutating func dynamicMapping(mappingType:DynamicMappingType)` 
-This function is where all nested items and models definitions should go. this function is executed after successful  encoding and decoding proccess. It is the only function that is called on the object.
+This function is where all nested items and models definitions should go. this function is executed during encoding and decoding proccess. It is the only function that is called on the object.
 
 #### `var dynamicSelf:DynamicClass?` 
-Dynamic copy of the object that we will use to dynamically access the nested property or model, we can use either `dynamicSelf` or its alias `ds` to access the dynamic model when `dynamicMapping(mappingType:DynamicMappingType)` function get called
+Dynamic copy of the object that we will use to dynamically access the nested properties or models, we can use either `dynamicSelf` or its safe non optional alias `ds` to access the dynamic model when `dynamicMapping(mappingType:DynamicMappingType)` function get called
 
 
 
@@ -268,7 +318,7 @@ fetching array item by index is safe
  var secondArrayItem_1_OfLevel_6:String? = "Abed"
  func dynamicMapping(mappingType: DynamicMappingType) {
     secondArrayItem_1_OfLevel_6 <--  ds.level1.level2.level3.level4.level5.level6Array[1200].item1
-     print(secondArrayItem_1_OfLevel_6) // this will print 'Abed'
+    print(secondArrayItem_1_OfLevel_6) // this will print 'Abed'
  }
 ```
 You can access nested custom model as follows:
@@ -342,8 +392,8 @@ json will be
 }
 ```
 # Extend `JSONDecoder` & `JSONEncoder`
-`DynamicJSONDecoder` and `DynamicJSONEncoder` inherit  `JSONDecoder` and `JSONEncoder` respectively, so you have the full power of native `Codable`
-for example, date decoding 
+`DynamicJSONDecoder` and `DynamicJSONEncoder` inherit  `JSONDecoder` and `JSONEncoder` respectively, so they have the **full power** of native `Codable`
+,for example date decoding 
 ```json
 {
     "user":{
@@ -379,6 +429,7 @@ for example, date decoding
 DynamicMapper and Realm can be used together
 
 ```swift
+import RealmSwift
 class Model: Object, DynamicCodable {
     var dynamicSelf:DynamicClass?
     
