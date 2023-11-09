@@ -172,7 +172,7 @@ class User:Codable {
 
  do {
      let subjectModel = try DynamicJSONDecoder().decode(Subject.self, from: subjectData)
-     print(subjectModel.teacher.firstName)
+     print(subjectModel.teacher.firstName) //Abdulrahman
  } catch  {
      print(error.localizedDescription)
  }
@@ -184,7 +184,7 @@ class Subject:DynamicCodable {
     
     var title:String
     var category:String
-    var teacherName:String?
+    var teacherName:String?  //Abdulrahman
     
     func dynamicMapping(mappingType: DynamicMappingType) {
         teacherName   <--   ds.teacher.firstName
