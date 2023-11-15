@@ -31,7 +31,7 @@ pod 'DynamicMapper', '~> 2.0.0' (check releases to make sure this is the latest 
 ```
 
 ### Swift Package Manager
-To add ObjectMapper to a [Swift Package Manager](https://swift.org/package-manager/) based project, add:
+To add DynamicMapper to a [Swift Package Manager](https://swift.org/package-manager/) based project, add:
 
 ```swift
 .package(url: "https://github.com/AbdulrahmanQasem95/DynamicMapper.git", .upToNextMajor(from: "2.0.0")),
