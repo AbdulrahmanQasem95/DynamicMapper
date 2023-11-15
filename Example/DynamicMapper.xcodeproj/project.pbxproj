@@ -61,6 +61,7 @@
 		F919D4972AF78D9600B7D4D4 /* ValueTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTypeModel.swift; sourceTree = "<group>"; };
 		F919D49B2AFA50B900B7D4D4 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		F919D49D2AFA540700B7D4D4 /* CustomInsertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInsertModel.swift; sourceTree = "<group>"; };
+		F939F7122B04E07600D182C1 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
 		F9BA4A4D2ACDA0ED00EBABA8 /* jsonExample.JSON */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jsonExample.JSON; sourceTree = "<group>"; };
 		F9BA4A512ACEA3CF00EBABA8 /* NestedPropertiesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedPropertiesModel.swift; sourceTree = "<group>"; };
 		F9BA4A532ACEA72C00EBABA8 /* JsonReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
@@ -165,6 +166,7 @@
 				F91543CD2AB9B1E700340D63 /* DynamicMapper.podspec */,
 				A63DC6B17E973832F0363680 /* README.md */,
 				B85E5EA26BE1EF7E3E4D5FC8 /* LICENSE */,
+				F939F7122B04E07600D182C1 /* Package.swift */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";

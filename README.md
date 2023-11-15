@@ -17,18 +17,26 @@ DynamicMapper is a framework written in Swift for dynamically decoding and encod
 - [Author](#author)
 - [License](#license)
 
-## Example
+# Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Installation
-
+# Installation
+### Cocoapods
 DynamicMapper is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'DynamicMapper', '~> 2.0.0' (check releases to make sure this is the latest version)
 ```
+
+### Swift Package Manager
+To add DynamicMapper to a [Swift Package Manager](https://swift.org/package-manager/) based project, add:
+
+```swift
+.package(url: "https://github.com/AbdulrahmanQasem95/DynamicMapper.git", .upToNextMajor(from: "2.0.0")),
+```
+to your `Package.swift` files `dependencies` array.
 
 # Features:
 - Decoding and encoding using native `JSONDecoder` and `JSONEncoder`
