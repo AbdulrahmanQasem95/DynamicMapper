@@ -1,4 +1,4 @@
-//
+// swift-tools-version:5.0
 //  package.swift
 //  DynamicMapper
 //
@@ -9,7 +9,7 @@ import PackageDescription
 let package = Package(
     name: "DynamicMapper",
     platforms: [.macOS(.v10_10),
-                .iOS(.v12),
+                .iOS(.v10),
                 .tvOS(.v9),
                 .watchOS(.v2)],
     products: [.library(name: "DynamicMapper",
