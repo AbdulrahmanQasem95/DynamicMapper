@@ -2,7 +2,7 @@ DynamicMapper
 ============
 [![Version](https://img.shields.io/cocoapods/v/DynamicMapper.svg?style=flat)](https://cocoapods.org/pods/DynamicMapper)
 [![License](https://img.shields.io/cocoapods/l/DynamicMapper.svg?style=flat)](https://cocoapods.org/pods/DynamicMapper)
-[![Platform](https://img.shields.io/cocoapods/p/DynamicMapper.svg?style=flat)](https://cocoapods.org/pods/DynamicMapper)
+[![Platform](https://img.shields.io/badge/Platforms-macOS_iOS_tvOS_watchOS_vision_OS-Green?style=flat-square)](https://cocoapods.org/pods/DynamicMapper)
 
 DynamicMapper is a framework written in Swift for dynamically decoding and encoding models (reference and value types) using Swift native `Decodable` and `Encodable` protocols. 
 
@@ -27,14 +27,14 @@ DynamicMapper is available through [CocoaPods](https://cocoapods.org). To instal
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'DynamicMapper', '~> 2.0.0' (check releases to make sure this is the latest version)
+pod 'DynamicMapper', '~> 2.0.1' (check releases to make sure this is the latest version)
 ```
 
 ### Swift Package Manager
 To add DynamicMapper to a [Swift Package Manager](https://swift.org/package-manager/) based project, add:
 
 ```swift
-.package(url: "https://github.com/AbdulrahmanQasem95/DynamicMapper.git", .upToNextMajor(from: "2.0.0")),
+.package(url: "https://github.com/AbdulrahmanQasem95/DynamicMapper.git", .upToNextMajor(from: "2.0.1")),
 ```
 to your `Package.swift` files `dependencies` array.
 
@@ -49,6 +49,7 @@ to your `Package.swift` files `dependencies` array.
 - Smooth transformation since it works directly with your `Codable` models without any changes
 - Compatible with [Realm](https://github.com/realm/realm-swift)
 - Native replacment of [ObjectMapper](https://github.com/tristanhimmelman/ObjectMapper)
+- Support Back to iOS 11, macOS 10.13, tvOS 11, and watchOS 4.
 
 # The Basics
 Like native `JSONDecoder` and `JSONEncoder` To support dynamic mapping, a class or struct just needs to implement the `DynamicDecodable` protocol for decoding, `DynamicEncodable` protocol for encoding or `DynamicCodable` protocol for both decoding and encoding togoether
@@ -474,6 +475,8 @@ Before submitting any pull request, If you are including new functionality, plea
 ## Author
 
 Abdulrahman Qasem, Abdulrahmanq1995@gmail.com
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-informational?logo=linkedin)](https://www.linkedin.com/in/abdulrahmanqasem?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
+
 
 ## License
 
