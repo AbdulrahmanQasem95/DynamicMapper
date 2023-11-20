@@ -475,6 +475,7 @@ Before submitting any pull request, If you are including new functionality, plea
 ## Author
 
 Abdulrahman Qasem, Abdulrahmanq1995@gmail.com
+
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-informational?logo=linkedin)](https://www.linkedin.com/in/abdulrahmanqasem?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
 
 
